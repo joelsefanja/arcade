@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\yvonn\\.nuget\\packages\\": {}
+    "C:\\Users\\joels\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yvonn\\Source\\Repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj",
+      "projectUniqueName": "C:\\Users\\joels\\Source\\Repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj",
       "projectName": "Arcade",
-      "projectPath": "C:\\Users\\yvonn\\Source\\Repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj",
-      "packagesPath": "C:\\Users\\yvonn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yvonn\\Source\\Repos\\joelsefanja\\arcade\\Arcade\\Arcade\\obj\\",
+      "projectPath": "C:\\Users\\joels\\Source\\Repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj",
+      "packagesPath": "C:\\Users\\joels\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\joels\\Source\\Repos\\joelsefanja\\arcade\\Arcade\\Arcade\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\yvonn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\joels\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
