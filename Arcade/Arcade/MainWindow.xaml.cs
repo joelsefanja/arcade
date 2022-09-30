@@ -24,5 +24,34 @@ namespace Arcade
         {
             InitializeComponent();
         }
+        private void StartButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LeaderBoardButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SettingsButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CreditsButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// QuitButtonClick sluit het programma zodra de knop 'Quit' is ingedrukt.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QuitButtonClick(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
