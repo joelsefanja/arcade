@@ -12,7 +12,25 @@
     <None Remove="img\background_layer_1_large.png" />
     <None Remove="img\background_layer_2.png" />
     <None Remove="img\background_layer_3.png" />
-    <None Remove="img\Monster.png" />
+    <None Remove="img\boy_64px.png" />
+    <None Remove="img\boy_large.png" />
+    <None Remove="img\boy_small.png" />
+    <None Remove="img\girl.png" />
+    <None Remove="img\girl_64px.png" />
+    <None Remove="img\girl_large.png" />
+    <None Remove="img\monster.png" />
+    <None Remove="img\monster_64px.png" />
+    <None Remove="img\monster_large.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\boy_64px.png" />
+    <Resource Include="img\boy_large.png" />
+    <Resource Include="img\boy_small.png" />
+    <Resource Include="img\girl.png" />
+    <Resource Include="img\girl_64px.png" />
+    <Resource Include="img\girl_large.png" />
+    <Resource Include="img\monster.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,7 +41,8 @@
     <Resource Include="img\background_layer_1.png" />
     <Resource Include="img\background_layer_1_large.png" />
     <Resource Include="img\background_layer_3.png" />
-    <Resource Include="img\Monster.png" />
+    <Resource Include="img\monster_64px.png" />
+    <Resource Include="img\monster_large.png" />
   </ItemGroup>
 
 </Project>

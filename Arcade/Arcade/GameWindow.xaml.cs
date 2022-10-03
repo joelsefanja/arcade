@@ -35,6 +35,16 @@ namespace Arcade
         private const int enemyPassesDamage = 10;
         private const int enemyCrashesDamage = 5;
 
+        public GameWindow()
+        {
+            InitializeComponent();
+
+            gameTimer.Interval = TimeSpan.FromMilliseconds(20);
+            gameTimer.Tick += GameEngine;
+            gameTimer.Start();
+
+            MyCanvas.Focus();
+        }
         private void GameEngine(object sender, EventArgs e)
         {
             if (moveLeft && Canvas.GetLeft(Player) > 0)
@@ -51,6 +61,7 @@ namespace Arcade
                         itemsToRemove.Add(x);
                 }
             }
+
             foreach (Rectangle r in itemsToRemove)
             {
                 MyCanvas.Children.Remove(r);
@@ -64,6 +75,58 @@ namespace Arcade
                 makeEnemies(); // run the make enemies function
                 enemySpawnCounter = enemySpawnLimit; //reset the enemy counter to the limit integer
             }
+            foreach (Rectangle x in MyCanvas.Children.OfType<Rectangle>())
+            {
+                if ((string)x.Tag == "Bullet")
+                {
+                    Canvas.SetTop(x, Canvas.GetTop(x) - bulletSpeed);
+                    Rect bullet = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    if (Canvas.GetTop(x) < 10)
+                        itemsToRemove.Add(x);
+                    foreach (Rectangle y in MyCanvas.Children.OfType<Rectangle>())
+                    {
+                        if ((string)y.Tag == "Enemy")
+                        {
+                            Rect enemy = new Rect(Canvas.GetLeft(y), Canvas.GetTop(y), y.Width, y.Height);
+                            if (bullet.IntersectsWith(enemy))
+                            {
+                                itemsToRemove.Add(x); //bullet
+                                itemsToRemove.Add(y); //enemy
+                                score++;
+                            }
+                        }
+                    }
+                }
+                
+                LabelScore.Content = "Score: " + score;
+                LabelDamage.Content = "Damaged " + damage;
+                if (score > 5)
+                    enemySpawnLimit = 20;
+                if (damage > 99)
+                {
+                    gameTimer.Stop();
+                    LabelDamage.Content = "Damaged: 100";
+                    LabelDamage.Foreground = Brushes.Red;
+                    MessageBox.Show("You have destroyed " + score + " ships", "Game Over");
+                }
+
+                if ((string)x.Tag == "Enemy")
+                {
+                    Canvas.SetTop(x, Canvas.GetTop(x) + enemySpeed);
+                    Rect enemy = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    if (Canvas.GetTop(x) + 50 > 900)
+                    {
+                        itemsToRemove.Add(x);
+                        damage += enemyPassesDamage;
+                    }
+                    if (playerHitBox.IntersectsWith(enemy))
+                    {
+                        damage += enemyCrashesDamage;
+                        itemsToRemove.Add(x);
+                    }
+                }
+            }
+
         }
 
         private void makeEnemies()
@@ -74,44 +137,35 @@ namespace Arcade
             {
                 case 1:
                     enemySprite.ImageSource =
-                    new BitmapImage(new Uri("pack://application:,,,/img/monster.png"));
+                    new BitmapImage(new Uri("pack://application:,,,/img/monster_64px.png"));
                     break;
                 case 2:
                     enemySprite.ImageSource =
-                    new BitmapImage(new Uri("pack://application:,,,/img/monster.png"));
+                    new BitmapImage(new Uri("pack://application:,,,/img/monster_64px.png"));
                     break;
                 case 3:
                     enemySprite.ImageSource =
-                    new BitmapImage(new Uri("pack://application:,,,/img/monster.png"));
+                    new BitmapImage(new Uri("pack://application:,,,/img/monster_64px.png"));
                     break;
                 default:
                     enemySprite.ImageSource =
-                    new BitmapImage(new Uri("pack://application:,,,/img/monster.png"));
+                    new BitmapImage(new Uri("pack://application:,,,/img/monster_64px.png"));
                     break;
             }
             Rectangle newEnemy = new Rectangle
             {
                 Tag = "Enemy",
-                Height = 500,
-                Width = 500,
+                Height = 50,
+                Width = 50,
                 Fill = enemySprite
             };
             Canvas.SetTop(newEnemy, 200);
-            Canvas.SetLeft(newEnemy, rand.Next(30, 430));
+            Canvas.SetLeft(newEnemy, rand.Next(30, 650));
             MyCanvas.Children.Add(newEnemy);
             GC.Collect();
         }
 
-        public GameWindow()
-        {
-            InitializeComponent();
-
-            gameTimer.Interval = TimeSpan.FromMilliseconds(20);
-            gameTimer.Tick += GameEngine;
-            gameTimer.Start();
-
-            MyCanvas.Focus();
-        }
+      
         private void OnKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Left)
@@ -141,6 +195,7 @@ namespace Arcade
                 MyCanvas.Children.Add(newBullet);
             }
         }
+
     }
 
 }

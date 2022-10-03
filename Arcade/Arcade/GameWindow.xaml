@@ -11,12 +11,17 @@
  Background="lightblue"
  KeyDown="OnKeyDown"
  KeyUp="OnKeyUp">
+
+
         <Rectangle x:Name="Player"
- Height="50"
- Width="60"
- Fill="Orange"
+ Height="64"
+ Width="64"
  Canvas.Left="500"
- Canvas.Bottom="100"/>
+ Canvas.Bottom="100">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/img/boy_64px.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
         <Label x:Name="LabelScore"
  Content="Score: 0"
  Foreground="White"
