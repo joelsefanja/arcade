@@ -26,7 +26,9 @@ namespace Arcade
         }
         private void StartButtonClick(object sender, RoutedEventArgs e)
         {
-
+            GameWindow gw = new GameWindow();
+            gw.Visibility = Visibility.Visible;
+            
         }
 
         private void LeaderBoardButtonClick(object sender, RoutedEventArgs e)

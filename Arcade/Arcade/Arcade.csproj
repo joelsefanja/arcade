@@ -7,4 +7,23 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="img\background_layer_1.png" />
+    <None Remove="img\background_layer_1_large.png" />
+    <None Remove="img\background_layer_2.png" />
+    <None Remove="img\background_layer_3.png" />
+    <None Remove="img\Monster.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\background_layer_2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\background_layer_1.png" />
+    <Resource Include="img\background_layer_1_large.png" />
+    <Resource Include="img\background_layer_3.png" />
+    <Resource Include="img\Monster.png" />
+  </ItemGroup>
+
 </Project>
