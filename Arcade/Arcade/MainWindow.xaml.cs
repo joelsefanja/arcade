@@ -33,6 +33,8 @@ namespace Arcade
 
         private void LeaderBoardButtonClick(object sender, RoutedEventArgs e)
         {
+            level2 l2 = new level2();
+            l2.Visibility = Visibility.Visible;
 
         }
 

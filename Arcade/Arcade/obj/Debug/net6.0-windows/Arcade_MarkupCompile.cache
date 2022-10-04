@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\App.xaml
-2396499192
+3-1463407723
 
-4-203608336
+5109747925
 194-200944676
-GameWindow.xaml;MainWindow.xaml;
+GameWindow.xaml;level2.xaml;MainWindow.xaml;
 
 False
 
