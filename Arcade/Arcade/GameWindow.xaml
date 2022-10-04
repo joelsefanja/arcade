@@ -5,34 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Arcade"
         mc:Ignorable="d"
-        Title="GameWindow" Width="1000" Height="500" WindowState="Maximized">
+        Title="GameWindow" Width="1920" Height="1080">
     <Canvas x:Name="MyCanvas"
- Focusable="True"
- Background="lightblue"
- KeyDown="OnKeyDown"
- KeyUp="OnKeyUp">
+            Focusable="True"
+            KeyDown="OnKeyDown"
+            KeyUp="OnKeyUp">
 
-
+        <Canvas.Background>
+            <ImageBrush TileMode="None" 
+                        ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
+        </Canvas.Background>
+        
         <Rectangle x:Name="Player"
- Height="64"
- Width="64"
- Canvas.Left="500"
- Canvas.Bottom="100">
+                   Height="128"
+                   Width="128"
+                   Canvas.Left="650"
+                   Canvas.Bottom="100"
+                   Canvas.Top="581" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top">
+            
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/boy_64px.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/sprites/boy.png" 
+                            Stretch="None" 
+                            TileMode="None"/>
             </Rectangle.Fill>
         </Rectangle>
+        
         <Label x:Name="LabelScore"
- Content="Score: 0"
- Foreground="White"
- FontSize="18"
- FontWeight="Bold"/>
+               Content="Score: 0"
+               Foreground="White"
+               FontSize="30"
+               FontWeight="Bold"/>
+        
         <Label x:Name="LabelDamage"
- Content="Damage: 0"
- Foreground="White"
- FontSize="18"
- FontWeight="Bold"
- Canvas.Top="34"/>
+              Content="Damage: 0"
+              Foreground="White"
+              FontSize="30"
+              FontWeight="Bold"
+              Canvas.Top="34"/>
+        
+        <Label x:Name="StandsOn"
+              Content="Stands on: "
+              Foreground="White"
+              FontSize="30"
+              FontWeight="Bold"
+              Canvas.Top="68"/>
+
+        <Image Name="platform1" Tag="platform" Height="64" Canvas.Left="671" Source="/img/platforms/platform_5.png" Stretch="Fill" Canvas.Top="705" Width="256"/>
+        <Image Name="platform2" Tag="platform" Height="128" Canvas.Left="926" Source="/img/platforms/helling.png" Stretch="Fill" Canvas.Top="577" Width="256"/>
+
     </Canvas>
 
 </Window>

@@ -9,7 +9,7 @@
     <Grid>
         <!--Achtergrond van het menu-->
         <Grid.Background>
-            <ImageBrush ImageSource="pack://application:,,,/img/background_layer_1.png"/>
+            <ImageBrush ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
         </Grid.Background>
 
         <!--De grid voor het hoofdmenu-->

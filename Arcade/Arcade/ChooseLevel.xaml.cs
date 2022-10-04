@@ -19,11 +19,15 @@ namespace Arcade
     /// </summary>
     public partial class ChooseLevel : Window
     {
+        /// <summary>
+        /// Kiezen van een level.
+        /// </summary>
         public ChooseLevel()
         {
             InitializeComponent();
         }
 
+       
         private void StartLevel1(object sender, RoutedEventArgs e)
         {
             GameWindow gw = new GameWindow();

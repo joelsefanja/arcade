@@ -8,41 +8,40 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="img\background_layer_1.png" />
-    <None Remove="img\background_layer_1_large.png" />
-    <None Remove="img\background_layer_2.png" />
-    <None Remove="img\background_layer_3.png" />
+    <None Remove="img\backgrounds\background_layered.png" />
+    <None Remove="img\backgrounds\background_layer_1.png" />
+    <None Remove="img\backgrounds\background_layer_2.png" />
+    <None Remove="img\backgrounds\background_layer_3.png" />
     <None Remove="img\boy_64px.png" />
-    <None Remove="img\boy_large.png" />
-    <None Remove="img\boy_small.png" />
-    <None Remove="img\girl.png" />
     <None Remove="img\girl_64px.png" />
-    <None Remove="img\girl_large.png" />
-    <None Remove="img\monster.png" />
     <None Remove="img\monster_64px.png" />
-    <None Remove="img\monster_large.png" />
+    <None Remove="img\platforms\helling.png" />
+    <None Remove="img\platforms\platform_5.png" />
+    <None Remove="img\sprites\boy.png" />
+    <None Remove="img\sprites\girl_1.png" />
+    <None Remove="img\sprites\girl_2.png" />
+    <None Remove="img\sprites\girl_3.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="img\boy_64px.png" />
-    <Resource Include="img\boy_large.png" />
-    <Resource Include="img\boy_small.png" />
-    <Resource Include="img\girl.png" />
-    <Resource Include="img\girl_64px.png" />
-    <Resource Include="img\girl_large.png" />
-    <Resource Include="img\monster.png" />
+    <Resource Include="img\backgrounds\background_layered.png" />
+    <Resource Include="img\backgrounds\background_layer_1.png" />
+    <Resource Include="img\backgrounds\background_layer_2.png" />
+    <Resource Include="img\backgrounds\background_layer_3.png" />
+    <Resource Include="img\platforms\helling.png" />
+    <Resource Include="img\platforms\platform_5.png" />
+    <Resource Include="img\sprites\boy.png" />
+    <Resource Include="img\sprites\boy_64px.png" />
+    <Resource Include="img\sprites\girl_1.png" />
+    <Resource Include="img\sprites\girl_2.png" />
+    <Resource Include="img\sprites\girl_3.png" />
+    <Resource Include="img\sprites\girl_64px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="img\background_layer_2.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="img\background_layer_1.png" />
-    <Resource Include="img\background_layer_1_large.png" />
-    <Resource Include="img\background_layer_3.png" />
-    <Resource Include="img\monster_64px.png" />
-    <Resource Include="img\monster_large.png" />
+    <Resource Include="img\sprites\monster_64px.png" />
   </ItemGroup>
 
 </Project>
