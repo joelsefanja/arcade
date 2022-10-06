@@ -46,3 +46,9 @@ C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-wi
 C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\level2.baml
 C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\ChooseLevel.g.cs
 C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\ChooseLevel.baml
+C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Leaderboard.g.cs
+C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Leaderboard.baml
+C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\credits.g.cs
+C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\instellingen.g.cs
+C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\credits.baml
+C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\instellingen.baml

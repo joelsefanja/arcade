@@ -1,0 +1,36 @@
+﻿<Page x:Class="Arcade.instellingen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Arcade"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Instellingen">
+
+    <Grid>
+
+        <!--Achtergrond van het menu-->
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
+        </Grid.Background>
+
+        <!--De grid voor het hoofdmenu-->
+        <Grid.RowDefinitions>
+            <!--7 rijen voor de layout van de knoppen en het spel-titel-->
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <!-- titel -->
+        <Label Grid.Row="0"
+               FontFamily="Gill Sans Ultra Bold"
+               FontSize="36"
+               Content="Instellingen" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
+        </Label>
+
+    </Grid>
+</Page>

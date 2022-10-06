@@ -10,7 +10,16 @@
     <Compile Update="ChooseLevel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="credits.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="GameWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="instellingen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Leaderboard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="level2.xaml.cs">
@@ -21,7 +30,16 @@
     <Page Update="ChooseLevel.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="credits.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="GameWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="instellingen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Leaderboard.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="level2.xaml">

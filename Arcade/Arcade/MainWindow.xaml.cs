@@ -26,25 +26,32 @@ namespace Arcade
         }
         private void StartButtonClick(object sender, RoutedEventArgs e)
         {
-            ChooseLevel cl = new ChooseLevel();
-            cl.Visibility = Visibility.Visible;
+            GameWindow gw = new GameWindow();
+            gw.Visibility = Visibility.Visible;
+            this.Close();
             
         }
 
         private void LeaderBoardButtonClick(object sender, RoutedEventArgs e)
         {
-            
+            Leaderboard lb = new Leaderboard();
+            lb.Visibility = Visibility.Visible;
+            this.Close();
 
         }
 
         private void SettingsButtonClick(object sender, RoutedEventArgs e)
         {
-
+            instellingen inst = new instellingen();
+            inst.Visibility = Visibility.Visible;
+            this.Close();
         }
 
         private void CreditsButtonClick(object sender, RoutedEventArgs e)
         {
-
+            credits cr = new credits();
+            cr.Visibility = Visibility.Visible;
+            this.Close();
         }
 
         /// <summary>

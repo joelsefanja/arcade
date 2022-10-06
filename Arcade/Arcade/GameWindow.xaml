@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Arcade"
         mc:Ignorable="d"
-        Title="GameWindow" Width="1920" Height="1080">
+        Title="GameWindow" Width="1800" Height="1000" WindowState="Maximized">
     <Canvas x:Name="MyCanvas"
             Focusable="True"
             KeyDown="OnKeyDown"
@@ -15,36 +15,53 @@
             <ImageBrush TileMode="None" 
                         ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
         </Canvas.Background>
-        
-        <Rectangle x:Name="Player"
+
+        <Rectangle x:Name="Player1"
                    Height="128"
                    Width="128"
-                   Canvas.Left="650"
+                   Canvas.Left="398"
                    Canvas.Bottom="100"
-                   Canvas.Top="581" 
+                   Canvas.Top="582" 
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Top">
-            
+
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/img/sprites/girl.png" 
+                            Stretch="None" 
+                            TileMode="None"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle x:Name="Player2"
+                   Height="128"
+                   Width="128"
+                   Canvas.Left="1268"
+                   Canvas.Bottom="100"
+                   Canvas.Top="583" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Top">
+
             <Rectangle.Fill>
                 <ImageBrush ImageSource="pack://application:,,,/img/sprites/boy.png" 
                             Stretch="None" 
                             TileMode="None"/>
             </Rectangle.Fill>
         </Rectangle>
-        
+
+
         <Label x:Name="LabelScore"
                Content="Score: 0"
                Foreground="White"
                FontSize="30"
                FontWeight="Bold"/>
-        
+
         <Label x:Name="LabelDamage"
               Content="Damage: 0"
               Foreground="White"
               FontSize="30"
               FontWeight="Bold"
               Canvas.Top="34"/>
-        
+
         <Label x:Name="StandsOn"
               Content="Stands on: "
               Foreground="White"
@@ -52,9 +69,10 @@
               FontWeight="Bold"
               Canvas.Top="68"/>
 
-        <Image Name="platform1" Tag="platform" Height="64" Canvas.Left="671" Source="/img/platforms/platform_5.png" Stretch="Fill" Canvas.Top="705" Width="256"/>
-        <Image Name="platform2" Tag="platform" Height="128" Canvas.Left="926" Source="/img/platforms/helling.png" Stretch="Fill" Canvas.Top="577" Width="256"/>
-
+        <Rectangle x:Name="platform1" Tag="platform" Width="1790" Height="80" Fill="#FF5CE37C" Canvas.Left="10" Canvas.Top="913" HorizontalAlignment="Left" VerticalAlignment="Center"></Rectangle>
+        <Rectangle x:Name="platform2" Tag="platform" Width="459" Height="80" Fill="#FF5CE37C" Canvas.Left="296" Canvas.Top="711" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Rectangle x:Name="platform3" Tag="platform" Width="459" Height="80" Fill="#FF5CE37C" Canvas.Left="1102" Canvas.Top="711" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Rectangle x:Name="platform4" Tag="platform" Width="459" Height="80" Fill="#FF5CE37C" Canvas.Left="691" Canvas.Top="492" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Canvas>
 
 </Window>

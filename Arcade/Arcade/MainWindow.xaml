@@ -36,10 +36,10 @@
 
         <!--5 Knoppen om te navigeren naar verschillende window's-->
         <Button x:Name="Start" Grid.Row="1" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Click="StartButtonClick" Content="Start" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592"></Button>
-        <Button x:Name="Leaderbord" Grid.Row="2" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Content="Leaderboard" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592" Click="LeaderBoardButtonClick"/>
-        <Button x:Name="Settings" Grid.Row="3" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Click="SettingsButtonClick" Content="Settings" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592"></Button>
+        <Button x:Name="Leaderbord" Grid.Row="2" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Content="Scorebord" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592" Click="LeaderBoardButtonClick"/>
+        <Button x:Name="Settings" Grid.Row="3" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Click="SettingsButtonClick" Content="Instellingen" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592"></Button>
         <Button x:Name="Credits" Grid.Row="4" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Click="CreditsButtonClick" Content="Credits" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592"></Button>
-        <Button x:Name="Quit" Grid.Row="5" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Click="QuitButtonClick" Content="Quit" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592"></Button>
+        <Button x:Name="Quit" Grid.Row="5" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Click="QuitButtonClick" Content="Afsluiten" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592"></Button>
 
     </Grid>
 </Window>

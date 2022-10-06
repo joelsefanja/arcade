@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\App.xaml
-41974065751
+71170343152
 
-81364527635
+11-406249582
 194-200944676
-ChooseLevel.xaml;GameWindow.xaml;level2.xaml;MainWindow.xaml;
+ChooseLevel.xaml;credits.xaml;GameWindow.xaml;instellingen.xaml;Leaderboard.xaml;level2.xaml;MainWindow.xaml;
 
 True
 
