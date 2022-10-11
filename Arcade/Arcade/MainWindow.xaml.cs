@@ -27,8 +27,8 @@ namespace Arcade
         private void StartButtonClick(object sender, RoutedEventArgs e)
         {
            
-            GameWindow gw = new GameWindow();
-            gw.Visibility = Visibility.Visible;
+            NamenInvoeren ni = new NamenInvoeren();
+            ni.Visibility = Visibility.Visible;
             this.Close();
             
         }

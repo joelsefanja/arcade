@@ -243,7 +243,7 @@ namespace Arcade
 
 
         /// <summary>
-        /// Methode voor 
+        /// Methode voor de timer in het spelscherm.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
