@@ -25,6 +25,7 @@ namespace Arcade
     public partial class GameWindow : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
+        DispatcherTimer spelTimer = new DispatcherTimer();
 
         int speed = 10; //spelersnelheid//
         int dropSpeed = 10; //zwaartekracht//
@@ -34,19 +35,32 @@ namespace Arcade
         bool jumping2 = false;
         int score = 0;
         int score2 = 0;
+        int tijdSeconden = 0; //speler timer seconden
+        int tijdMinuten = 0; //speler timer minuten
+        int SpelerTimerTick = 0; // tick om na 50 ticks van 20 miliseconden de timer te updaten
+        string seconden; // variabel voor de prefix 0 bij de tijd onder 10 seconden.
+        string minuten; // variabel voor de prefix 0 bij de minuten onder 60 minuten.
 
 
-        public GameWindow() // game engine//
+        public GameWindow() // game engine
         {
             InitializeComponent();
 
-            newcanvas.Focus();
+            newcanvas.Focus(); // focus op het spel canvas.
+
+            //Start game engine timer
             timer.Tick += MainTimerEvent;
             timer.Interval = TimeSpan.FromMilliseconds(20);
             timer.Start();
+
+            // start level timer
+            spelTimer.Tick += spelersTimer;
+            spelTimer.Interval = TimeSpan.FromSeconds(1);
+            spelTimer.Start();
+
         }
 
-        private void MainTimerEvent(object? sender, EventArgs e) //main timer events met de werking van de mechanics van de spelers en hopelijk later de munten en trapdoors later//
+        private void MainTimerEvent(object sender, EventArgs e) //main timer events met de werking van de mechanics van de spelers en hopelijk later de munten en trapdoors later//
         {
             Canvas.SetTop(Player, Canvas.GetTop(Player) + dropSpeed);
             Canvas.SetTop(Player2, Canvas.GetTop(Player2) + dropSpeed);
@@ -172,6 +186,7 @@ namespace Arcade
                     Rect deurhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
                     if (player2hitbox.IntersectsWith(deurhitbox))
                     {
+                        spelTimer.Stop();
                         timer.Stop();
                         MessageBox.Show("Speler 2, Je hebt gewonnen!!");
                     }
@@ -226,6 +241,39 @@ namespace Arcade
 
         }
 
+
+        /// <summary>
+        /// Methode voor 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void spelersTimer(object sender, EventArgs e) {
+            tijdSeconden++;
+            
+            if (tijdSeconden == 60)
+            {
+                tijdMinuten++;
+                tijdSeconden = 0;
+            }
+            
+            // tijd format instellen op basis van de timer
+            if (tijdSeconden < 10) // prefix bij seconden onder de 10.
+            {
+                 seconden = "0" + tijdSeconden.ToString();
+            }
+            else { seconden = tijdSeconden.ToString();}
+            // prefix bij minuten onder de 60
+            if(tijdMinuten < 60)
+            {
+                minuten = "0" + tijdMinuten.ToString();
+            }
+            else if (tijdMinuten > 60)
+            {
+                minuten = tijdMinuten.ToString();
+            }
+            tijd.Content = "tijd: " + minuten + ":" + seconden;
+
+        }
         private void keydown(object sender, KeyEventArgs e) //keybinds voor speler 1 en 2//
         {
             if (e.Key == Key.Left)
