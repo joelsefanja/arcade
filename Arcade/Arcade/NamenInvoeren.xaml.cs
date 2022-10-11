@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Arcade;
 
 namespace Arcade
 {
@@ -27,16 +28,13 @@ namespace Arcade
 
         private void startSpel(object sender, RoutedEventArgs e)
         {
-            spelerNamenOpslaan();
+            // namen opslaan in de GameWindow voor in het level
+            GameWindow.playerName1 = inputPlayer1.Text;
+            GameWindow.playerName2 = inputPlayer2.Text;
+
             GameWindow gw = new GameWindow();
             gw.Visibility = Visibility.Visible;
             this.Close();
-        }
-
-        public void spelerNamenOpslaan()
-        {
-            spelerNaam1 = inputPlayer1.Text;
-            spelerNaam2 = inputPlayer2.Text;
         }
     }
 }

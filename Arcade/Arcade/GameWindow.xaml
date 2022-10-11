@@ -10,14 +10,14 @@
         <Canvas.Background>
             <ImageBrush ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
         </Canvas.Background>
-        <Rectangle Name="Player" Width="40" Height="52" Canvas.Left="154" Canvas.Top="719" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Black" Panel.ZIndex="-3" >
+        <Rectangle Name="Player2" Width="40" Height="52" Canvas.Left="154" Canvas.Top="719" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Black" Panel.ZIndex="-3" >
             <!-- hier komen alle platformen en spelers en hun afbeeldingen te staan-->
 
             <Rectangle.Fill>
                 <ImageBrush ImageSource="pack://application:,,,/img/sprites/boy.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="Player2" Width="58" Height="58" Canvas.Left="1180" Canvas.Top="716" Stroke="Black" HorizontalAlignment="Left" VerticalAlignment="Top" >
+        <Rectangle Name="Player" Width="58" Height="58" Canvas.Left="1180" Canvas.Top="716" Stroke="Black" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <Rectangle.Fill>
                 <ImageBrush ImageSource="pack://application:,,,/img/sprites/girl.png"/>
             </Rectangle.Fill>
@@ -356,6 +356,9 @@
                 <ImageBrush ImageSource="/img/platforms/roof1.png"/>
             </Rectangle.Fill>
         </Rectangle>
+        <!-- Labels voor speler namen -->
+        <Label x:Name="speler1label" Content="speler 1" FontSize="35" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="173" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="10"/>
+        <Label x:Name="speler2label" Content="speler 2" FontSize="35" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="1115" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="10"/>
 
     </Canvas>
 

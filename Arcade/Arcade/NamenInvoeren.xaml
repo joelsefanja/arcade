@@ -51,5 +51,7 @@
         <TextBox x:Name="inputPlayer1" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="Speler 1" VerticalAlignment="Center" Width="160" FontFamily="Gill Sans Ultra Bold" FontSize="14" Foreground="#FF465592" Height="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox x:Name="inputPlayer2" HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" Text="Speler 2" VerticalAlignment="Center" Width="160" FontFamily="Gill Sans Ultra Bold" FontSize="14" Foreground="#FF465592" Height="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Button x:Name="start" Grid.Row="3" Margin="288,66,288,0" Grid.RowSpan="2" Content="Start Spel" VerticalAlignment="Center" Width="160" FontFamily="Gill Sans Ultra Bold" FontSize="14" Foreground="#FF465592" Height="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White" Click="startSpel"></Button>
+        
+   
     </Grid>
 </Window>

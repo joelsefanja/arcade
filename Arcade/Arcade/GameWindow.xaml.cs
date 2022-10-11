@@ -40,13 +40,18 @@ namespace Arcade
         int SpelerTimerTick = 0; // tick om na 50 ticks van 20 miliseconden de timer te updaten
         string seconden; // variabel voor de prefix 0 bij de tijd onder 10 seconden.
         string minuten; // variabel voor de prefix 0 bij de minuten onder 60 minuten.
+        public static string playerName1, playerName2;
 
 
         public GameWindow() // game engine
         {
+
             InitializeComponent();
 
             newcanvas.Focus(); // focus op het spel canvas.
+
+            // zet de ingevoerde namen als labels
+            updateNames();
 
             //Start game engine timer
             timer.Tick += MainTimerEvent;
@@ -62,6 +67,7 @@ namespace Arcade
 
         private void MainTimerEvent(object sender, EventArgs e) //main timer events met de werking van de mechanics van de spelers en hopelijk later de munten en trapdoors later//
         {
+            
             Canvas.SetTop(Player, Canvas.GetTop(Player) + dropSpeed);
             Canvas.SetTop(Player2, Canvas.GetTop(Player2) + dropSpeed);
             if (jumping == true && Canvas.GetLeft(Player) > 0)
@@ -188,7 +194,7 @@ namespace Arcade
                     {
                         spelTimer.Stop();
                         timer.Stop();
-                        MessageBox.Show("Speler 2, Je hebt gewonnen!!");
+                        MessageBox.Show(playerName1 + ", Je hebt gewonnen!!");
                     }
 
                 }
@@ -200,7 +206,7 @@ namespace Arcade
                     if (playerhitbox.IntersectsWith(deurhitbox))
                     {
                         timer.Stop();
-                        MessageBox.Show("Speler 1, Je hebt gewonnen!!");
+                        MessageBox.Show(playerName2 + ", Je hebt gewonnen!!");
                     }
 
                 }
@@ -241,6 +247,12 @@ namespace Arcade
 
         }
 
+        public void updateNames() 
+        {
+            speler1label.Content = playerName1;
+            speler2label.Content = playerName2;
+
+        }
 
         /// <summary>
         /// Methode voor de timer in het spelscherm.
