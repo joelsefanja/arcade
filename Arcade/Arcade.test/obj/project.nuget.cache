@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "joSw9WpLAFuEHXVdTC0f2mowp6gHIbhyUP4UshRgeqb5TTn4No89/+kY7vqJjSjoIBTGavRSDMiVyZaZ8ILcAQ==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\joels\\source\\repos\\joelsefanja\\arcade\\Arcade\\Arcade.test\\Arcade.test.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Arcade is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project Arcade supports: net6.0-windows7.0 (.NETCoreApp,Version=v6.0)",
+      "libraryId": "Arcade",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}

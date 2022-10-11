@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace Arcade
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for GameWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -26,6 +26,7 @@ namespace Arcade
         }
         private void StartButtonClick(object sender, RoutedEventArgs e)
         {
+           
             GameWindow gw = new GameWindow();
             gw.Visibility = Visibility.Visible;
             this.Close();

@@ -13,15 +13,21 @@
     <None Remove="img\backgrounds\background_layer_2.png" />
     <None Remove="img\backgrounds\background_layer_3.png" />
     <None Remove="img\boy_64px.png" />
+    <None Remove="img\coins\coin1.png" />
+    <None Remove="img\doors\deur1.jpg" />
     <None Remove="img\girl_64px.png" />
     <None Remove="img\monster_64px.png" />
+    <None Remove="img\platforms\FLOOR2.png" />
+    <None Remove="img\platforms\Floortile1.png" />
     <None Remove="img\platforms\helling.png" />
     <None Remove="img\platforms\platform_5.png" />
+    <None Remove="img\platforms\roof1.png" />
     <None Remove="img\sprites\boy.png" />
     <None Remove="img\sprites\girl.png" />
     <None Remove="img\sprites\girl_1.png" />
     <None Remove="img\sprites\girl_2.png" />
     <None Remove="img\sprites\girl_3.png" />
+    <None Remove="img\walls\wall-tile1.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,8 +35,13 @@
     <Resource Include="img\backgrounds\background_layer_1.png" />
     <Resource Include="img\backgrounds\background_layer_2.png" />
     <Resource Include="img\backgrounds\background_layer_3.png" />
+    <Resource Include="img\coins\coin1.png" />
+    <Resource Include="img\doors\deur1.jpg" />
+    <Resource Include="img\platforms\FLOOR2.png" />
+    <Resource Include="img\platforms\Floortile1.png" />
     <Resource Include="img\platforms\helling.png" />
     <Resource Include="img\platforms\platform_5.png" />
+    <Resource Include="img\platforms\roof1.png" />
     <Resource Include="img\sprites\boy.png" />
     <Resource Include="img\sprites\boy_64px.png" />
     <Resource Include="img\sprites\girl.png" />
@@ -44,6 +55,7 @@
 
   <ItemGroup>
     <Resource Include="img\sprites\monster_64px.png" />
+    <Resource Include="img\walls\wall-tile1.png" />
   </ItemGroup>
 
 </Project>
