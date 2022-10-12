@@ -211,14 +211,21 @@ namespace Arcade
                     }
 
                 }
-                //MUNTEN VERZAMELEN CODE NIET AF//
-                //TODO MUNTEN VERZAMELEN
+
+                // muntjes oppakken spelers
+                //todo speler 2 munten oppakken.
+
                 if ((string)x.Tag == "coin")
                 {
                     Rect playerhitbox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
                     Rect coinhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
-                    if (playerhitbox.IntersectsWith(coinhitbox))
+                    if ((playerhitbox.IntersectsWith(coinhitbox)) && x.Visibility == Visibility.Visible)
+
                     {
+                        x.Visibility = Visibility.Hidden;
+                        score++;
+
+                        score1test.Content = "Munten Speler1: " + score;
 
                     }
 
