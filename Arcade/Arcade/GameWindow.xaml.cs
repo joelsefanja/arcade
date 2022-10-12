@@ -33,6 +33,8 @@ namespace Arcade
         bool goLeft2, goRight2;
         bool jumping = false;
         bool jumping2 = false;
+        int horizontalspeed = 5;
+        int verticalspeed = 3;
         int score = 0;
         int score2 = 0;
         int tijdSeconden = 0; //speler timer seconden
@@ -221,6 +223,22 @@ namespace Arcade
 
                     }
 
+                }
+                if ((string)x.Tag== "enemy")//ENEMY CODE FIRST ATTEMPT//
+
+                {
+   
+                    Rect playerhitbox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
+                    Rect player2hitbox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height);
+                    Rect Enemyhitbox= new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    if(playerhitbox.IntersectsWith(Enemyhitbox) || player2hitbox.IntersectsWith(Enemyhitbox))
+                    {
+                        Canvas.SetTop(Player, 716);
+
+                    }
+                    
+
+                    
                 }
 
 

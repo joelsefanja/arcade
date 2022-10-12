@@ -157,6 +157,11 @@
                 <ImageBrush ImageSource="pack://application:,,,/img/walls/wall-tile1.png"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Rectangle Name="wall11" Tag="wall"  Width="80" Height="156" Canvas.Left="669" Canvas.Top="679" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/img/walls/wall-tile1.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
         <Rectangle Name="wall2" Tag="wall"  Width="80" Height="156" Canvas.Left="671" Canvas.Top="410" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="pack://application:,,,/img/walls/wall-tile1.png"/>
@@ -359,7 +364,12 @@
         <!-- Labels voor speler namen -->
         <Label x:Name="speler1label" Content="speler 1" FontSize="35" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="173" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="10"/>
         <Label x:Name="speler2label" Content="speler 2" FontSize="35" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="1115" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="10"/>
-
+        <!--de enemies komen hier onder te staan-->
+        <Rectangle Name="enemy1" Tag="enemy"  Width="50" Height="50" Canvas.Left="767" Canvas.Top="275" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <ImageBrush x:Name="enemy" ImageSource="pack://application:,,,/img/sprites/monster_64px.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
     </Canvas>
 
 </Window>
