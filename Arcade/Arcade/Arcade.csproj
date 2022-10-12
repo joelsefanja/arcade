@@ -28,6 +28,9 @@
     <None Remove="img\sprites\girl_2.png" />
     <None Remove="img\sprites\girl_3.png" />
     <None Remove="img\walls\wall-tile1.png" />
+    <None Remove="muur_376px.png" />
+    <None Remove="platform_410px.png" />
+    <None Remove="platform_960px.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,6 +56,9 @@
   <ItemGroup>
     <Resource Include="img\sprites\monster_64px.png" />
     <Resource Include="img\walls\wall-tile1.png" />
+    <Resource Include="muur_376px.png" />
+    <Resource Include="platform_410px.png" />
+    <Resource Include="platform_960px.png" />
   </ItemGroup>
 
 </Project>

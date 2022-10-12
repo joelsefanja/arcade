@@ -10,19 +10,19 @@
         <Canvas.Background>
             <ImageBrush ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
         </Canvas.Background>
-        <Rectangle Name="Player2" Width="40" Height="52" Canvas.Left="154" Canvas.Top="719" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Black" Panel.ZIndex="-3" >
+        <Rectangle Name="Player2" Width="40" Height="52" Canvas.Left="138" Canvas.Top="693" HorizontalAlignment="Left" VerticalAlignment="Top" Panel.ZIndex="-3" >
             <!-- hier komen alle platformen en spelers en hun afbeeldingen te staan-->
 
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/sprites/boy.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/sprites/boy.png" Stretch="Uniform"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="Player" Width="58" Height="58" Canvas.Left="1180" Canvas.Top="716" Stroke="Black" HorizontalAlignment="Left" VerticalAlignment="Top" >
+        <Rectangle Name="Player" Width="58" Height="58" Canvas.Left="1180" Canvas.Top="716" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/sprites/girl.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/sprites/girl.png" Stretch="Fill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="rec1" Tag="platform"  Width="162" Height="40" Canvas.Left="1060" Canvas.Top="786" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" >
+        <Rectangle Name="rec10" Tag="platform"  Width="960" Height="48" Canvas.Top="774" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Canvas.Left="-233">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -32,149 +32,12 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/FLOOR2.png"/>
+                <ImageBrush ImageSource="/platform_960px.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="rec2" Tag="platform"  Width="162" Height="40" Canvas.Left="1222" Canvas.Top="786" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform X="0" Y="0"/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
+        <Rectangle Name="wall5" Tag="wall"  Width="49" Height="513" Canvas.Left="683" Canvas.Top="175" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/FLOOR2.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="rec3" Tag="platform"  Width="162" Height="40" Canvas.Left="898" Canvas.Top="786" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform X="0" Y="0"/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/FLOOR2.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="rec4" Tag="platform"  Width="162" Height="40" Canvas.Left="1384" Canvas.Top="786" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform X="0" Y="0"/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/FLOOR2.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="rec5" Tag="platform"  Width="162" Height="40" Canvas.Left="736" Canvas.Top="786" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform X="0" Y="0"/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/FLOOR2.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="rec6" Tag="platform"  Width="162" Height="40" Canvas.Left="574" Canvas.Top="786" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform X="0" Y="0"/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/FLOOR2.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="rec7" Tag="platform"  Width="162" Height="40" Canvas.Left="412" Canvas.Top="786" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform X="0" Y="0"/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/FLOOR2.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="rec8" Tag="platform"  Width="161" Height="40" Canvas.Left="266" Canvas.Top="786" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform X="0" Y="0"/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/FLOOR2.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="rec9" Tag="platform"  Width="162" Height="40" Canvas.Left="104" Canvas.Top="786" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform X="0" Y="0"/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/FLOOR2.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="rec10" Tag="platform"  Width="162" Height="40" Canvas.Left="-47" Canvas.Top="786" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform X="0" Y="0"/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/FLOOR2.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="wall1" Tag="wall"  Width="80" Height="156" Canvas.Left="671" Canvas.Top="524" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/walls/wall-tile1.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="wall2" Tag="wall"  Width="80" Height="156" Canvas.Left="671" Canvas.Top="410" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/walls/wall-tile1.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="wall3" Tag="wall"  Width="79" Height="156" Canvas.Left="670" Canvas.Top="339" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/walls/wall-tile1.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="wall4" Tag="wall"  Width="79" Height="156" Canvas.Left="670" Canvas.Top="222" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/walls/wall-tile1.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="wall5" Tag="wall"  Width="79" Height="156" Canvas.Left="670" Canvas.Top="174" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/walls/wall-tile1.png"/>
+                <ImageBrush ImageSource="/muur_376px.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <!--hier beginnen de zwefende platformen-->
@@ -183,164 +46,164 @@
                 <ImageBrush x:Name="door" ImageSource="pack://application:,,,/img/doors/deur1.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland" Tag="eiland"  Width="120" Height="39" Canvas.Left="749" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland" Tag="eiland"  Width="120" Height="39" Canvas.Left="732" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland2" Tag="eiland"  Width="119" Height="39" Canvas.Left="869" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland2" Tag="eiland"  Width="119" Height="39" Canvas.Left="852" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland3" Tag="eiland"  Width="120" Height="39" Canvas.Left="988" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland3" Tag="eiland"  Width="120" Height="39" Canvas.Left="971" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland6" Tag="eiland"  Width="119" Height="39" Canvas.Left="1380" Canvas.Top="641" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland6" Tag="eiland"  Width="119" Height="39" Canvas.Left="1462" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland7" Tag="eiland"  Width="147" Height="40" Canvas.Left="751" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <Rectangle Name="eiland7" Tag="eiland"  Width="147" Height="40" Canvas.Left="730" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland8" Tag="eiland"  Width="119" Height="40" Canvas.Left="1149" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland8" Tag="eiland"  Width="119" Height="40" Canvas.Left="1231" Canvas.Top="489" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland9" Tag="eiland"  Width="120" Height="40" Canvas.Left="1268" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland9" Tag="eiland"  Width="120" Height="40" Canvas.Left="1350" Canvas.Top="489" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland10" Tag="eiland"  Width="119" Height="40" Canvas.Left="1384" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland10" Tag="eiland"  Width="119" Height="40" Canvas.Left="1466" Canvas.Top="489" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland11" Tag="eiland"  Width="120" Height="40" Canvas.Left="1034" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland11" Tag="eiland"  Width="120" Height="40" Canvas.Left="1116" Canvas.Top="489" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland13" Tag="eiland"  Width="120" Height="40" Canvas.Left="1386" Canvas.Top="392" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland13" Tag="eiland"  Width="120" Height="40" Canvas.Left="1468" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland14" Tag="eiland"  Width="119" Height="40" Canvas.Left="1267" Canvas.Top="392" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland14" Tag="eiland"  Width="119" Height="40" Canvas.Left="1349" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland15" Tag="eiland"  Width="120" Height="40" Canvas.Left="749" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland15" Tag="eiland"  Width="120" Height="40" Canvas.Left="732" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland16" Tag="eiland"  Width="119" Height="40" Canvas.Left="869" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland16" Tag="eiland"  Width="119" Height="40" Canvas.Left="852" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland17" Tag="eiland"  Width="120" Height="39" Canvas.Left="550" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland17" Tag="eiland"  Width="120" Height="39" Canvas.Left="562" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland18" Tag="eiland"  Width="119" Height="39" Canvas.Left="431" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland18" Tag="eiland"  Width="119" Height="39" Canvas.Left="443" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland19" Tag="eiland"  Width="119" Height="39" Canvas.Left="317" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland19" Tag="eiland"  Width="119" Height="39" Canvas.Left="329" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland20" Tag="eiland"  Width="119" Height="39" Canvas.Left="198" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland20" Tag="eiland"  Width="119" Height="39" Canvas.Left="210" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland21" Tag="eiland"  Width="120" Height="39" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland22" Tag="eiland"  Width="119" Height="40" Canvas.Left="552" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland22" Tag="eiland"  Width="119" Height="40" Canvas.Left="565" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland23" Tag="eiland"  Width="120" Height="40" Canvas.Left="328" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland24" Tag="eiland"  Width="120" Height="40" Canvas.Left="218" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland25" Tag="eiland"  Width="119" Height="40" Canvas.Left="119" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland26" Tag="eiland"  Width="120" Height="40" Canvas.Left="-1" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland28" Tag="eiland"  Width="120" Height="40" Canvas.Left="550" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland29" Tag="eiland"  Width="119" Height="40" Canvas.Left="431" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland30" Tag="eiland"  Width="115" Height="40" Canvas.Top="266" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland31" Tag="eiland"  Width="119" Height="40" Canvas.Left="95" Canvas.Top="266" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland32" Tag="eiland"  Width="120" Height="40" Canvas.Left="1222" Canvas.Top="232" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush x:Name="roof" ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush x:Name="roof" ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland33" Tag="eiland"  Width="119" Height="40" Canvas.Left="1103" Canvas.Top="232" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland34" Tag="eiland"  Width="120" Height="40" Canvas.Left="749" Canvas.Top="174" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Rectangle Name="eiland34" Tag="eiland"  Width="120" Height="40" Canvas.Left="730" Canvas.Top="175" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland35" Tag="eiland"  Width="119" Height="40" Canvas.Left="869" Canvas.Top="173" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland35" Tag="eiland"  Width="119" Height="40" Canvas.Left="850" Canvas.Top="175" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland36" Tag="eiland"  Width="120" Height="40" Canvas.Left="550" Canvas.Top="174" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Rectangle Name="eiland36" Tag="eiland"  Width="120" Height="40" Canvas.Left="564" Canvas.Top="175" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="pack://application:,,,/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <!--RECTANGLES VOOR DE COINS-->
@@ -351,14 +214,27 @@
         </Rectangle>
         <!-- Game timer -->
         <Label x:Name="tijd" Content="Tijd: 00:00" FontSize="35" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="600" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="10"/>
-        <Rectangle x:Name="eiland6_Copy" Tag="eiland"  Width="119" Height="39" Canvas.Left="1269" Canvas.Top="641" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <Rectangle x:Name="eiland6_Copy" Tag="eiland"  Width="119" Height="39" Canvas.Left="1351" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/roof1.png"/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <!-- Labels voor speler namen -->
         <Label x:Name="speler1label" Content="speler 1" FontSize="35" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="173" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="10"/>
         <Label x:Name="speler2label" Content="speler 2" FontSize="35" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="1115" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="10"/>
+        <Rectangle x:Name="rec10_Copy" Tag="platform"  Width="960" Height="48" Canvas.Top="774" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="727">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform X="0" Y="0"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/platform_960px.png" Stretch="UniformToFill"/>
+            </Rectangle.Fill>
+        </Rectangle>
 
     </Canvas>
 
