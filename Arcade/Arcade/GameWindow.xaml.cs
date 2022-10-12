@@ -33,7 +33,8 @@ namespace Arcade
         bool goLeft2, goRight2;
         bool jumping = false;
         bool jumping2 = false;
-        int score = 0;
+        int 
+            score = 0;
         int score2 = 0;
         int tijdSeconden = 0; //speler timer seconden
         int tijdMinuten = 0; //speler timer minuten
@@ -67,7 +68,10 @@ namespace Arcade
 
         private void MainTimerEvent(object sender, EventArgs e) //main timer events met de werking van de mechanics van de spelers en hopelijk later de munten en trapdoors later//
         {
-            
+            //if (Canvas.GetTop(Player2) + (Player2.Height * 2) > Application.Current.MainWindow.Height)
+            //{
+            //    Canvas.SetTop(Player2, -80);
+            //}
             Canvas.SetTop(Player, Canvas.GetTop(Player) + dropSpeed);
             Canvas.SetTop(Player2, Canvas.GetTop(Player2) + dropSpeed);
             if (jumping == true && Canvas.GetLeft(Player) > 0)
@@ -94,10 +98,7 @@ namespace Arcade
             {
                 Canvas.SetLeft(Player, Canvas.GetLeft(Player) + speed);
             }
-            if (Canvas.GetTop(Player2) + (Player2.Height * 2) > Application.Current.MainWindow.Height) //respawn voor speler 2//
-            {
-                Canvas.SetTop(Player2, -80);
-            }
+           
             //physics voor de spelers en colliders met de rectangles//
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
             {
@@ -226,10 +227,10 @@ namespace Arcade
 
             }
 
-            if (Canvas.GetTop(Player) + (Player.Height * 2) > Application.Current.MainWindow.Height) //hitboxes instellen//
-            {
-                Canvas.SetTop(Player, -80);
-            }
+            //if (Canvas.GetTop(Player) + (Player.Height * 2) > Application.Current.MainWindow.Height) //hitboxes instellen//
+            //{
+            //    Canvas.SetTop(Player, -80);
+            //}
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
             {
                 if ((string)x.Tag == "platform")
@@ -239,6 +240,7 @@ namespace Arcade
                     Rect platformhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
                     if (playerhitbox.IntersectsWith(platformhitbox))
                     {
+                        
                         //dropSpeed = 0;
                         Canvas.SetTop(Player, Canvas.GetTop(x) - Player.Height);
                     }
