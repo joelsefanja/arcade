@@ -10,8 +10,8 @@
         <Canvas.Background>
             <ImageBrush ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
         </Canvas.Background>
-        <Rectangle Name="Player2" Width="40" Height="52" Canvas.Left="138" Canvas.Top="693" HorizontalAlignment="Left" VerticalAlignment="Top" Panel.ZIndex="-3" >
             <!-- hier komen alle platformen en spelers en hun afbeeldingen te staan-->
+        <Rectangle Name="Player2" Width="40" Height="52" Canvas.Left="138" Canvas.Top="693" HorizontalAlignment="Left" VerticalAlignment="Top" Panel.ZIndex="-3" >
 
             <Rectangle.Fill>
                 <ImageBrush ImageSource="pack://application:,,,/img/sprites/boy.png" Stretch="Uniform"/>
@@ -61,7 +61,7 @@
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland6" Tag="eiland"  Width="119" Height="39" Canvas.Left="1462" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland6" Tag="eiland"  Width="119" Height="39" Canvas.Left="1380" Canvas.Top="641" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
@@ -71,42 +71,47 @@
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland8" Tag="eiland"  Width="119" Height="40" Canvas.Left="1231" Canvas.Top="489" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland8" Tag="eiland"  Width="119" Height="40" Canvas.Left="1149" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland9" Tag="eiland"  Width="120" Height="40" Canvas.Left="1350" Canvas.Top="489" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland9" Tag="eiland"  Width="120" Height="40" Canvas.Left="1268" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland10" Tag="eiland"  Width="119" Height="40" Canvas.Left="1466" Canvas.Top="489" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland10" Tag="eiland"  Width="119" Height="40" Canvas.Left="1384" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland11" Tag="eiland"  Width="120" Height="40" Canvas.Left="1116" Canvas.Top="489" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland11" Tag="eiland"  Width="120" Height="40" Canvas.Left="1034" Canvas.Top="490" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland13" Tag="eiland"  Width="120" Height="40" Canvas.Left="1468" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland12" Tag="eiland"  Width="119" Height="40" Canvas.Top="641" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="1" >
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland14" Tag="eiland"  Width="119" Height="40" Canvas.Left="1349" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland13" Tag="eiland"  Width="120" Height="40" Canvas.Left="1386" Canvas.Top="392" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland15" Tag="eiland"  Width="120" Height="40" Canvas.Left="732" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <Rectangle Name="eiland14" Tag="eiland"  Width="119" Height="40" Canvas.Left="1267" Canvas.Top="392" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland16" Tag="eiland"  Width="119" Height="40" Canvas.Left="852" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <Rectangle Name="eiland15" Tag="eiland"  Width="120" Height="40" Canvas.Left="731" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Name="eiland16" Tag="eiland"  Width="119" Height="40" Canvas.Left="851" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
@@ -127,11 +132,6 @@
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland20" Tag="eiland"  Width="119" Height="39" Canvas.Left="210" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Center">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Name="eiland21" Tag="eiland"  Width="120" Height="39" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
@@ -161,14 +161,14 @@
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland28" Tag="eiland"  Width="120" Height="40" Canvas.Left="550" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland28" Tag="eiland"  Width="120" Height="40" Canvas.Left="564" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush/>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/img/platforms/platform_5.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland29" Tag="eiland"  Width="119" Height="40" Canvas.Left="431" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle Name="eiland29" Tag="eiland"  Width="119" Height="40" Canvas.Left="445" Canvas.Top="330" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
-                <ImageBrush/>
+                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland30" Tag="eiland"  Width="115" Height="40" Canvas.Top="266" HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -214,7 +214,7 @@
         </Rectangle>
         <!-- Game timer -->
         <Label x:Name="tijd" Content="Tijd: 00:00" FontSize="35" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="600" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="10"/>
-        <Rectangle x:Name="eiland6_Copy" Tag="eiland"  Width="119" Height="39" Canvas.Left="1351" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Rectangle x:Name="eiland6_Copy" Tag="eiland"  Width="119" Height="39" Canvas.Left="1269" Canvas.Top="641" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
@@ -235,6 +235,7 @@
                 <ImageBrush ImageSource="/platform_960px.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
+
 
     </Canvas>
 
