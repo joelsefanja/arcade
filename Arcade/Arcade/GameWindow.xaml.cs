@@ -104,7 +104,7 @@ namespace Arcade
             {
                 if ((string)x.Tag == "platform")
                 {
-                    x.Stroke = Brushes.Black;
+                    //x.Stroke = Brushes.Black;
                     Rect player2hitbox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height); // hitboxberekening voor speler 2//
                     Rect platformhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
                     if (player2hitbox.IntersectsWith(platformhitbox))
@@ -242,7 +242,7 @@ namespace Arcade
             {
                 if ((string)x.Tag == "platform")
                 {
-                    x.Stroke = Brushes.Black;
+                    //x.Stroke = Brushes.Black;
                     Rect playerhitbox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
                     Rect platformhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
                     if (playerhitbox.IntersectsWith(platformhitbox))
