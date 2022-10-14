@@ -29,8 +29,8 @@ namespace Arcade
         private void startSpel(object sender, RoutedEventArgs e)
         {
             // namen opslaan in de GameWindow voor in het level
-            GameWindow.playerName1 = inputPlayer1.Text;
-            GameWindow.playerName2 = inputPlayer2.Text;
+            GameWindow.speler1Naam = inputPlayer1.Text;
+            GameWindow.speler2Naam = inputPlayer2.Text;
 
             GameWindow gw = new GameWindow();
             gw.Visibility = Visibility.Visible;
