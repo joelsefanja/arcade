@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,190 +25,174 @@ namespace Arcade
     /// </summary>
     public partial class GameWindow : Window
     {
-        DispatcherTimer timer = new DispatcherTimer();
-        DispatcherTimer spelTimer = new DispatcherTimer();
+        DispatcherTimer timer = new DispatcherTimer(); // TIMER VOOR DE MECHANICA VAN HET SPEL
+        DispatcherTimer spelTimer = new DispatcherTimer(); // TIMER VOOR DE SCORE VAN DE SPELERS
 
-        int speed = 10; //spelersnelheid//
-        int dropSpeed = 10; //zwaartekracht//
-        bool goLeft, goRight;
-        bool goLeft2, goRight2;
-        bool jumping = false;
-        bool jumping2 = false;
-        int 
-            score = 0;
-        int score2 = 0;
-        int tijdSeconden = 0; //speler timer seconden
-        int tijdMinuten = 0; //speler timer minuten
-        int SpelerTimerTick = 0; // tick om na 50 ticks van 20 miliseconden de timer te updaten
-        string seconden; // variabel voor de prefix 0 bij de tijd onder 10 seconden.
-        string minuten; // variabel voor de prefix 0 bij de minuten onder 60 minuten.
-        public static string playerName1, playerName2;
+        int snelheid = 8; // SPELERSNELHEID
+        int zwaartekracht = 10; // ZWAARTEKRACHT
+        int springSnelheid = 20; // SPRING SNELHEID / SPRING HOOGTE
+        bool speler1NaarLinks, speler1NaarRechts, speler1Springt = false; // BEWEGING SPELER 1
+        bool speler2NaarLinks, speler2NaarRechts, speler2Springt = false; // BEWEGING SPELER 2
+        int score = 0, score2 = 0; // SCORE SPELER 1 & 2
+        int tijdSeconden = 0, tijdMinuten = 0; // SECONDEN & MINUTEN TELLERS VOOR TIJDENS HET SPEL
+        string seconden, minuten; // PREFIX VOOR DE TIMER ONDER DE 10 SECONDEN & PREFIX VOOR DE TIMER ONDER DE 60 MINUTEN 
+        public static string speler1Naam, speler2Naam; // SPELERS NAMEN; KUNNEN MET EXTERNE .XAML.CS BESTANDEN BENADERD WORDEN
+        string spelerGewonnen = "Onbekende Winnaar"; // 
 
-
-        public GameWindow() // game engine
+        //TODO GAME WINDOW METHODE BESCHIJVEN: BIJVOORBEELD: ZET VERSCHILLENDE (BESCHIJF WELKE) ONDERELEN KLAAR VOOR DE GAME
+        public GameWindow()
         {
-
             InitializeComponent();
-
-            newcanvas.Focus(); // focus op het spel canvas.
-
-            // zet de ingevoerde namen als labels
-            updateNames();
-
-            //Start game engine timer
-            timer.Tick += MainTimerEvent;
+            newcanvas.Focus(); // FOCUS OP HET SPEL CANVAS ZODAT INGEDRUKTE TOETSEN EN MUISKLIKKEN KUNNEN WORDEN WAARGENOMEN
+            updateNames(); // ZET DE INGEVOERDE NAMEN ALS LABELS
+            
+            // GAME TIMER AANMAKEN EN AANZETTEN
+            timer.Tick += GameTimer;
             timer.Interval = TimeSpan.FromMilliseconds(20);
             timer.Start();
 
-            // start level timer
+
+            // SPEL TIMER AANMAKEN EN AANZETTEN
             spelTimer.Tick += spelersTimer;
             spelTimer.Interval = TimeSpan.FromSeconds(1);
             spelTimer.Start();
 
+            // PLAATS DE SPELERS OP HET ONDERSTE PLATFORM.
+            Canvas.SetBottom(Speler1, Canvas.GetTop(platform1)); 
+            Canvas.SetBottom(Speler2, Canvas.GetTop(platform2));
+
         }
 
-        private void MainTimerEvent(object sender, EventArgs e) //main timer events met de werking van de mechanics van de spelers en hopelijk later de munten en trapdoors later//
+        private void GameTimer(object sender, EventArgs e) //main timer events met de werking van de mechanics van de spelers en hopelijk later de munten en trapdoors later//
         {
-            //if (Canvas.GetTop(Player2) + (Player2.Height * 2) > Application.Current.MainWindow.Height)
-            //{
-            //    Canvas.SetTop(Player2, -80);
-            //}
-            Canvas.SetTop(Player, Canvas.GetTop(Player) + dropSpeed);
-            Canvas.SetTop(Player2, Canvas.GetTop(Player2) + dropSpeed);
-            if (jumping == true && Canvas.GetLeft(Player) > 0)
-            {
-                Canvas.SetTop(Player, Canvas.GetTop(Player) - 20); // speler 1 jumpcode, jank af jumpcode 20 is de snelheid moet wss een timer bij//
-            }
-            if (jumping2 == true && Canvas.GetLeft(Player2) > 0)
-            {
-                Canvas.SetTop(Player2, Canvas.GetTop(Player2) - 20); // speler2 jumpcode, jank af jumpcode 20 is de snelheid moet wss een timer bij//
-            }
-            if (goLeft2 == true && Canvas.GetLeft(Player2) > 0) // defineren van de looprichtingen + de zwaartekracht etc//
-            {
-                Canvas.SetLeft(Player2, Canvas.GetLeft(Player2) - speed);
-            }
-            if (goLeft == true && Canvas.GetLeft(Player) > 0)
-            {
-                Canvas.SetLeft(Player, Canvas.GetLeft(Player) - speed);
-            }
-            if (goRight2 == true && Canvas.GetLeft(Player2) + (Player2.Width + 15) < Application.Current.MainWindow.Width) //rechts voor speler 2//
-            {
-                Canvas.SetLeft(Player2, Canvas.GetLeft(Player2) + speed);
-            }
-            if (goRight == true && Canvas.GetLeft(Player) + (Player.Width + 15) < Application.Current.MainWindow.Width) //rechts voor speler 1//
-            {
-                Canvas.SetLeft(Player, Canvas.GetLeft(Player) + speed);
-            }
+            // ZWAARTEKRACHT BEREKENEN
+            
+            Canvas.SetTop(Speler1, Canvas.GetTop(Speler1) + zwaartekracht); // ZWAARTEKRACHT BEREKENING
+            Canvas.SetTop(Speler2, Canvas.GetTop(Speler2) + zwaartekracht); // ZWAARTEKRACHT BEREKENING
+
            
-            //physics voor de spelers en colliders met de rectangles//
+
+            // NATUURKUNDE VOOR DE SPELERS EN DE INTERACTIE MET OBSTAKELS EN PLATFORMEN
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
             {
-                if ((string)x.Tag == "platform")
+
+                if ((string)x.Tag == "platform") // CONTROLE ALS EEN RECHTHOEK DE TAG PLATFORM HEEFT
                 {
-                    //x.Stroke = Brushes.Black;
-                    Rect player2hitbox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height); // hitboxberekening voor speler 2//
-                    Rect platformhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
-                    if (player2hitbox.IntersectsWith(platformhitbox))
+                    Rect speler1hitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height); // HITBOX AANMAKEN VOOR SPELER 1
+                    Rect speler2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height); // HITBOX AANMAKEN VOOR SPELER 2
+                    Rect platformhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); // HITBOX AANMAKEN VOOR PLATFORM
+                    
+                    if (speler1hitbox.IntersectsWith(platformhitbox)) // CONTROLE OF SPELER 1 OP EEN PLATFORM STAAT
                     {
-                        Canvas.SetTop(Player2, Canvas.GetTop(x) - Player2.Height);
+                        Canvas.SetTop(Speler1, Canvas.GetTop(x) - Speler1.Height); // POSTITIE AANPASSEN VAN SPELER 1 NAAR BOVEN OP HET PLATFORM.
+                    }
+                    if (speler2hitbox.IntersectsWith(platformhitbox)) // CONTROLE OF SPELER 2 OP EEN PLATFORM STAAT
+                    {
+                        Canvas.SetTop(Speler2, Canvas.GetTop(x) - Speler2.Height); // POSTITIE AANPASSEN VAN SPELER 2 NAAR BOVEN OP HET PLATFORM.
                     }
                 }
-                //System.Windows.Application.Current.Shutdown(); (handig voor later//
-                //SPELER 2//
-                if ((string)x.Tag == "eiland") //instellen van de borders en acties wanneer speler2 in aanraking komt met de platformen met de tag eiland//
+
+                // CONTROLE VAN SPELER 1 EN 2 OF ZE MET EEN ZWEVEND EILAND INTERACTIE HEBBEN.
+                if ((string)x.Tag == "eiland") // CONTROLEREN VOOR RECHTHOEKEN MET DE TAG EILAND
                 {
-                    Rect player2hitbox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height); // hitboxberekening voor speler 2//
-                    Rect eilandhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); //hitboxberekeningen voor de platformen met de naam eiland//
-                    if (eilandhitbox.Bottom >= player2hitbox.Top && eilandhitbox.Bottom < player2hitbox.Bottom && player2hitbox.IntersectsWith(eilandhitbox))
+                    Rect player1hitbox = new Rect(Canvas.GetLeft(Speler1) + 5, Canvas.GetTop(Speler1), Speler1.Width - 10, Speler1.Height); // HITBOX AANMAKEN VOOR SPELER 1
+                    Rect player2hitbox = new Rect(Canvas.GetLeft(Speler2) + 25, Canvas.GetTop(Speler2), Speler2.Width - 30, Speler2.Height); // HITBOX AANMAKEN VOOR SPELER 2
+                    Rect eilandhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); // HITBOX AANMAKEN VOOR RECHTHOEKEN MET TAG EILAND
+
+                    
+                    if (player1hitbox.IntersectsWith(eilandhitbox)) // CONTROLE OF SPELER 1 OP EEN PLATFORM STAAT
                     {
-                        Canvas.SetTop(Player2, eilandhitbox.Bottom); //instellen van onderkant van de platformen zodat de speler er niet langs kan//
+                        Canvas.SetTop(Speler1, Canvas.GetTop(x) - Speler1.Height); // POSTITIE AANPASSEN VAN SPELER 1 NAAR BOVEN OP HET PLATFORM.
+                    }
+                    if (player2hitbox.IntersectsWith(eilandhitbox)) // CONTROLE OF SPELER 2 OP EEN PLATFORM STAAT
+                    {
+                        Canvas.SetTop(Speler2, Canvas.GetTop(x) - Speler2.Height); // POSTITIE AANPASSEN VAN SPELER 2 NAAR BOVEN OP HET PLATFORM.
                     }
 
-                    else if (player2hitbox.IntersectsWith(eilandhitbox))
-                    {
-                        Canvas.SetTop(Player2, eilandhitbox.Top - Player.Height); //instellen van de bovenkant van het platform zodat speler2 er op kan lopen//
-                    }
+                    // CONTROLE OF SPELER 1 ZICH AAN DE ONDER KANT VAN EEN EILAND BEVIND
+                    if (eilandhitbox.Bottom >= player1hitbox.Top && eilandhitbox.Bottom < player1hitbox.Top && player1hitbox.IntersectsWith(eilandhitbox))
+                    { Canvas.SetTop(Speler1, eilandhitbox.Bottom + Speler1.Height); } // SPELER 1 NAAR DE BODEM VAN HET EILAND VERPLAATSEN 
 
+                    if (player1hitbox.Bottom <= eilandhitbox.Top && player1hitbox.IntersectsWith(eilandhitbox)) // CONTROLEREN OF SPELER 1 HET EILAND RAAKT
+                    { Canvas.SetTop(Speler1, eilandhitbox.Top - Speler1.Height); } // SPELER 1 NAAR DE BOVENKANT VAN HET EILAND VERPLAATSEN
 
-                } //SPELER 1//
-                if ((string)x.Tag == "eiland") //instellen van de borders en acties wanneer speler 1 in aanraking komt met de platformen met de tag eiland//
-                {
-                    Rect playerhitbox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height); // hitboxberekening voor speler 1//
-                    Rect eilandhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); //hitboxberekeningen voor de platformen met de naam eiland//
-                    if (eilandhitbox.Bottom >= playerhitbox.Top && eilandhitbox.Bottom < playerhitbox.Bottom && playerhitbox.IntersectsWith(eilandhitbox))
-                    {
-                        Canvas.SetTop(Player, eilandhitbox.Bottom); //instellen van onderkant van de platformen zodat de speler er niet langs kan//
-                    }
+                    // CONTROLE OF SPELER 2 ZICH AAN DE ONDER KANT VAN EEN EILAND BEVIND
+                    if (eilandhitbox.Bottom >= player2hitbox.Top && eilandhitbox.Bottom < player2hitbox.Top && player2hitbox.IntersectsWith(eilandhitbox))
+                    { Canvas.SetTop(Speler2, eilandhitbox.Bottom); } // SPELER 2 NAAR DE BODEM VAN HET EILAND VERPLAATSEN 
 
-                    else if (playerhitbox.IntersectsWith(eilandhitbox))
-                    {
-                        Canvas.SetTop(Player, eilandhitbox.Top - Player.Height); //instellen van de bovenkant van het platform zodat speler er op kan lopen//
-                    }
-
-
+                    if (player2hitbox.Bottom <= eilandhitbox.Top && player2hitbox.IntersectsWith(eilandhitbox)) // CONTROLEREN OF SPELER 2 HET EILAND RAAKT
+                    { Canvas.SetTop(Speler2, eilandhitbox.Top - Speler2.Height); } // SPELER 2 NAAR DE BOVENKANT VAN HET EILAND VERPLAATSEN
                 }
-                //SPELER 2 WALL//
-                if ((string)x.Tag == "wall")
+
+                // CONTROLE VAN SPELER 1 EN 2 OF ZE MET EEN MUUR INTERACTIE HEBBEN.
+                // TODO WERKEN MET METHODE(CASE) IPV IF ELSE
+                if ((string)x.Tag == "muur")
                 {
-                    Rect player2wallhitbox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), 50, 50); // hitboxberekening voor speler 2//
-                    Rect wallhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), 100, 196);
+                    Rect speler1muurhitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height); // HITBOX AANMAKEN VOOR SPELER 1
+                    Rect speler2muurhitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height); // HITBOX AANMAKEN VOOR SPELER 2
+                    Rect muurhitbox = new Rect(Canvas.GetLeft(x) - snelheid, Canvas.GetTop(x), x.Width + snelheid, x.Height); // HITBOX AANMAKEN VOOR MUUR
+                    Rect deurhitbox = new Rect(Canvas.GetLeft(deur), Canvas.GetTop(deur), deur.Width, deur.Height);
 
+                
 
-                    // hit rechts
-                    if (wallhitbox.Right >= player2wallhitbox.Left && wallhitbox.Left < player2wallhitbox.Left && player2wallhitbox.IntersectsWith(wallhitbox))
-                    {
-                        Canvas.SetLeft(Player2, wallhitbox.Right);
-                    }
+                    // CONTROLEREN OF SPELER 1 DE MUUR RAAKT AAN DE LINKERKANT
+                    if (muurhitbox.Left <= speler1muurhitbox.Right 
+                        && muurhitbox.Right > speler1muurhitbox.Right 
+                        && speler1muurhitbox.Top >= deurhitbox.Bottom // check voor de bovenkant van de muur 
+                        && speler1muurhitbox.IntersectsWith(muurhitbox))
+                    { Canvas.SetLeft(Speler1, muurhitbox.Left - speler1muurhitbox.Width); }
 
-                    // hit links
-                    else if (wallhitbox.Left <= player2wallhitbox.Right && wallhitbox.Right > player2wallhitbox.Right && player2wallhitbox.IntersectsWith(wallhitbox))
-                    {
-                        Canvas.SetLeft(Player2, wallhitbox.Left - player2wallhitbox.Width);
-                    }
+                    // CONTROLEREN OF SPELER 1 DE MUUR RAAKT AAN DE RECHTERKANT
+                    else if (muurhitbox.Right >= speler1muurhitbox.Left 
+                        && muurhitbox.Left < speler1muurhitbox.Left 
+                        && speler1muurhitbox.Top >= deurhitbox.Bottom
+                        && speler1muurhitbox.IntersectsWith(muurhitbox))
+                    { Canvas.SetLeft(Speler1, muurhitbox.Right); }
 
+                    // CONTROLEREN OF SPELER 2 DE MUUR RAAKT AAN DE LINKERKANT
+                    if (muurhitbox.Left <= speler2muurhitbox.Right 
+                        && muurhitbox.Right > speler2muurhitbox.Right 
+                        && speler2muurhitbox.Top >= deurhitbox.Bottom
+                        && speler2muurhitbox.IntersectsWith(muurhitbox))
+                    { Canvas.SetLeft(Speler2, muurhitbox.Left - speler2muurhitbox.Width); }
+
+                    // CONTROLEREN OF SPELER 2 DE MUUR RAAKT AAN DE RECHTERKANT
+                    else if (muurhitbox.Right >= speler2muurhitbox.Left 
+                        && muurhitbox.Left < speler2muurhitbox.Left 
+                        && speler2muurhitbox.Top >= deurhitbox.Bottom
+                        && speler2muurhitbox.IntersectsWith(muurhitbox))
+                    { Canvas.SetLeft(Speler2, muurhitbox.Right); }
                 }
-                //SPELER 1 WALL//
-                if ((string)x.Tag == "wall")
-                {
-                    Rect playerwallhitbox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), 50, 50); // hitboxberekening voor speler 2 VERANDER DE 50  en de 50 later voor player.width en player.height//
-                    Rect wallhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), 100, 196);
 
-
-                    // hit rechts
-                    if (wallhitbox.Right >= playerwallhitbox.Left && wallhitbox.Left < playerwallhitbox.Left && playerwallhitbox.IntersectsWith(wallhitbox))
-                    {
-                        Canvas.SetLeft(Player, wallhitbox.Right);
-                    }
-
-                    // hit links
-                    else if (wallhitbox.Left <= playerwallhitbox.Right && wallhitbox.Right > playerwallhitbox.Right && playerwallhitbox.IntersectsWith(wallhitbox))
-                    {
-                        Canvas.SetLeft(Player, wallhitbox.Left - playerwallhitbox.Width);
-                    }
-
-                }
-                //SPELER 2 DEUR MECHANICS//
+                // INSTELLEN WELKE SPELER HEEFT GEWONNEN AAN DE HAND VAN DE DEUR//
                 if ((string)x.Tag == "deur")
                 {
-                    Rect player2hitbox = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height);
+                    Rect speler1hitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height);
+                    Rect speler2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
                     Rect deurhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
-                    if (player2hitbox.IntersectsWith(deurhitbox))
+
+                    if (speler1hitbox.IntersectsWith(deurhitbox))
                     {
+                        if (spelerGewonnen != speler2Naam)
+                        { spelerGewonnen = speler1Naam; }
+                    }
+
+                    if (speler2hitbox.IntersectsWith(deurhitbox))
+                    {
+                        if (spelerGewonnen != speler1Naam)
+                        { spelerGewonnen = speler2Naam; }
+                    }
+                    // LAAT ZIEN WELKE SPELER GEWONNEN HEEFT ALS BEIDE SPELERS DE DEUR BEREIKT HEBBEN
+                    if (speler1hitbox.IntersectsWith(deurhitbox) && speler2hitbox.IntersectsWith(deurhitbox))
+                    {
+                   
+                        // MessageBox.Show(spelerGewonnen + " heeft gewonnen!");
+                        // MESSAGE BOX GEEFT EEN ERROR -> POPPETJES ZAKKEN NAAR BENEDEN ERDOOR... 
+                        // OPLOSSING: EEN NEW WINDOW POP-UP
+                        //TODO POPUP MET WIE GEWONNEN HEEFT -> SOORT MENU
+                        timer.Stop();
                         spelTimer.Stop();
-                        timer.Stop();
-                        MessageBox.Show(playerName1 + ", Je hebt gewonnen!!");
-                    }
 
-                }
-                //SPELER 1 DEUR MECHANICS//
-                if ((string)x.Tag == "deur")
-                {
-                    Rect playerhitbox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
-                    Rect deurhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
-                    if (playerhitbox.IntersectsWith(deurhitbox))
-                    {
-                        timer.Stop();
-                        MessageBox.Show(playerName2 + ", Je hebt gewonnen!!");
                     }
 
                 }
@@ -217,54 +202,106 @@ namespace Arcade
 
                 if ((string)x.Tag == "coin")
                 {
-                    Rect playerhitbox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
+                    Rect speler1hitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height);
+                    Rect speler2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
                     Rect coinhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
-                    if ((playerhitbox.IntersectsWith(coinhitbox)) && x.Visibility == Visibility.Visible)
-
+                    if ((speler1hitbox.IntersectsWith(coinhitbox)) && x.Visibility == Visibility.Visible)
                     {
                         x.Visibility = Visibility.Hidden;
                         score++;
 
-                        score1test.Content = "Munten Speler1: " + score;
+                        scoreSpeler1Label.Content = "Munten: " + score;
 
                     }
+                    if ((speler2hitbox.IntersectsWith(coinhitbox)) && x.Visibility == Visibility.Visible)
+                    {
+                        x.Visibility = Visibility.Hidden;
+                        score2++;
 
+                        scoreSpeler2Label.Content = "Munten: " + score2;
+
+                    }
+                }
+            }
+
+                
+
+                // PLAATS SPELER 2 BOVEN AAN HET SCHERM ZODRA HIJ AAN DE ONDERKANT UIT HET SCHERM VALT
+                //if (Canvas.GetTop(Player2) + (Player2.Height * 2) > Application.Current.MainWindow.Height)
+                //{
+                //    Canvas.SetTop(Player2, -80);
+                //}
+
+                // BEWEGINGS MECHANISMEN VOOR SPELER 1
+               
+                if (speler1NaarLinks == true && Canvas.GetLeft(Speler1) > 0) // BEWEEG NAAR LINKS BEREKENING 
+                {
+                    
+                    Canvas.SetLeft(Speler1, Canvas.GetLeft(Speler1) - snelheid);
+                }
+                if (speler1NaarRechts == true && Canvas.GetLeft(Speler1) + (Speler1.Width + 15) < Application.Current.MainWindow.Width) // BEWEEG NAAR RECHTS BEREKENING 
+                {
+                    
+                    Canvas.SetLeft(Speler1, Canvas.GetLeft(Speler1) + snelheid);
                 }
 
+                // TODO SPRING BEREKENING. MISSCHIEN MET EEN TIMER
+                if (speler1Springt == true /*&& Canvas.GetLeft(Player) > 0*/) // SPRING OMHOOG BEREKENING 
+                {
+                    Canvas.SetTop(Speler1, Canvas.GetTop(Speler1) - springSnelheid);
+                }
 
-            }
+                // BEWEGINGS MECHANISMEN VOOR SPELER 2
+                if (speler2NaarLinks == true && Canvas.GetLeft(Speler2) > 0)  // BEWEEG NAAR LINKS BEREKENING 
+                {
+                    Canvas.SetLeft(Speler2, Canvas.GetLeft(Speler2) - snelheid);
+                }
+                if (speler2NaarRechts == true && Canvas.GetLeft(Speler2) + (Speler2.Width + 15) < Application.Current.MainWindow.Width)  // BEWEEG NAAR RECHTS BEREKENING 
+                {
+                    Canvas.SetLeft(Speler2, Canvas.GetLeft(Speler2) + snelheid);
+                }
+
+                // TODO SPRING BEREKENING. MISSCHIEN MET EEN TIMER
+                if (speler2Springt == true /*&& Canvas.GetLeft(Player2) > 0*/)
+                {
+                    Canvas.SetTop(Speler2, Canvas.GetTop(Speler2) - springSnelheid); // SPRING OMHOOG BEREKENING 
+                }
+
 
             //if (Canvas.GetTop(Player) + (Player.Height * 2) > Application.Current.MainWindow.Height) //hitboxes instellen//
             //{
             //    Canvas.SetTop(Player, -80);
             //}
-            foreach (var x in newcanvas.Children.OfType<Rectangle>())
-            {
-                if ((string)x.Tag == "platform")
-                {
-                    //x.Stroke = Brushes.Black;
-                    Rect playerhitbox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
-                    Rect platformhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
-                    if (playerhitbox.IntersectsWith(platformhitbox))
-                    {
+            //foreach (var x in newcanvas.Children.OfType<Rectangle>())
+            //{
+            //    if ((string)x.Tag == "platform")
+            //    {
+            //        //x.Stroke = Brushes.Black;
+            //        Rect speler1hitbox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
+            //        Rect platformhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+            //        if (speler1hitbox.IntersectsWith(platformhitbox))
+            //        {
                         
-                        //dropSpeed = 0;
-                        Canvas.SetTop(Player, Canvas.GetTop(x) - Player.Height);
-                    }
-                }
-            }
-
-        }
-
-        public void updateNames() 
-        {
-            speler1label.Content = playerName1;
-            speler2label.Content = playerName2;
+            //            //zwaartekracht = 0;
+            //            Canvas.SetTop(Player, Canvas.GetTop(x) - Player.Height);
+            //        }
+            //    }
+            //}
 
         }
 
         /// <summary>
-        /// Methode voor de timer in het spelscherm.
+        /// updateNames-methode geeft de ingevoerde spelernamen weer op het spelscherm.
+        /// </summary>
+        public void updateNames() 
+        {
+            speler1label.Content = speler1Naam; // lAAT DE EERSTE SPELERS NAAM ZIEN IN HET EERSTE LABEL
+            speler2label.Content = speler2Naam; // lAAT DE TWEEDE SPELERS NAAM ZIEN IN HET TWEEDE LABEL
+
+        }
+
+        /// <summary>
+        /// spelerTimer-Methode berekent de timer voor in het spel. En geeft deze in het juiste tijdsformat weer.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -295,68 +332,83 @@ namespace Arcade
             tijd.Content = "tijd: " + minuten + ":" + seconden;
 
         }
-        private void keydown(object sender, KeyEventArgs e) //keybinds voor speler 1 en 2//
+
+        //TODO KEYDOWN METHODE BESCHRIJVEN
+        private void keydown(object sender, KeyEventArgs e) // BEWEGINGEN VOOR SPELER 1 & 2
         {
-            if (e.Key == Key.Left)
+            // BEWEGING VOOR SPELER 1 (KEYS: AWSD)
+            if (e.Key == Key.A) // BEWEGING NAAR LINKS
             {
-                goLeft = true;
-                Player.RenderTransform = new RotateTransform(0, Player.Width / 2, Player.Height / 2); //roteert de speler als de conditie true is//
-            }
-            if (e.Key == Key.Right)
-            {
-                goRight = true;
-                Player.RenderTransform = new RotateTransform(0, Player.Width / 2, Player.Height / 2);
-            }
-            if (e.Key == Key.A)
-            {
-                goLeft2 = true;
-                Player2.RenderTransform = new RotateTransform(0, Player2.Width / 2, Player2.Height / 2); //roteert de speler als de conditie true is//
+                speler1NaarLinks = true; 
+                // Player2.RenderTransform = new RotateTransform(0, Player.Width / 2, Player.Height / 2); //roteert de speler als de conditie true is//
 
             }
             if (e.Key == Key.D)
             {
-                goRight2 = true;
-                Player2.RenderTransform = new RotateTransform(0, Player2.Width / 2, Player2.Height / 2);
+                speler1NaarRechts = true; // BEWEGING NAAR RECHTS
+                // Player2.RenderTransform = new RotateTransform(0, Player.Width / 2, Player.Height / 2);
             }
-            if (e.Key == Key.Up && !jumping) //toetsenbordinput voor ghet springen,keydown//
+
+            // TODO SPELR 1 SPRINGANIMATIE / SPRINGEN NA AANTAL SECONDEN UITZETTEN EN PAS AANZETTEN ALS SPELER OP EEN PLATORM STAAT
+            if (e.Key == Key.W && !speler1Springt) // SPRINGEN AANZETTEN 
             {
-                jumping = true;
+                speler1Springt = true; // SPRINGEN AANZETTEN
             }
-            if (e.Key == Key.W && !jumping2) //toetsenbordinput voor het springen, keydown//
+
+            // KEYDOWN VOOR SPELER 2 (KEYS: PIJLTJES-TOETSEN)
+            if (e.Key == Key.Left) 
             {
-                jumping2 = true;
+                speler2NaarLinks = true; // BEWEGING NAAR LINKS
+                //Player.RenderTransform = new RotateTransform(0, Player2.Width / 2, Player2.Height / 2); //roteert de speler als de conditie true is//
             }
+            if (e.Key == Key.Right)
+            {
+                speler2NaarRechts = true; // BEWEGING NAAR RECHTS
+                //Player.RenderTransform = new RotateTransform(0, Player2.Width / 2, Player2.Height / 2);
+            }
+            // TODO SPELER 2 SPRINGANIMATIE / SPRINGEN NA AANTAL SECONDEN UITZETTEN EN PAS AANZETTEN ALS SPELER OP EEN PLATORM STAAT
+            if (e.Key == Key.Up && !speler2Springt) 
+            {
+                speler2Springt = true; // SPRINGEN AANZETTEN 
+            }
+            
+            // KEY VOOR GAMEWINOW SLUITEN
             if (e.Key == Key.Escape)
             {
                 this.Close();
             }
         }
 
+        //TODO KEYUP METHODE BESCHRIJVEN
         private void keyup(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Left)
-            {
-                goLeft = false;
-            }
+            // BEWEGING SPELER 1 UITSCHAKELEN
             if (e.Key == Key.A)
             {
-                goLeft2 = false;
-            }
-            if (e.Key == Key.Right)
-            {
-                goRight = false;
+                speler1NaarLinks = false; // BEWEGING NAAR LINKS UITSCHAKELEN 
             }
             if (e.Key == Key.D)
             {
-                goRight2 = false;
+                speler1NaarRechts = false; // BEWEGING NAAR RECHTS UITSCHAKELEN
             }
-            if (jumping)
+            if (speler1Springt)
             {
-                jumping = false; //attemps were made stopt hopelijk het springen//
+                speler1Springt = false; // SPRINGEN UITSCHAKELEN
             }
-            if (jumping2)
+
+
+            // STOPPEN BEWEGING SPELER 2
+            if (e.Key == Key.Left)
             {
-                jumping2 = false;
+                speler2NaarLinks = false; // BEWEGING NAAR LINKS UITSCHAKELEN 
+            }
+            if (e.Key == Key.Right)
+            {
+                speler2NaarRechts = false; // BEWEGING NAAR RECHTS UITSCHAKELEN
+            }
+            if (speler2Springt) 
+            {
+                speler2Springt = false;  // SPRINGEN UITSCHAKELEN
             }
 
         }
