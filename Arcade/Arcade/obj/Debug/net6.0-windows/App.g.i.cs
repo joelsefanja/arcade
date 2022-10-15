@@ -45,11 +45,11 @@ namespace Arcade {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.8.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.10.0")]
         public void InitializeComponent() {
             
             #line 5 "..\..\..\App.xaml"
-            this.StartupUri = new System.Uri("GameWindow.xaml", System.UriKind.Relative);
+            this.StartupUri = new System.Uri("MainWindow.xaml", System.UriKind.Relative);
             
             #line default
             #line hidden
@@ -60,7 +60,7 @@ namespace Arcade {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.8.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.10.0")]
         public static void Main() {
             Arcade.App app = new Arcade.App();
             app.InitializeComponent();

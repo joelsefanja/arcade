@@ -10,14 +10,15 @@
         <Canvas.Background>
             <ImageBrush ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
         </Canvas.Background>
-        <Rectangle Name="Player" Width="64" Height="85" Canvas.Left="325" Canvas.Top="808" HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="Black" Panel.ZIndex="-3" >
-            <!-- hier komen alle platformen en spelers en hun afbeeldingen te staan-->
+        <!-- hier komen alle platformen en spelers en hun afbeeldingen te staan-->
+        <Rectangle Name="Player" Width="64" Height="85" Canvas.Left="330" Canvas.Top="882" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Black" Panel.ZIndex="-3" >
 
             <Rectangle.Fill>
                 <ImageBrush ImageSource="pack://application:,,,/img/sprites/boy.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="Player2" Width="95" Height="95" Canvas.Left="1525" Canvas.Top="727" Stroke="Black" HorizontalAlignment="Center" VerticalAlignment="Top" >
+        <Rectangle Name="Player2" Width="88" Height="85" Canvas.Left="1406" Canvas.Top="877" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Black" Panel.ZIndex="-3" >
+
             <Rectangle.Fill>
                 <ImageBrush ImageSource="pack://application:,,,/img/sprites/girl.png"/>
             </Rectangle.Fill>

@@ -28,12 +28,14 @@ namespace Arcade
 
         int speed = 10; //spelersnelheid//
         int dropSpeed = 10; //zwaartekracht//
+        bool zwaartekrachtDisabled = false;
         bool goLeft, goRight;
         bool goLeft2, goRight2;
         bool jumping = false;
         bool jumping2 = false;
         int score = 0;
         int score2 = 0;
+        bool pauze = false;
 
 
         public GameWindow() // game engine//
@@ -48,6 +50,8 @@ namespace Arcade
 
         private void MainTimerEvent(object? sender, EventArgs e) //main timer events met de werking van de mechanics van de spelers en hopelijk later de munten en trapdoors later//
         {
+
+            if (zwaartekrachtDisabled) { dropSpeed = 0; } else { zwaartekrachtDisabled = false; dropSpeed = 10; } // zwaartekracht switch voor pauzescherm.
             Canvas.SetTop(Player, Canvas.GetTop(Player) + dropSpeed);
             Canvas.SetTop(Player2, Canvas.GetTop(Player2) + dropSpeed);
             if (jumping == true && Canvas.GetLeft(Player) > 0)
@@ -259,8 +263,24 @@ namespace Arcade
             }
             if (e.Key == Key.Escape)
             {
-                this.Close();
+                zwaartekrachtDisabled = true;
+                goLeft = goRight = jumping = false;
+                goLeft2 = goRight2 = jumping2 = false;
+
+
+                pauze = true;
+                PauzeMenu pm = new PauzeMenu(this);
+                pm.Visibility = Visibility.Visible;
+                timer.Stop();
+
+                if (pm.Visibility == Visibility.Visible)
+                {
+                    timer.Start();
+                }
             }
+
+
+
         }
 
         private void keyup(object sender, KeyEventArgs e)
@@ -289,7 +309,21 @@ namespace Arcade
             {
                 jumping2 = false;
             }
+            if (e.Key == Key.Escape)
+            {
+                zwaartekrachtDisabled = false;
 
+                pauze = false;
+                PauzeMenu pm = new PauzeMenu(this);
+
+
+            }
+        }
+
+        public void SpeelVerder()
+        {
+            pauze = false;
+            zwaartekrachtDisabled = false;
         }
     }
 }
