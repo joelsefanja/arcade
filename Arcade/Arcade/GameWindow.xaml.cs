@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using System.Windows.Threading;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Arcade
 {
@@ -58,20 +59,77 @@ namespace Arcade
             spelTimer.Start();
 
             // PLAATS DE SPELERS OP HET ONDERSTE PLATFORM.
-            Canvas.SetBottom(Speler1, Canvas.GetTop(platform1)); 
-            Canvas.SetBottom(Speler2, Canvas.GetTop(platform2));
+            spelersNaarBeginpunt();
+           
 
         }
 
-        private void GameTimer(object sender, EventArgs e) //main timer events met de werking van de mechanics van de spelers en hopelijk later de munten en trapdoors later//
+        private void GameTimer(object sender, EventArgs e) // DEZE METHODE WORD ELKE 20 MILISECONDEN HERHAALDELIJK UITGEVOERD
         {
-            // ZWAARTEKRACHT BEREKENEN
-            
-            Canvas.SetTop(Speler1, Canvas.GetTop(Speler1) + zwaartekracht); // ZWAARTEKRACHT BEREKENING
-            Canvas.SetTop(Speler2, Canvas.GetTop(Speler2) + zwaartekracht); // ZWAARTEKRACHT BEREKENING
+            // HIER STAAN ALLE METHODEN DIE TIJDENS HET SPEL HERHAALDELIJK WORDEN UITGEVOERD EN GECONTROLEERD
+            // OP BASIS VAN DEZE CONTROLE WORD ER ACTIE ONDERNOMEN IN DE VERSCHILLENDE METHODEN
+            // BIJVOORBEELD: SPELERS VERPLAATST OF ZWAARTEKRACHT TOEGEPAST / UITGEZET.
 
-           
+            // IN DE METHODEN STAAT DE CODE VOOR ELK VERSCHILLEND ONDERDEEL.
+            zwaartekrachtBerekenenSpelers();
+            bewegingSpeler1();
+            bewegingSpeler2();
 
+            // DEZE METHODEN CONTROLEREN DE INTERACTIE TUSSEN EEN SPELER EN DE VERSCHILLENDE OBSTAKELS
+            interactieMetPlatform();
+            interactieMetEiland();
+            interactieMetMuur();
+            interactieMetMunt();
+            interactieMetDeur();
+        }
+
+        // TODO ALLE METHODEN BESCHRIJVEN
+        // TODO UNIT TESTING TOEPASSEN
+        public void spelersNaarBeginpunt() 
+        {
+            Canvas.SetBottom(Speler1, Canvas.GetTop(platform1));
+            Canvas.SetBottom(Speler2, Canvas.GetTop(platform2));
+        }
+        public void bewegingSpeler1() {
+            // BEWEGINGS MECHANISMEN VOOR SPELER 1
+
+            if (speler1NaarLinks == true && Canvas.GetLeft(Speler1) > 0) // BEWEEG NAAR LINKS BEREKENING 
+            {
+
+                Canvas.SetLeft(Speler1, Canvas.GetLeft(Speler1) - snelheid);
+            }
+            if (speler1NaarRechts == true && Canvas.GetLeft(Speler1) + (Speler1.Width) < 1200) // BEWEEG NAAR RECHTS BEREKENING 
+            {
+
+                Canvas.SetLeft(Speler1, Canvas.GetLeft(Speler1) + snelheid);
+            }
+
+            // TODO SPRING BEREKENING. MISSCHIEN MET EEN TIMER
+            if (speler1Springt == true /*&& Canvas.GetLeft(Player) > 0*/) // SPRING OMHOOG BEREKENING 
+            {
+                Canvas.SetTop(Speler1, Canvas.GetTop(Speler1) - springSnelheid);
+            }
+        }
+        public void bewegingSpeler2() 
+        {
+            // BEWEGINGS MECHANISMEN VOOR SPELER 2
+            if (speler2NaarLinks == true && Canvas.GetLeft(Speler2) > 0)  // BEWEEG NAAR LINKS BEREKENING 
+            {
+                Canvas.SetLeft(Speler2, Canvas.GetLeft(Speler2) - snelheid);
+            }
+            if (speler2NaarRechts == true && Canvas.GetLeft(Speler2) + (Speler2.Width) < 1200) // BEWEEG NAAR RECHTS BEREKENING 
+            {
+                Canvas.SetLeft(Speler2, Canvas.GetLeft(Speler2) + snelheid);
+            }
+
+            // TODO SPRING BEREKENING. MISSCHIEN MET EEN TIMER
+            if (speler2Springt == true /*&& Canvas.GetLeft(Player2) > 0*/)
+            {
+                Canvas.SetTop(Speler2, Canvas.GetTop(Speler2) - springSnelheid); // SPRING OMHOOG BEREKENING 
+            }
+        }
+        public void interactieMetPlatform() 
+        {
             // NATUURKUNDE VOOR DE SPELERS EN DE INTERACTIE MET OBSTAKELS EN PLATFORMEN
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
             {
@@ -81,7 +139,7 @@ namespace Arcade
                     Rect speler1hitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height); // HITBOX AANMAKEN VOOR SPELER 1
                     Rect speler2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height); // HITBOX AANMAKEN VOOR SPELER 2
                     Rect platformhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); // HITBOX AANMAKEN VOOR PLATFORM
-                    
+
                     if (speler1hitbox.IntersectsWith(platformhitbox)) // CONTROLE OF SPELER 1 OP EEN PLATFORM STAAT
                     {
                         Canvas.SetTop(Speler1, Canvas.GetTop(x) - Speler1.Height); // POSTITIE AANPASSEN VAN SPELER 1 NAAR BOVEN OP HET PLATFORM.
@@ -91,15 +149,20 @@ namespace Arcade
                         Canvas.SetTop(Speler2, Canvas.GetTop(x) - Speler2.Height); // POSTITIE AANPASSEN VAN SPELER 2 NAAR BOVEN OP HET PLATFORM.
                     }
                 }
-
-                // CONTROLE VAN SPELER 1 EN 2 OF ZE MET EEN ZWEVEND EILAND INTERACTIE HEBBEN.
+            }
+        }
+        public void interactieMetEiland() 
+        {
+            // CONTROLE VAN SPELER 1 EN 2 OF ZE MET EEN ZWEVEND EILAND INTERACTIE HEBBEN.
+            foreach (var x in newcanvas.Children.OfType<Rectangle>())
+            {
                 if ((string)x.Tag == "eiland") // CONTROLEREN VOOR RECHTHOEKEN MET DE TAG EILAND
                 {
                     Rect player1hitbox = new Rect(Canvas.GetLeft(Speler1) + 5, Canvas.GetTop(Speler1), Speler1.Width - 10, Speler1.Height); // HITBOX AANMAKEN VOOR SPELER 1
                     Rect player2hitbox = new Rect(Canvas.GetLeft(Speler2) + 25, Canvas.GetTop(Speler2), Speler2.Width - 30, Speler2.Height); // HITBOX AANMAKEN VOOR SPELER 2
                     Rect eilandhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); // HITBOX AANMAKEN VOOR RECHTHOEKEN MET TAG EILAND
 
-                    
+
                     if (player1hitbox.IntersectsWith(eilandhitbox)) // CONTROLE OF SPELER 1 OP EEN PLATFORM STAAT
                     {
                         Canvas.SetTop(Speler1, Canvas.GetTop(x) - Speler1.Height); // POSTITIE AANPASSEN VAN SPELER 1 NAAR BOVEN OP HET PLATFORM.
@@ -123,9 +186,14 @@ namespace Arcade
                     if (player2hitbox.Bottom <= eilandhitbox.Top && player2hitbox.IntersectsWith(eilandhitbox)) // CONTROLEREN OF SPELER 2 HET EILAND RAAKT
                     { Canvas.SetTop(Speler2, eilandhitbox.Top - Speler2.Height); } // SPELER 2 NAAR DE BOVENKANT VAN HET EILAND VERPLAATSEN
                 }
-
-                // CONTROLE VAN SPELER 1 EN 2 OF ZE MET EEN MUUR INTERACTIE HEBBEN.
-                // TODO WERKEN MET METHODE(CASE) IPV IF ELSE
+            }
+        }
+        public void interactieMetMuur() 
+        {
+            // CONTROLE VAN SPELER 1 EN 2 OF ZE MET EEN MUUR INTERACTIE HEBBEN.
+            // TODO WERKEN MET METHODE(CASE) IPV IF ELSE
+            foreach (var x in newcanvas.Children.OfType<Rectangle>())
+            {
                 if ((string)x.Tag == "muur")
                 {
                     Rect speler1muurhitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height); // HITBOX AANMAKEN VOOR SPELER 1
@@ -133,73 +201,42 @@ namespace Arcade
                     Rect muurhitbox = new Rect(Canvas.GetLeft(x) - snelheid, Canvas.GetTop(x), x.Width + snelheid, x.Height); // HITBOX AANMAKEN VOOR MUUR
                     Rect deurhitbox = new Rect(Canvas.GetLeft(deur), Canvas.GetTop(deur), deur.Width, deur.Height);
 
-                
-
                     // CONTROLEREN OF SPELER 1 DE MUUR RAAKT AAN DE LINKERKANT
-                    if (muurhitbox.Left <= speler1muurhitbox.Right 
-                        && muurhitbox.Right > speler1muurhitbox.Right 
-                        && speler1muurhitbox.Top >= deurhitbox.Bottom // check voor de bovenkant van de muur 
+                    if (muurhitbox.Left <= speler1muurhitbox.Right
+                        && muurhitbox.Right > speler1muurhitbox.Right
+                        && speler1muurhitbox.Top >= deurhitbox.Bottom // CHECK OF EEN SPELER BOVEN OP EEN MUUR STAAT
                         && speler1muurhitbox.IntersectsWith(muurhitbox))
                     { Canvas.SetLeft(Speler1, muurhitbox.Left - speler1muurhitbox.Width); }
 
                     // CONTROLEREN OF SPELER 1 DE MUUR RAAKT AAN DE RECHTERKANT
-                    else if (muurhitbox.Right >= speler1muurhitbox.Left 
-                        && muurhitbox.Left < speler1muurhitbox.Left 
-                        && speler1muurhitbox.Top >= deurhitbox.Bottom
+                    else if (muurhitbox.Right >= speler1muurhitbox.Left
+                        && muurhitbox.Left < speler1muurhitbox.Left
+                        && speler1muurhitbox.Top >= deurhitbox.Bottom // CHECK OF EEN SPELER BOVEN OP EEN MUUR STAAT
                         && speler1muurhitbox.IntersectsWith(muurhitbox))
                     { Canvas.SetLeft(Speler1, muurhitbox.Right); }
 
                     // CONTROLEREN OF SPELER 2 DE MUUR RAAKT AAN DE LINKERKANT
-                    if (muurhitbox.Left <= speler2muurhitbox.Right 
-                        && muurhitbox.Right > speler2muurhitbox.Right 
-                        && speler2muurhitbox.Top >= deurhitbox.Bottom
+                    if (muurhitbox.Left <= speler2muurhitbox.Right
+                        && muurhitbox.Right > speler2muurhitbox.Right
+                        && speler2muurhitbox.Top >= deurhitbox.Bottom // CHECK OF EEN SPELER BOVEN OP EEN MUUR STAAT
                         && speler2muurhitbox.IntersectsWith(muurhitbox))
                     { Canvas.SetLeft(Speler2, muurhitbox.Left - speler2muurhitbox.Width); }
 
                     // CONTROLEREN OF SPELER 2 DE MUUR RAAKT AAN DE RECHTERKANT
-                    else if (muurhitbox.Right >= speler2muurhitbox.Left 
-                        && muurhitbox.Left < speler2muurhitbox.Left 
-                        && speler2muurhitbox.Top >= deurhitbox.Bottom
+                    else if (muurhitbox.Right >= speler2muurhitbox.Left
+                        && muurhitbox.Left < speler2muurhitbox.Left
+                        && speler2muurhitbox.Top >= deurhitbox.Bottom // CHECK OF EEN SPELER BOVEN OP EEN MUUR STAAT
                         && speler2muurhitbox.IntersectsWith(muurhitbox))
                     { Canvas.SetLeft(Speler2, muurhitbox.Right); }
                 }
-
-                // INSTELLEN WELKE SPELER HEEFT GEWONNEN AAN DE HAND VAN DE DEUR//
-                if ((string)x.Tag == "deur")
-                {
-                    Rect speler1hitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height);
-                    Rect speler2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
-                    Rect deurhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
-
-                    if (speler1hitbox.IntersectsWith(deurhitbox))
-                    {
-                        if (spelerGewonnen != speler2Naam)
-                        { spelerGewonnen = speler1Naam; }
-                    }
-
-                    if (speler2hitbox.IntersectsWith(deurhitbox))
-                    {
-                        if (spelerGewonnen != speler1Naam)
-                        { spelerGewonnen = speler2Naam; }
-                    }
-                    // LAAT ZIEN WELKE SPELER GEWONNEN HEEFT ALS BEIDE SPELERS DE DEUR BEREIKT HEBBEN
-                    if (speler1hitbox.IntersectsWith(deurhitbox) && speler2hitbox.IntersectsWith(deurhitbox))
-                    {
-                   
-                        // MessageBox.Show(spelerGewonnen + " heeft gewonnen!");
-                        // MESSAGE BOX GEEFT EEN ERROR -> POPPETJES ZAKKEN NAAR BENEDEN ERDOOR... 
-                        // OPLOSSING: EEN NEW WINDOW POP-UP
-                        //TODO POPUP MET WIE GEWONNEN HEEFT -> SOORT MENU
-                        timer.Stop();
-                        spelTimer.Stop();
-
-                    }
-
-                }
-
-                // muntjes oppakken spelers
-                //todo speler 2 munten oppakken.
-
+            }
+        }
+        public void interactieMetMunt() 
+        {
+            // MUNTEN OPPAKKEN SPELERS
+            //todo speler 2 munten oppakken.
+            foreach (var x in newcanvas.Children.OfType<Rectangle>())
+            {
                 if ((string)x.Tag == "coin")
                 {
                     Rect speler1hitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height);
@@ -223,73 +260,50 @@ namespace Arcade
                     }
                 }
             }
-
-                
-
-                // PLAATS SPELER 2 BOVEN AAN HET SCHERM ZODRA HIJ AAN DE ONDERKANT UIT HET SCHERM VALT
-                //if (Canvas.GetTop(Player2) + (Player2.Height * 2) > Application.Current.MainWindow.Height)
-                //{
-                //    Canvas.SetTop(Player2, -80);
-                //}
-
-                // BEWEGINGS MECHANISMEN VOOR SPELER 1
-               
-                if (speler1NaarLinks == true && Canvas.GetLeft(Speler1) > 0) // BEWEEG NAAR LINKS BEREKENING 
-                {
-                    
-                    Canvas.SetLeft(Speler1, Canvas.GetLeft(Speler1) - snelheid);
-                }
-                if (speler1NaarRechts == true && Canvas.GetLeft(Speler1) + (Speler1.Width + 15) < Application.Current.MainWindow.Width) // BEWEEG NAAR RECHTS BEREKENING 
-                {
-                    
-                    Canvas.SetLeft(Speler1, Canvas.GetLeft(Speler1) + snelheid);
-                }
-
-                // TODO SPRING BEREKENING. MISSCHIEN MET EEN TIMER
-                if (speler1Springt == true /*&& Canvas.GetLeft(Player) > 0*/) // SPRING OMHOOG BEREKENING 
-                {
-                    Canvas.SetTop(Speler1, Canvas.GetTop(Speler1) - springSnelheid);
-                }
-
-                // BEWEGINGS MECHANISMEN VOOR SPELER 2
-                if (speler2NaarLinks == true && Canvas.GetLeft(Speler2) > 0)  // BEWEEG NAAR LINKS BEREKENING 
-                {
-                    Canvas.SetLeft(Speler2, Canvas.GetLeft(Speler2) - snelheid);
-                }
-                if (speler2NaarRechts == true && Canvas.GetLeft(Speler2) + (Speler2.Width + 15) < Application.Current.MainWindow.Width)  // BEWEEG NAAR RECHTS BEREKENING 
-                {
-                    Canvas.SetLeft(Speler2, Canvas.GetLeft(Speler2) + snelheid);
-                }
-
-                // TODO SPRING BEREKENING. MISSCHIEN MET EEN TIMER
-                if (speler2Springt == true /*&& Canvas.GetLeft(Player2) > 0*/)
-                {
-                    Canvas.SetTop(Speler2, Canvas.GetTop(Speler2) - springSnelheid); // SPRING OMHOOG BEREKENING 
-                }
-
-
-            //if (Canvas.GetTop(Player) + (Player.Height * 2) > Application.Current.MainWindow.Height) //hitboxes instellen//
-            //{
-            //    Canvas.SetTop(Player, -80);
-            //}
-            //foreach (var x in newcanvas.Children.OfType<Rectangle>())
-            //{
-            //    if ((string)x.Tag == "platform")
-            //    {
-            //        //x.Stroke = Brushes.Black;
-            //        Rect speler1hitbox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
-            //        Rect platformhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
-            //        if (speler1hitbox.IntersectsWith(platformhitbox))
-            //        {
-                        
-            //            //zwaartekracht = 0;
-            //            Canvas.SetTop(Player, Canvas.GetTop(x) - Player.Height);
-            //        }
-            //    }
-            //}
-
         }
+        public void interactieMetDeur() 
+        {
+            // INSTELLEN WELKE SPELER HEEFT GEWONNEN AAN DE HAND VAN DE DEUR//
+            foreach (var x in newcanvas.Children.OfType<Rectangle>())
+            {
+                if ((string)x.Tag == "deur")
+                {
+                    Rect speler1hitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height);
+                    Rect speler2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
+                    Rect deurhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
 
+                    if (speler1hitbox.IntersectsWith(deurhitbox))
+                    {
+                        if (spelerGewonnen != speler2Naam)
+                        { spelerGewonnen = speler1Naam; }
+                    }
+
+                    if (speler2hitbox.IntersectsWith(deurhitbox))
+                    {
+                        if (spelerGewonnen != speler1Naam)
+                        { spelerGewonnen = speler2Naam; }
+                    }
+                    // LAAT ZIEN WELKE SPELER GEWONNEN HEEFT ALS BEIDE SPELERS DE DEUR BEREIKT HEBBEN
+                    if (speler1hitbox.IntersectsWith(deurhitbox) && speler2hitbox.IntersectsWith(deurhitbox))
+                    {
+
+                        // MessageBox.Show(spelerGewonnen + " heeft gewonnen!");
+                        // MESSAGE BOX GEEFT EEN ERROR -> POPPETJES ZAKKEN NAAR BENEDEN ERDOOR... 
+                        // OPLOSSING: EEN NEW WINDOW POP-UP
+                        //TODO POPUP MET WIE GEWONNEN HEEFT -> SOORT MENU
+                        timer.Stop();
+                        spelTimer.Stop();
+
+                    }
+
+                }
+            }
+        }
+        public void zwaartekrachtBerekenenSpelers() {
+            Canvas.SetTop(Speler1, Canvas.GetTop(Speler1) + zwaartekracht); // ZWAARTEKRACHT BEREKENING
+            Canvas.SetTop(Speler2, Canvas.GetTop(Speler2) + zwaartekracht); // ZWAARTEKRACHT BEREKENING
+        }
+     
         /// <summary>
         /// updateNames-methode geeft de ingevoerde spelernamen weer op het spelscherm.
         /// </summary>
@@ -308,20 +322,20 @@ namespace Arcade
         private void spelersTimer(object sender, EventArgs e) {
             tijdSeconden++;
             
-            if (tijdSeconden == 60)
+            if (tijdSeconden == 60) // ELKE MINUUT EEN MINUUUT ERBIJ TELLEN
             {
                 tijdMinuten++;
                 tijdSeconden = 0;
             }
             
-            // tijd format instellen op basis van de timer
-            if (tijdSeconden < 10) // prefix bij seconden onder de 10.
+            // TIJD FORMAT INSTELLEN (MM:SS)
+            if (tijdSeconden < 10) // PREFIX BIJ SECONDEN ONDER DE 10 (00, 01, 02 ETC.)
             {
                  seconden = "0" + tijdSeconden.ToString();
             }
             else { seconden = tijdSeconden.ToString();}
-            // prefix bij minuten onder de 60
-            if(tijdMinuten < 60)
+            // PREFIX BIJ MINUTEN ONDER DE 60 (00:00, 01:00, 02:00 ETC.)
+            if (tijdMinuten < 60)
             {
                 minuten = "0" + tijdMinuten.ToString();
             }
@@ -329,7 +343,7 @@ namespace Arcade
             {
                 minuten = tijdMinuten.ToString();
             }
-            tijd.Content = "tijd: " + minuten + ":" + seconden;
+            tijd.Content = "tijd: " + minuten + ":" + seconden; 
 
         }
 
