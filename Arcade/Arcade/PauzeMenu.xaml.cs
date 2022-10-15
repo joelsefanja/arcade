@@ -35,6 +35,7 @@ namespace Arcade
             if (e.Key == Key.Escape)
             {
 
+                GameWindow.SpeelVerder();
                 this.Close();
 
             }
@@ -43,7 +44,7 @@ namespace Arcade
         private void VerderSpelenButtonClick(object sender, RoutedEventArgs e)
         {
             this.Close();
-            game.SpeelVerder();
+            GameWindow.SpeelVerder();
         }
 
         private void HerstartenButtonClick(object sender, RoutedEventArgs e)

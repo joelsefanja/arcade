@@ -26,8 +26,8 @@ namespace Arcade
     /// </summary>
     public partial class GameWindow : Window
     {
-        DispatcherTimer timer = new DispatcherTimer(); // TIMER VOOR DE MECHANICA VAN HET SPEL
-        DispatcherTimer spelTimer = new DispatcherTimer(); // TIMER VOOR DE SCORE VAN DE SPELERS
+        public static DispatcherTimer timer = new DispatcherTimer(); // TIMER VOOR DE MECHANICA VAN HET SPEL
+        public static DispatcherTimer spelTimer = new DispatcherTimer(); // TIMER VOOR DE SCORE VAN DE SPELERS
 
         int snelheid = 8; // SPELERSNELHEID
         int zwaartekracht = 10; // ZWAARTEKRACHT
@@ -41,8 +41,8 @@ namespace Arcade
         string spelerGewonnen = "Onbekende Winnaar"; // 
 
         // VARIABLEN VOOR TIJDENS PAUZE
-        bool zwaartekrachtDisabled = false; 
-        bool pauze = false;
+        public static bool zwaartekrachtDisabled = false;
+        public static bool pauze = false;
 
         //TODO GAME WINDOW METHODE BESCHIJVEN: BIJVOORBEELD: ZET VERSCHILLENDE (BESCHIJF WELKE) ONDERELEN KLAAR VOOR DE GAME
         public GameWindow()
@@ -409,8 +409,7 @@ namespace Arcade
 
                 if (pm.Visibility == Visibility.Visible)
                 {
-                    timer.Start();
-                    spelTimer.Start();
+                    
                 }
             }
         }
@@ -460,10 +459,12 @@ namespace Arcade
 
         }
 
-        public void SpeelVerder()
+        public static void SpeelVerder()
         {
             pauze = false;
             zwaartekrachtDisabled = false;
+            timer.Start();
+            spelTimer.Start();
         }
     }
 }
