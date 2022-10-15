@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joels\\source\\repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj": {}
+    "C:\\Users\\joels\\Source\\Repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joels\\source\\repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj": {
+    "C:\\Users\\joels\\Source\\Repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joels\\source\\repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj",
+        "projectUniqueName": "C:\\Users\\joels\\Source\\Repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj",
         "projectName": "Arcade",
-        "projectPath": "C:\\Users\\joels\\source\\repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj",
+        "projectPath": "C:\\Users\\joels\\Source\\Repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj",
         "packagesPath": "C:\\Users\\joels\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joels\\source\\repos\\joelsefanja\\arcade\\Arcade\\Arcade\\obj\\",
+        "outputPath": "C:\\Users\\joels\\Source\\Repos\\joelsefanja\\arcade\\Arcade\\Arcade\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joels\\AppData\\Roaming\\NuGet\\NuGet.Config",

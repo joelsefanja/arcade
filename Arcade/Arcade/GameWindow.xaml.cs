@@ -40,6 +40,10 @@ namespace Arcade
         public static string speler1Naam, speler2Naam; // SPELERS NAMEN; KUNNEN MET EXTERNE .XAML.CS BESTANDEN BENADERD WORDEN
         string spelerGewonnen = "Onbekende Winnaar"; // 
 
+        // VARIABLEN VOOR TIJDENS PAUZE
+        bool zwaartekrachtDisabled = false; 
+        bool pauze = false;
+
         //TODO GAME WINDOW METHODE BESCHIJVEN: BIJVOORBEELD: ZET VERSCHILLENDE (BESCHIJF WELKE) ONDERELEN KLAAR VOOR DE GAME
         public GameWindow()
         {
@@ -81,6 +85,9 @@ namespace Arcade
             interactieMetMuur();
             interactieMetMunt();
             interactieMetDeur();
+
+            //
+            if (zwaartekrachtDisabled) { zwaartekracht = 0; } else { zwaartekrachtDisabled = false; zwaartekracht = 10; }
         }
 
         // TODO ALLE METHODEN BESCHRIJVEN
@@ -385,11 +392,26 @@ namespace Arcade
             {
                 speler2Springt = true; // SPRINGEN AANZETTEN 
             }
-            
-            // KEY VOOR GAMEWINOW SLUITEN
+            //
+
             if (e.Key == Key.Escape)
             {
-                this.Close();
+                zwaartekrachtDisabled = true;
+                speler1NaarLinks = speler1NaarRechts = speler1Springt = false;
+                speler2NaarLinks = speler2NaarRechts = speler2Springt = false;
+
+
+                pauze = true;
+                PauzeMenu pm = new PauzeMenu(this);
+                pm.Visibility = Visibility.Visible;
+                spelTimer.Stop();
+                timer.Stop();
+
+                if (pm.Visibility == Visibility.Visible)
+                {
+                    timer.Start();
+                    spelTimer.Start();
+                }
             }
         }
 
@@ -425,6 +447,23 @@ namespace Arcade
                 speler2Springt = false;  // SPRINGEN UITSCHAKELEN
             }
 
+            // GAME PAUZEREN
+            if (e.Key == Key.Escape)
+            {
+                zwaartekrachtDisabled = false;
+
+                pauze = false;
+                PauzeMenu pm = new PauzeMenu(this);
+
+
+            }
+
+        }
+
+        public void SpeelVerder()
+        {
+            pauze = false;
+            zwaartekrachtDisabled = false;
         }
     }
 }

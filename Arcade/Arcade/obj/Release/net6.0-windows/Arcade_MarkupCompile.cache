@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\App.xaml
-6-347721210
+8117123510
 
-8-1512268096
+10-1541101519
 194-200944676
-credits.xaml;GameWindow.xaml;instellingen.xaml;Leaderboard.xaml;MainWindow.xaml;NamenInvoeren.xaml;
+credits.xaml;GameWindow.xaml;GeluidsInstellingen.xaml;instellingen.xaml;Leaderboard.xaml;MainWindow.xaml;NamenInvoeren.xaml;PauzeMenu.xaml;
 
 True
 

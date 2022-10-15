@@ -13,6 +13,9 @@
     <Compile Update="GameWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GeluidsInstellingen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="instellingen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,12 +25,18 @@
     <Compile Update="NamenInvoeren.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="PauzeMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="credits.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GeluidsInstellingen.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="instellingen.xaml">
@@ -40,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="NamenInvoeren.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PauzeMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

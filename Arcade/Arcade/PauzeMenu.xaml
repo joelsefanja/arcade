@@ -1,0 +1,35 @@
+﻿<Window x:Class="Arcade.PauzeMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Arcade"
+        mc:Ignorable="d"
+     
+        Title="PauzeMenu" Height="450" Width="800" WindowStyle="None" HorizontalAlignment="Center" VerticalAlignment="Center" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <!--Achtergrond van het menu-->
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
+        </Grid.Background>
+
+        <!--De grid voor het hoofdmenu-->
+        <Grid.RowDefinitions>
+            <!--6 rijen voor de layout van de knoppen en het spel-->
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Canvas Focusable="True" x:Name="newcanvas" KeyDown="OnKeyDown" HorizontalAlignment="Center" VerticalAlignment="Center"></Canvas>
+
+        <!--4 Knoppen om te navigeren naar verschillende window's-->
+        <Button x:Name="VerderSpelen" Background="{x:Null}" Grid.Row="1" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="VerderSpelenButtonClick" Content="Verder spelen" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FD511A0E" />
+        <Button x:Name="Herstarten" Background="{x:Null}" Grid.Row="2" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="HerstartenButtonClick" Content="Herstarten" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FD511A0E" />
+        <Button x:Name="Geluid" Background="{x:Null}" Grid.Row="3" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="GeluidButtonClick" Content="Geluid" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FD511A0E" />
+        <Button x:Name="Hoofdmenu"  Grid.Row="4" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="HoofmenuButtonClick" Content="Terug naar het hoofdmenu" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FD511A0E" Background="{x:Null}" />
+    </Grid>
+</Window>
