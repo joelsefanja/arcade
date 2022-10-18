@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Arcade"
         mc:Ignorable="d"
         Title="NamenInvoeren" Height="450" Width="800" WindowState="Maximized">
-    <Grid>
+    <Grid Name="namenGrid" Focusable="true">
         <!--Achtergrond van het menu-->
         <Grid.Background>
             <ImageBrush ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
@@ -16,7 +16,6 @@
         <Grid.RowDefinitions>
             <!--7 rijen voor de layout van de knoppen en het spel-titel-->
             <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -33,24 +32,12 @@
             </Label.Background>
         </Label>
 
-        <!-- Onder titel -> Geef spelernamen op: -->
-        <Label Grid.Row="1"
-               FontFamily="Gill Sans Ultra Bold"
-               FontSize="18"
-               Content="Geef jullie spelernamen op:" 
-               FontWeight="Bold" 
-               HorizontalAlignment="Center" 
-               VerticalAlignment="Center" 
-               Foreground="White" >
-            <Label.Background>
-                <ImageBrush/>
-            </Label.Background>
-        </Label>
+       
 
         <!--Naam invoer voor spelers -->
-        <TextBox x:Name="inputPlayer1" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="Speler 1" VerticalAlignment="Center" Width="160" FontFamily="Gill Sans Ultra Bold" FontSize="14" Foreground="#FF465592" Height="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="inputPlayer2" HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" Text="Speler 2" VerticalAlignment="Center" Width="160" FontFamily="Gill Sans Ultra Bold" FontSize="14" Foreground="#FF465592" Height="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button x:Name="start" Grid.Row="3" Margin="288,66,288,0" Grid.RowSpan="2" Content="Start Spel" VerticalAlignment="Center" Width="160" FontFamily="Gill Sans Ultra Bold" FontSize="14" Foreground="#FF465592" Height="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White" Click="startSpel"></Button>
+        <TextBox x:Name="invoerPlayer1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="Vul speler naam 1 in" VerticalAlignment="Center" Width="400" FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592" Height="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="inputPlayer1_TextChanged" GotFocus="OnFocus1" LostFocus="FocusLostInvoer1"/>
+        <TextBox x:Name="invoerPlayer2" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="Vul speler naam 2 in" VerticalAlignment="Center" Width="400" FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592" Height="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" GotFocus="OnFocus2" LostFocus="FocusLostInvoer2"/>
+        <Button x:Name="start"         HorizontalAlignment="Center" Grid.Row="3"  Content="Start Spel" VerticalAlignment="Center" Width="400" FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592" Height="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White" Click="startSpel"></Button>
         
    
     </Grid>

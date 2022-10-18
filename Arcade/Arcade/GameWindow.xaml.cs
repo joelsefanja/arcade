@@ -169,6 +169,7 @@ namespace Arcade
                     Rect player2hitbox = new Rect(Canvas.GetLeft(Speler2) + 25, Canvas.GetTop(Speler2), Speler2.Width - 30, Speler2.Height); // HITBOX AANMAKEN VOOR SPELER 2
                     Rect eilandhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); // HITBOX AANMAKEN VOOR RECHTHOEKEN MET TAG EILAND
 
+                    
 
                     if (player1hitbox.IntersectsWith(eilandhitbox)) // CONTROLE OF SPELER 1 OP EEN PLATFORM STAAT
                     {
@@ -466,5 +467,7 @@ namespace Arcade
             timer.Start();
             spelTimer.Start();
         }
+
+      
     }
 }
