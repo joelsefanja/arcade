@@ -22,21 +22,15 @@ namespace Arcade
     /// </summary>
     public partial class NamenInvoeren : Window
     {
-        // public DispatcherTimer tekstAnimatieTimer = new DispatcherTimer(); // TIMER VOOR DE ANIMATIE VAN TEXT
-        string spelerNaam1, spelerNaam2;
+        
         public NamenInvoeren()
         {
             InitializeComponent();
-            //namenGrid.Focus();
-            //tekstAnimatieTimer.Tick += tekstAnimatie;
-            //tekstAnimatieTimer.Interval = TimeSpan.FromMilliseconds(50);
-            //tekstAnimatieTimer.Start();
+            namenGrid.Focus();
+            
         }
 
-        public void tekstAnimatie()
-        {
-
-        }
+    
         private void inputPlayer1_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -44,35 +38,48 @@ namespace Arcade
 
         private void OnFocus1(object sender, RoutedEventArgs e)
         {
-            inputPlayer1.Text = "";
+            if (invoerPlayer1.Text == "Vul speler naam 1 in")
+            {
+            invoerPlayer1.Text = "";
+            }
         }
 
         private void OnFocus2(object sender, RoutedEventArgs e)
         {
-            inputPlayer2.Text = "";
+            if (invoerPlayer2.Text == "Vul speler naam 2 in")
+            {
+                invoerPlayer2.Text = "";
+            }
         }
 
         private void FocusLostInvoer1(object sender, RoutedEventArgs e)
         {
-            if (inputPlayer1.Text == "")
+            if (invoerPlayer1.Text == "")
             {
-                inputPlayer1.Text = "Vul speler naam 1 in";
+                invoerPlayer1.Text = "Vul speler naam 1 in";
             }
         }
 
         private void FocusLostInvoer2(object sender, RoutedEventArgs e)
         {
-            if (inputPlayer2.Text == "")
+            if (invoerPlayer2.Text == "")
             {
-                inputPlayer2.Text = "Vul speler naam 2 in";
+                invoerPlayer2.Text = "Vul speler naam 2 in";
             }
         }
 
         private void startSpel(object sender, RoutedEventArgs e)
         {
             // namen opslaan in de GameWindow voor in het level
-            GameWindow.speler1Naam = inputPlayer1.Text;
-            GameWindow.speler2Naam = inputPlayer2.Text;
+            if (invoerPlayer1.Text == "Vul speler naam 1 in")
+            { GameWindow.speler1Naam = "Speler 1"; }
+            else
+            { GameWindow.speler1Naam = invoerPlayer1.Text; }
+
+            if (invoerPlayer2.Text == "Vul speler naam 2 in")
+            { GameWindow.speler2Naam = "Speler 2"; }
+            else
+            { GameWindow.speler2Naam = invoerPlayer2.Text; }
 
             GameWindow gw = new GameWindow();
             gw.Visibility = Visibility.Visible;

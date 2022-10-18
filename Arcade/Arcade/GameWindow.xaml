@@ -220,8 +220,8 @@
             </Rectangle.Fill>
         </Rectangle>
         <!-- Labels voor speler namen -->
-        <Label x:Name="speler1label" Content="speler 1" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="18" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="34" Height="44" Width="158" ForceCursor="False"/>
-        <Label x:Name="speler2label" Content="speler 2" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="724" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="34" Height="44" Width="221" ForceCursor="False"/>
+        <Label x:Name="speler1label" Content="speler 1" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="18" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="34" Height="44" Width="283" ForceCursor="False"/>
+        <Label x:Name="speler2label" Content="speler 2" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="724" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="34" Height="44" Width="248" ForceCursor="False"/>
         <Rectangle x:Name="platform2" Tag="platform"  Width="802" Height="40" Canvas.Top="671" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="588" ForceCursor="False">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -237,8 +237,8 @@
         </Rectangle>
         <!-- Coin code -->
 
-        <Label x:Name="scoreSpeler1Label" Content="Munten" Canvas.Left="179" Canvas.Top="34" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Height="44" Width="323" ForceCursor="False"/>
-        <Label x:Name="scoreSpeler2Label" Content="Munten" Canvas.Left="942" Canvas.Top="34" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Height="44" Width="273" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False"/>
+        <Label x:Name="scoreSpeler1Label" Content="Munten" Canvas.Left="306" Canvas.Top="34" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="44" Width="196" ForceCursor="False"/>
+        <Label x:Name="scoreSpeler2Label" Content="Munten" Canvas.Left="977" Canvas.Top="34" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Height="44" Width="238" HorizontalAlignment="Left" VerticalAlignment="Center" ForceCursor="False"/>
 
 
         <Rectangle x:Name="coin1_Copy" Tag="coin"  Width="23" Height="26" Canvas.Left="714" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
