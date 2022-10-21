@@ -161,12 +161,12 @@
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland28" Tag="eiland"  Width="102" Height="34" Canvas.Left="451" Canvas.Top="299" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle Name="eiland29" Tag="eiland"  Width="102" Height="34" Canvas.Left="451" Canvas.Top="299" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/img/platforms/platform_5.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Name="eiland29" Tag="eiland"  Width="99" Height="34" Canvas.Left="352" Canvas.Top="299" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle Name="eiland28" Tag="eiland"  Width="99" Height="34" Canvas.Left="352" Canvas.Top="299" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
@@ -428,6 +428,11 @@
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="enemy2" Tag="enemy"  Width="50" Height="50" Canvas.Left="995" Canvas.Top="388" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/img/sprites/monster_64px.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Name="enemy3" Tag="enemy"  Width="50" Height="50" Canvas.Left="379" Canvas.Top="252" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="pack://application:,,,/img/sprites/monster_64px.png"/>
             </Rectangle.Fill>
