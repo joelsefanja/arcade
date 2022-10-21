@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -43,7 +44,50 @@ namespace Arcade
         string seconden; // variabel voor de prefix 0 bij de tijd onder 10 seconden.
         string minuten; // variabel voor de prefix 0 bij de minuten onder 60 minuten.
         public static string playerName1, playerName2;
+        bool moveEnemyRightOne = true;
+        bool moveEnemyRightTwo = true;
+        int enemySpeed = 5;
+        
+        private void handleEnemy(Rectangle enemy, Rectangle left, Rectangle right, ref bool moveEnemyRight)
+        {
 
+            if (moveEnemyRight.Equals(true) && Canvas.GetLeft(right) + right.Width > Canvas.GetLeft(right) + enemy.Width)
+            {
+                Canvas.SetLeft(enemy, Canvas.GetLeft(enemy) + enemySpeed);
+                if (Canvas.GetLeft(right) + right.Width <= Canvas.GetLeft(enemy) + enemy.Width)
+                {
+                    moveEnemyRight = false;
+                }
+            }
+
+            if (moveEnemyRight.Equals(false) && Canvas.GetLeft(left) < Canvas.GetLeft(enemy))
+            {
+                Canvas.SetLeft(enemy, Canvas.GetLeft(enemy) - enemySpeed);
+                if (Canvas.GetLeft(left) >= Canvas.GetLeft(enemy))
+                {
+                    moveEnemyRight = true;
+                }
+            }
+        }
+
+
+        private void handlePlayerControl(Rectangle player, bool goRight, bool goLeft, bool jumping)
+        {
+            if (jumping == true && Canvas.GetLeft(player) > 0)
+            {
+                Canvas.SetTop(player, Canvas.GetTop(player) - 20); // speler 1 jumpcode, jank af jumpcode 20 is de snelheid moet wss een timer bij//
+            }
+
+            if (goLeft == true && Canvas.GetLeft(player) > 0) // defineren van de looprichtingen + de zwaartekracht etc//
+            {
+                Canvas.SetLeft(player, Canvas.GetLeft(player) - this.speed);
+            }
+
+            if (goRight == true && Canvas.GetLeft(player) + (player.Width + 15) < Application.Current.MainWindow.Width) //rechts voor speler 2//
+            {
+                Canvas.SetLeft(player, Canvas.GetLeft(player) + this.speed);
+            }
+        }
 
         public GameWindow() // game engine
         {
@@ -64,42 +108,24 @@ namespace Arcade
             spelTimer.Tick += spelersTimer;
             spelTimer.Interval = TimeSpan.FromSeconds(1);
             spelTimer.Start();
-
-        }
+        } 
 
         private void MainTimerEvent(object sender, EventArgs e) //main timer events met de werking van de mechanics van de spelers en hopelijk later de munten en trapdoors later//
         {
             
             Canvas.SetTop(Player, Canvas.GetTop(Player) + dropSpeed);
             Canvas.SetTop(Player2, Canvas.GetTop(Player2) + dropSpeed);
-            if (jumping == true && Canvas.GetLeft(Player) > 0)
-            {
-                Canvas.SetTop(Player, Canvas.GetTop(Player) - 20); // speler 1 jumpcode, jank af jumpcode 20 is de snelheid moet wss een timer bij//
-            }
-            if (jumping2 == true && Canvas.GetLeft(Player2) > 0)
-            {
-                Canvas.SetTop(Player2, Canvas.GetTop(Player2) - 20); // speler2 jumpcode, jank af jumpcode 20 is de snelheid moet wss een timer bij//
-            }
-            if (goLeft2 == true && Canvas.GetLeft(Player2) > 0) // defineren van de looprichtingen + de zwaartekracht etc//
-            {
-                Canvas.SetLeft(Player2, Canvas.GetLeft(Player2) - speed);
-            }
-            if (goLeft == true && Canvas.GetLeft(Player) > 0)
-            {
-                Canvas.SetLeft(Player, Canvas.GetLeft(Player) - speed);
-            }
-            if (goRight2 == true && Canvas.GetLeft(Player2) + (Player2.Width + 15) < Application.Current.MainWindow.Width) //rechts voor speler 2//
-            {
-                Canvas.SetLeft(Player2, Canvas.GetLeft(Player2) + speed);
-            }
-            if (goRight == true && Canvas.GetLeft(Player) + (Player.Width + 15) < Application.Current.MainWindow.Width) //rechts voor speler 1//
-            {
-                Canvas.SetLeft(Player, Canvas.GetLeft(Player) + speed);
-            }
-            if (Canvas.GetTop(Player2) + (Player2.Height * 2) > Application.Current.MainWindow.Height) //respawn voor speler 2//
-            {
-                Canvas.SetTop(Player2, -80);
-            }
+
+            // Handles actions for the players
+            this.handlePlayerControl(Player, goRight, goLeft, jumping);
+            this.handlePlayerControl(Player2, goRight2, goLeft2, jumping2);
+
+            // Handle enemy movement
+            this.handleEnemy(enemy2, eiland11, eiland10, ref moveEnemyRightOne);
+            this.handleEnemy(enemy1, eiland15, eiland16, ref moveEnemyRightTwo);
+
+
+            //enemy shit//
             //physics voor de spelers en colliders met de rectangles//
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
             {
