@@ -38,7 +38,12 @@ namespace Arcade
         int tijdSeconden = 0, tijdMinuten = 0; // SECONDEN & MINUTEN TELLERS VOOR TIJDENS HET SPEL
         string seconden, minuten; // PREFIX VOOR DE TIMER ONDER DE 10 SECONDEN & PREFIX VOOR DE TIMER ONDER DE 60 MINUTEN 
         public static string speler1Naam, speler2Naam; // SPELERS NAMEN; KUNNEN MET EXTERNE .XAML.CS BESTANDEN BENADERD WORDEN
-        string spelerGewonnen = "Onbekende Winnaar"; // 
+        string spelerGewonnen = "Onbekende Winnaar";
+
+        bool moveEnemyRightOne = true;
+        bool moveEnemyRightTwo = true;
+        int enemySpeed = 5;
+
 
         // VARIABLEN VOOR TIJDENS PAUZE
         public static bool zwaartekrachtDisabled = false;
@@ -50,7 +55,7 @@ namespace Arcade
             InitializeComponent();
             newcanvas.Focus(); // FOCUS OP HET SPEL CANVAS ZODAT INGEDRUKTE TOETSEN EN MUISKLIKKEN KUNNEN WORDEN WAARGENOMEN
             updateNames(); // ZET DE INGEVOERDE NAMEN ALS LABELS
-            
+
             // GAME TIMER AANMAKEN EN AANZETTEN
             timer.Tick += GameTimer;
             timer.Interval = TimeSpan.FromMilliseconds(20);
@@ -64,7 +69,7 @@ namespace Arcade
 
             // PLAATS DE SPELERS OP HET ONDERSTE PLATFORM.
             spelersNaarBeginpunt();
-           
+
 
         }
 
@@ -79,12 +84,18 @@ namespace Arcade
             bewegingSpeler1();
             bewegingSpeler2();
 
+            // BEWEGING MONSTERS
+            bewegingMonster(enemy2, eiland11, eiland10, ref moveEnemyRightOne);
+            bewegingMonster(enemy1, eiland15, eiland16, ref moveEnemyRightTwo);
+
             // DEZE METHODEN CONTROLEREN DE INTERACTIE TUSSEN EEN SPELER EN DE VERSCHILLENDE OBSTAKELS
+            interactieMetMonster();
             interactieMetPlatform();
             interactieMetEiland();
             interactieMetMuur();
             interactieMetMunt();
             interactieMetDeur();
+
 
             //
             if (zwaartekrachtDisabled) { zwaartekracht = 0; } else { zwaartekrachtDisabled = false; zwaartekracht = 10; }
@@ -92,12 +103,13 @@ namespace Arcade
 
         // TODO ALLE METHODEN BESCHRIJVEN
         // TODO UNIT TESTING TOEPASSEN
-        public void spelersNaarBeginpunt() 
+        public void spelersNaarBeginpunt()
         {
             Canvas.SetBottom(Speler1, Canvas.GetTop(platform1));
             Canvas.SetBottom(Speler2, Canvas.GetTop(platform2));
         }
-        public void bewegingSpeler1() {
+        public void bewegingSpeler1()
+        {
             // BEWEGINGS MECHANISMEN VOOR SPELER 1
 
             if (speler1NaarLinks == true && Canvas.GetLeft(Speler1) > 0) // BEWEEG NAAR LINKS BEREKENING 
@@ -117,7 +129,7 @@ namespace Arcade
                 Canvas.SetTop(Speler1, Canvas.GetTop(Speler1) - springSnelheid);
             }
         }
-        public void bewegingSpeler2() 
+        public void bewegingSpeler2()
         {
             // BEWEGINGS MECHANISMEN VOOR SPELER 2
             if (speler2NaarLinks == true && Canvas.GetLeft(Speler2) > 0)  // BEWEEG NAAR LINKS BEREKENING 
@@ -135,7 +147,32 @@ namespace Arcade
                 Canvas.SetTop(Speler2, Canvas.GetTop(Speler2) - springSnelheid); // SPRING OMHOOG BEREKENING 
             }
         }
-        public void interactieMetPlatform() 
+
+        private void bewegingMonster(Rectangle enemy, Rectangle left, Rectangle right, ref bool moveEnemyRight)
+        {
+
+            if (moveEnemyRight.Equals(true) && Canvas.GetLeft(right) + right.Width > Canvas.GetLeft(right) + enemy.Width)
+            {
+                Canvas.SetLeft(enemy, Canvas.GetLeft(enemy) + enemySpeed);
+                if (Canvas.GetLeft(right) + right.Width <= Canvas.GetLeft(enemy) + enemy.Width)
+                {
+                    moveEnemyRight = false;
+                }
+            }
+
+            if (moveEnemyRight.Equals(false) && Canvas.GetLeft(left) < Canvas.GetLeft(enemy))
+            {
+                Canvas.SetLeft(enemy, Canvas.GetLeft(enemy) - enemySpeed);
+                if (Canvas.GetLeft(left) >= Canvas.GetLeft(enemy))
+                {
+                    moveEnemyRight = true;
+                }
+            }
+        }
+
+
+
+        public void interactieMetPlatform()
         {
             // NATUURKUNDE VOOR DE SPELERS EN DE INTERACTIE MET OBSTAKELS EN PLATFORMEN
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
@@ -158,20 +195,9 @@ namespace Arcade
                 }
             }
         }
-        public void interactieMetEiland() 
+        public void interactieMetEiland()
         {
             // CONTROLE VAN SPELER 1 EN 2 OF ZE MET EEN ZWEVEND EILAND INTERACTIE HEBBEN.
-            foreach (var x in newcanvas.Children.OfType<Rectangle>())
-            {
-                if ((string)x.Tag == "eiland") // CONTROLEREN VOOR RECHTHOEKEN MET DE TAG EILAND
-                {
-                    Rect player1hitbox = new Rect(Canvas.GetLeft(Speler1) + 5, Canvas.GetTop(Speler1), Speler1.Width - 10, Speler1.Height); // HITBOX AANMAKEN VOOR SPELER 1
-                    Rect player2hitbox = new Rect(Canvas.GetLeft(Speler2) + 25, Canvas.GetTop(Speler2), Speler2.Width - 30, Speler2.Height); // HITBOX AANMAKEN VOOR SPELER 2
-                    Rect eilandhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); // HITBOX AANMAKEN VOOR RECHTHOEKEN MET TAG EILAND
-
-                    
-
-                         // CONTROLE VAN SPELER 1 EN 2 OF ZE MET EEN ZWEVEND EILAND INTERACTIE HEBBEN.
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
             {
                 if ((string)x.Tag == "eiland") // CONTROLEREN VOOR RECHTHOEKEN MET DE TAG EILAND
@@ -205,10 +231,36 @@ namespace Arcade
                 }
             }
         }
+
+        public void interactieMetMonster()
+        {
+            foreach (var x in newcanvas.Children.OfType<Rectangle>())
+            {
+                if ((string)x.Tag == "enemy")
+
+                {
+
+                    Rect player1hitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height);
+                    Rect player2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
+                    Rect monsterhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    
+
+                    if (player1hitbox.IntersectsWith(monsterhitbox))
+                    {
+                        Canvas.SetTop(Speler1, Canvas.GetTop(platform1));
+
+                    }
+                    if (player2hitbox.IntersectsWith(monsterhitbox))
+                    {
+                        
+                        Canvas.SetTop(Speler2, Canvas.GetTop(platform2));
+
+                    }
                 }
             }
-        }
-        public void interactieMetMuur() 
+    }
+
+         public void interactieMetMuur()
         {
             // CONTROLE VAN SPELER 1 EN 2 OF ZE MET EEN MUUR INTERACTIE HEBBEN.
             // TODO WERKEN MET METHODE(CASE) IPV IF ELSE
@@ -251,7 +303,7 @@ namespace Arcade
                 }
             }
         }
-        public void interactieMetMunt() 
+        public void interactieMetMunt()
         {
             // MUNTEN OPPAKKEN SPELERS
             //todo speler 2 munten oppakken.
@@ -281,7 +333,7 @@ namespace Arcade
                 }
             }
         }
-        public void interactieMetDeur() 
+        public void interactieMetDeur()
         {
             // INSTELLEN WELKE SPELER HEEFT GEWONNEN AAN DE HAND VAN DE DEUR//
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
@@ -319,15 +371,16 @@ namespace Arcade
                 }
             }
         }
-        public void zwaartekrachtBerekenenSpelers() {
+        public void zwaartekrachtBerekenenSpelers()
+        {
             Canvas.SetTop(Speler1, Canvas.GetTop(Speler1) + zwaartekracht); // ZWAARTEKRACHT BEREKENING
             Canvas.SetTop(Speler2, Canvas.GetTop(Speler2) + zwaartekracht); // ZWAARTEKRACHT BEREKENING
         }
-     
+
         /// <summary>
         /// updateNames-methode geeft de ingevoerde spelernamen weer op het spelscherm.
         /// </summary>
-        public void updateNames() 
+        public void updateNames()
         {
             speler1label.Content = speler1Naam; // lAAT DE EERSTE SPELERS NAAM ZIEN IN HET EERSTE LABEL
             speler2label.Content = speler2Naam; // lAAT DE TWEEDE SPELERS NAAM ZIEN IN HET TWEEDE LABEL
@@ -339,21 +392,22 @@ namespace Arcade
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void spelersTimer(object sender, EventArgs e) {
+        private void spelersTimer(object sender, EventArgs e)
+        {
             tijdSeconden++;
-            
+
             if (tijdSeconden == 60) // ELKE MINUUT EEN MINUUUT ERBIJ TELLEN
             {
                 tijdMinuten++;
                 tijdSeconden = 0;
             }
-            
+
             // TIJD FORMAT INSTELLEN (MM:SS)
             if (tijdSeconden < 10) // PREFIX BIJ SECONDEN ONDER DE 10 (00, 01, 02 ETC.)
             {
-                 seconden = "0" + tijdSeconden.ToString();
+                seconden = "0" + tijdSeconden.ToString();
             }
-            else { seconden = tijdSeconden.ToString();}
+            else { seconden = tijdSeconden.ToString(); }
             // PREFIX BIJ MINUTEN ONDER DE 60 (00:00, 01:00, 02:00 ETC.)
             if (tijdMinuten < 60)
             {
@@ -363,7 +417,7 @@ namespace Arcade
             {
                 minuten = tijdMinuten.ToString();
             }
-            tijd.Content = "tijd: " + minuten + ":" + seconden; 
+            tijd.Content = "tijd: " + minuten + ":" + seconden;
 
         }
 
@@ -373,7 +427,7 @@ namespace Arcade
             // BEWEGING VOOR SPELER 1 (KEYS: AWSD)
             if (e.Key == Key.A) // BEWEGING NAAR LINKS
             {
-                speler1NaarLinks = true; 
+                speler1NaarLinks = true;
                 // Player2.RenderTransform = new RotateTransform(0, Player.Width / 2, Player.Height / 2); //roteert de speler als de conditie true is//
 
             }
@@ -390,7 +444,7 @@ namespace Arcade
             }
 
             // KEYDOWN VOOR SPELER 2 (KEYS: PIJLTJES-TOETSEN)
-            if (e.Key == Key.Left) 
+            if (e.Key == Key.Left)
             {
                 speler2NaarLinks = true; // BEWEGING NAAR LINKS
                 //Player.RenderTransform = new RotateTransform(0, Player2.Width / 2, Player2.Height / 2); //roteert de speler als de conditie true is//
@@ -401,7 +455,7 @@ namespace Arcade
                 //Player.RenderTransform = new RotateTransform(0, Player2.Width / 2, Player2.Height / 2);
             }
             // TODO SPELER 2 SPRINGANIMATIE / SPRINGEN NA AANTAL SECONDEN UITZETTEN EN PAS AANZETTEN ALS SPELER OP EEN PLATORM STAAT
-            if (e.Key == Key.Up && !speler2Springt) 
+            if (e.Key == Key.Up && !speler2Springt)
             {
                 speler2Springt = true; // SPRINGEN AANZETTEN 
             }
@@ -422,7 +476,7 @@ namespace Arcade
 
                 if (pm.Visibility == Visibility.Visible)
                 {
-                    
+
                 }
             }
         }
@@ -454,7 +508,7 @@ namespace Arcade
             {
                 speler2NaarRechts = false; // BEWEGING NAAR RECHTS UITSCHAKELEN
             }
-            if (speler2Springt) 
+            if (speler2Springt)
             {
                 speler2Springt = false;  // SPRINGEN UITSCHAKELEN
             }
@@ -480,6 +534,6 @@ namespace Arcade
             spelTimer.Start();
         }
 
-      
+
     }
 }

@@ -421,7 +421,17 @@
                 <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-
+        <!--de enemies komen hier onder te staan-->
+        <Rectangle Name="enemy1" Tag="enemy"  Width="50" Height="50" Canvas.Left="700" Canvas.Top="252" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <ImageBrush x:Name="enemy" ImageSource="pack://application:,,,/img/sprites/monster_64px.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Name="enemy2" Tag="enemy"  Width="50" Height="50" Canvas.Left="995" Canvas.Top="388" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/img/sprites/monster_64px.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
 
     </Canvas>
 
