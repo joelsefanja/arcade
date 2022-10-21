@@ -27,7 +27,7 @@ namespace Arcade
     {
         DispatcherTimer timer = new DispatcherTimer();
         DispatcherTimer spelTimer = new DispatcherTimer();
-
+        // commeent
         int speed = 10; //spelersnelheid//
         int dropSpeed = 10; //zwaartekracht//
         bool goLeft, goRight;
