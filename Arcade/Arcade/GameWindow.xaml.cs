@@ -160,7 +160,7 @@ namespace Arcade
         }
         public void interactieMetEiland() 
         {
-            // CONTROLE VAN SPELER 1 EN 2 OF ZE MET EEN ZWEVEND EILAND INTERACTIE HEBBEN.
+                 // CONTROLE VAN SPELER 1 EN 2 OF ZE MET EEN ZWEVEND EILAND INTERACTIE HEBBEN.
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
             {
                 if ((string)x.Tag == "eiland") // CONTROLEREN VOOR RECHTHOEKEN MET DE TAG EILAND
@@ -169,32 +169,31 @@ namespace Arcade
                     Rect player2hitbox = new Rect(Canvas.GetLeft(Speler2) + 25, Canvas.GetTop(Speler2), Speler2.Width - 30, Speler2.Height); // HITBOX AANMAKEN VOOR SPELER 2
                     Rect eilandhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height); // HITBOX AANMAKEN VOOR RECHTHOEKEN MET TAG EILAND
 
-                    
+                    // SPELER 1 HITBOXEN
 
-                    if (player1hitbox.IntersectsWith(eilandhitbox)) // CONTROLE OF SPELER 1 OP EEN PLATFORM STAAT
+                    // EERST WORDT ER GECONTROLEERD OF SPELER 1 ZICH TEGEN DE ONDER KANT VAN EEN EILAND BEVIND
+                    if (eilandhitbox.Bottom >= player1hitbox.Top && eilandhitbox.Bottom < player1hitbox.Bottom && player1hitbox.IntersectsWith(eilandhitbox))
+                    { Canvas.SetTop(Speler1, eilandhitbox.Bottom); } // ALS STATEMENT WAAR IS DAN WORDT SPELER 1 VERPLAATST NAAR DE BODEM VAN HET EILAND
+
+                    // DAARNA WORDT ER GECONTROLEERD OF SPELER 1 INTERACTIE MET HET EILAND HEEFT
+                    else if (player1hitbox.IntersectsWith(eilandhitbox))
                     {
-                        Canvas.SetTop(Speler1, Canvas.GetTop(x) - Speler1.Height); // POSTITIE AANPASSEN VAN SPELER 1 NAAR BOVEN OP HET PLATFORM.
-                    }
-                    if (player2hitbox.IntersectsWith(eilandhitbox)) // CONTROLE OF SPELER 2 OP EEN PLATFORM STAAT
-                    {
-                        Canvas.SetTop(Speler2, Canvas.GetTop(x) - Speler2.Height); // POSTITIE AANPASSEN VAN SPELER 2 NAAR BOVEN OP HET PLATFORM.
+                        Canvas.SetTop(Speler1, Canvas.GetTop(x) - Speler1.Height); // ALS STATEMENT WAAR IS DAN WORDT SPELER 1 VERPLAATST NAAR DE BOVENKANT VAN HET EILAND
                     }
 
-                    // CONTROLE OF SPELER 1 ZICH AAN DE ONDER KANT VAN EEN EILAND BEVIND
-                    if (eilandhitbox.Bottom >= player1hitbox.Top && eilandhitbox.Bottom < player1hitbox.Top && player1hitbox.IntersectsWith(eilandhitbox))
-                    { Canvas.SetTop(Speler1, eilandhitbox.Bottom + Speler1.Height); } // SPELER 1 NAAR DE BODEM VAN HET EILAND VERPLAATSEN 
 
-                    if (player1hitbox.Bottom <= eilandhitbox.Top && player1hitbox.IntersectsWith(eilandhitbox)) // CONTROLEREN OF SPELER 1 HET EILAND RAAKT
-                    { Canvas.SetTop(Speler1, eilandhitbox.Top - Speler1.Height); } // SPELER 1 NAAR DE BOVENKANT VAN HET EILAND VERPLAATSEN
+                    // SPELER 2 HITBOXEN 
 
-                    // CONTROLE OF SPELER 2 ZICH AAN DE ONDER KANT VAN EEN EILAND BEVIND
-                    if (eilandhitbox.Bottom >= player2hitbox.Top && eilandhitbox.Bottom < player2hitbox.Top && player2hitbox.IntersectsWith(eilandhitbox))
-                    { Canvas.SetTop(Speler2, eilandhitbox.Bottom); } // SPELER 2 NAAR DE BODEM VAN HET EILAND VERPLAATSEN 
+                    // EERST WORDT ER GECONTROLEERD OF SPELER 2 ZICH TEGEN DE ONDER KANT VAN EEN EILAND BEVIND
+                    if (eilandhitbox.Bottom >= player2hitbox.Top && eilandhitbox.Bottom < player2hitbox.Bottom && player2hitbox.IntersectsWith(eilandhitbox))
+                    { Canvas.SetTop(Speler2, eilandhitbox.Bottom); } // ALS STATEMENT WAAR IS DAN WORDT SPELER 2 VERPLAATST NAAR DE BODEM VAN HET EILAND
 
-                    if (player2hitbox.Bottom <= eilandhitbox.Top && player2hitbox.IntersectsWith(eilandhitbox)) // CONTROLEREN OF SPELER 2 HET EILAND RAAKT
-                    { Canvas.SetTop(Speler2, eilandhitbox.Top - Speler2.Height); } // SPELER 2 NAAR DE BOVENKANT VAN HET EILAND VERPLAATSEN
+                    // DAARNA WORDT ER GECONTROLEERD OF SPELER 1 INTERACTIE MET HET EILAND HEEFT
+                    else if (player2hitbox.IntersectsWith(eilandhitbox))
+                    { Canvas.SetTop(Speler2, Canvas.GetTop(x) - Speler2.Height); } // ALS STATEMENT WAAR IS DAN WORDT SPELER 2 VERPLAATST NAAR DE BOVENKANT VAN HET EILAND
                 }
             }
+        }
         }
         public void interactieMetMuur() 
         {
