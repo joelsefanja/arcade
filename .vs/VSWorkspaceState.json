@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Arcade"
+    "\\Arcade",
+    "\\Arcade\\Arcade"
   ],
-  "SelectedNode": "\\Arcade\\Arcade.sln",
   "PreviewInSolutionExplorer": false
 }

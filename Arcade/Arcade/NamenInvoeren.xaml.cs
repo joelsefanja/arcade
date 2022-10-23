@@ -81,8 +81,8 @@ namespace Arcade
             else
             { GameWindow.speler2Naam = invoerPlayer2.Text; }
 
-            GameWindow gw = new GameWindow();
-            gw.Visibility = Visibility.Visible;
+            Strip1 S1 = new Strip1();
+            S1.Visibility = Visibility.Visible;
             this.Close();
         }
     }

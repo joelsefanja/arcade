@@ -368,6 +368,9 @@ namespace Arcade
                         timer.Stop();
                         spelTimer.Stop();
 
+                        StripEind SE = new StripEind();
+                        SE.Visibility = Visibility.Visible;
+                        this.Close();
                     }
 
                 }

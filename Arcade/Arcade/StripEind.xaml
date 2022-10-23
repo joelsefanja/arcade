@@ -1,0 +1,18 @@
+﻿<Window x:Class="Arcade.StripEind"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Arcade"
+        mc:Ignorable="d"
+        Title="StripEind" Height="450" Width="800" Focusable="True" WindowState="Maximized" WindowStyle="None">
+
+    <Window.Background>
+        <ImageBrush ImageSource="/img/MangaStrips/Strip eind.png"/>
+    </Window.Background>
+
+    <Grid>
+        <Button x:Name="ScoreBekijken" Click="ScoreBekijkenClick" Height="50" Width="200" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Content="Verder" FontFamily="Gill Sans Ultra Bold" FontSize="25"></Button> 
+    </Grid>
+    
+</Window>
