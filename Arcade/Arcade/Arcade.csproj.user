@@ -28,6 +28,18 @@
     <Compile Update="PauzeMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Scores.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Strip1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Strip2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StripEind.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="credits.xaml">
@@ -52,6 +64,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PauzeMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Scores.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Strip1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Strip2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StripEind.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

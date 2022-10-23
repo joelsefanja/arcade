@@ -1,0 +1,17 @@
+﻿<Window x:Class="Arcade.Strip2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Arcade"
+        mc:Ignorable="d"
+        Title="Strip2" Height="450" Width="800" Focusable="True" WindowState="Maximized" WindowStyle="None">
+   
+    <Window.Background>
+        <ImageBrush ImageSource="/img/MangaStrips/Strip start 2.png"/>
+    </Window.Background>
+
+    <Grid>
+        <Button x:Name="SpelBeginnen"  Height="50" Width="230" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="SpelBeginnenClick" Content="Spel beginnen" FontFamily="Gill Sans Ultra Bold" FontSize="25" Background="#FFFCFCFC" BorderBrush="{x:Null}"></Button> 
+    </Grid>
+</Window>

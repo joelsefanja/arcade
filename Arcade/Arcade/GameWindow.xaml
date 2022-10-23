@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Arcade"
         mc:Ignorable="d"
-        Title="GameWindow" WindowState="Maximized">
+        Title="GameWindow" WindowState="Maximized" WindowStyle="None">
     <Window.Background>
         <ImageBrush ImageSource="/img/backgrounds/background_layered.png"/>
     </Window.Background>
