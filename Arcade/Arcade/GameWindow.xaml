@@ -32,12 +32,12 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/platform_960px.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_960px.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="muur1" Tag="muur"  Width="42" Height="429" Canvas.Left="551" Canvas.Top="170" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False" Panel.ZIndex="1">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/muur_376px.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/walls/muur_376px.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <!--hier beginnen de zwefende platformen-->
@@ -48,175 +48,169 @@
         </Rectangle>
         <Rectangle Name="eiland" Tag="eiland"  Width="99" Height="32" Canvas.Left="593" Canvas.Top="561" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland2" Tag="eiland"  Width="100" Height="32" Canvas.Left="692" Canvas.Top="561" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland3" Tag="eiland"  Width="101" Height="32" Canvas.Left="792" Canvas.Top="561" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland6" Tag="eiland"  Width="100" Height="32" Canvas.Left="1133" Canvas.Top="561" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland7" Tag="eiland"  Width="124" Height="33" Canvas.Left="590" Canvas.Top="435" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland8" Tag="eiland"  Width="99" Height="33" Canvas.Left="942" Canvas.Top="435" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland9" Tag="eiland"  Width="99" Height="33" Canvas.Left="1041" Canvas.Top="435" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland10" Tag="eiland"  Width="100" Height="33" Canvas.Left="1137" Canvas.Top="435" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland11" Tag="eiland"  Width="100" Height="33" Canvas.Left="845" Canvas.Top="435" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland12" Tag="eiland"  Width="98" Height="35" Canvas.Top="561" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="-18" ForceCursor="False" >
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland13" Tag="eiland"  Width="101" Height="33" Canvas.Left="1139" Canvas.Top="352" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland14" Tag="eiland"  Width="100" Height="33" Canvas.Left="1039" Canvas.Top="352" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland15" Tag="eiland"  Width="102" Height="34" Canvas.Left="590" Canvas.Top="299" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland16" Tag="eiland"  Width="98" Height="34" Canvas.Left="692" Canvas.Top="299" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland17" Tag="eiland"  Width="100" Height="32" Canvas.Left="450" Canvas.Top="561" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland18" Tag="eiland"  Width="99" Height="32" Canvas.Left="351" Canvas.Top="561" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland19" Tag="eiland"  Width="101" Height="32" Canvas.Left="255" Canvas.Top="561" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland20" Tag="eiland"  Width="100" Height="32" Canvas.Left="155" Canvas.Top="561" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland22" Tag="eiland"  Width="100" Height="33" Canvas.Left="453" Canvas.Top="435" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland23" Tag="eiland"  Width="101" Height="33" Canvas.Left="255" Canvas.Top="435" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland24" Tag="eiland"  Width="100" Height="33" Canvas.Left="163" Canvas.Top="435" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland25" Tag="eiland"  Width="100" Height="33" Canvas.Top="435" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="79" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland26" Tag="eiland"  Width="99" Height="33" Canvas.Left="-20" Canvas.Top="435" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland29" Tag="eiland"  Width="102" Height="34" Canvas.Left="451" Canvas.Top="299" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush Stretch="UniformToFill" ImageSource="/img/platforms/platform_5.png"/>
+                <ImageBrush Stretch="UniformToFill" ImageSource="pack://application:,,,/img/platforms/platform_5.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland28" Tag="eiland"  Width="99" Height="34" Canvas.Left="352" Canvas.Top="299" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland30" Tag="eiland"  Width="95" Height="33" Canvas.Top="247" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="-19" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland31" Tag="eiland"  Width="98" Height="33" Canvas.Left="60" Canvas.Top="247" ForceCursor="False" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland32" Tag="eiland"  Width="100" Height="33" Canvas.Left="1003" Canvas.Top="219" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush x:Name="roof" ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush x:Name="roof" ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland33" Tag="eiland"  Width="101" Height="33" Canvas.Left="902" Canvas.Top="219" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland34" Tag="eiland"  Width="101" Height="36" Canvas.Left="590" Canvas.Top="170" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland35" Tag="eiland"  Width="98" Height="36" Canvas.Left="691" Canvas.Top="170" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland36" Tag="eiland"  Width="102" Height="36" Canvas.Left="488" Canvas.Top="170" HorizontalAlignment="Left" VerticalAlignment="Center" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <!--RECTANGLES VOOR DE COINS-->
-        <Rectangle Name="coin1" Tag="coin"  Width="20" Height="21" Canvas.Left="481" Canvas.Top="394" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
-            <Rectangle.Fill>
-                <ImageBrush x:Name="coin" ImageSource="pack://application:,,,/img/coins/coin1.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <!-- Game timer -->
         <Label x:Name="tijd" Content="Tijd: 00:00" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="490" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="34" Height="44" Width="254" ForceCursor="False"/>
         <Rectangle x:Name="eiland6_Copy" Tag="eiland"  Width="99" Height="32" Canvas.Left="1041" Canvas.Top="561" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/img/platforms/platform_5.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <!-- Labels voor speler namen -->
@@ -232,7 +226,8 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/platform_960px.png" Stretch="UniformToFill"/>
+
+                <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_960px.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <!-- Coin code -->
@@ -240,10 +235,16 @@
         <Label x:Name="scoreSpeler1Label" Content="Munten" Canvas.Left="306" Canvas.Top="34" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="44" Width="196" ForceCursor="False"/>
         <Label x:Name="scoreSpeler2Label" Content="Munten" Canvas.Left="977" Canvas.Top="34" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Height="44" Width="238" HorizontalAlignment="Left" VerticalAlignment="Center" ForceCursor="False"/>
 
-
-        <Rectangle x:Name="coin1_Copy" Tag="coin"  Width="23" Height="26" Canvas.Left="714" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <!--RECTANGLES VOOR DE COINS-->
+        <Rectangle Name="coin1" Tag="coin"  Width="26" Height="26" Canvas.Left="524" Canvas.Top="368" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
-                <ImageBrush x:Name="coin2" ImageSource="/img/coins/coin1.png"/>
+                <ImageBrush x:Name="coin" ImageSource="pack://application:,,,/img/coins/coin1.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle x:Name="coin1_Copy" Tag="coin"  Width="23" Height="26" Canvas.Left="652" Canvas.Top="264" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+            <Rectangle.Fill>
+                <ImageBrush x:Name="coin2" ImageSource="pack://application:,,,/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle x:Name="coin1_Copy1" Tag="coin"  Width="25" Height="26" Canvas.Left="66" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
@@ -251,52 +252,52 @@
                 <ImageBrush x:Name="coin3" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="coin1_Copy2" Tag="coin"  Width="25" Height="26" Canvas.Left="680" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="coin1_Copy2" Tag="coin"  Width="26" Height="26" Canvas.Left="604" Canvas.Top="368" HorizontalAlignment="Center" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush x:Name="coin4" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="coin1_Copy3" Tag="coin"  Width="26" Height="26" Canvas.Left="642" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="coin1_Copy3" Tag="coin"  Width="26" Height="26" Canvas.Left="560" Canvas.Top="78" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush x:Name="coin5" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="coin1_Copy4" Tag="coin"  Width="24" Height="26" Canvas.Left="105" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="coin1_Copy4" Tag="coin"  Width="24" Height="26" Canvas.Left="512" Canvas.Top="254" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush x:Name="coin6" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="coin1_Copy5" Tag="coin"  Width="25" Height="26" Canvas.Left="150" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="coin1_Copy5" Tag="coin"  Width="25" Height="26" Canvas.Left="16" Canvas.Top="210" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush x:Name="coin7" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="coin1_Copy6" Tag="coin"  Width="24" Height="23" Canvas.Left="188" Canvas.Top="641" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="coin1_Copy6" Tag="coin"  Width="24" Height="23" Canvas.Left="255" Canvas.Top="473" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush x:Name="coin8" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="coin1_Copy7" Tag="coin"  Width="27" Height="23" Canvas.Left="217" Canvas.Top="641" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="coin1_Copy7" Tag="coin"  Width="27" Height="24" Canvas.Left="18" Canvas.Top="510" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush x:Name="coin9" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="coin1_Copy8" Tag="coin"  Width="27" Height="23" Canvas.Left="250" Canvas.Top="641" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="coin1_Copy8" Tag="coin"  Width="26" Height="23" Canvas.Left="440" Canvas.Top="637" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush x:Name="coin10" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="coin1_Copy9" Tag="coin"  Width="24" Height="26" Canvas.Left="909" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="coin1_Copy9" Tag="coin"  Width="24" Height="26" Canvas.Left="282" Canvas.Top="91" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush x:Name="coin11" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="coin1_Copy10" Tag="coin"  Width="25" Height="26" Canvas.Left="942" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="coin1_Copy10" Tag="coin"  Width="25" Height="26" Canvas.Left="921" Canvas.Top="257" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush x:Name="coin12" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="coin1_Copy11" Tag="coin"  Width="24" Height="26" Canvas.Left="971" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="coin1_Copy11" Tag="coin"  Width="24" Height="26" Canvas.Left="1039" Canvas.Top="391" HorizontalAlignment="Left" VerticalAlignment="Center" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush x:Name="coin13" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
@@ -306,14 +307,9 @@
                 <ImageBrush x:Name="coin14" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="coin1_Copy13" Tag="coin"  Width="23" Height="27" Canvas.Left="839" Canvas.Top="520" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="coin1_Copy13" Tag="coin"  Width="23" Height="27" Canvas.Left="700" Canvas.Top="637" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush x:Name="coin15" ImageSource="/img/coins/coin1.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="coin1_Copy14" Tag="coin"  Width="25" Height="23" Canvas.Left="1171" Canvas.Top="307" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
-            <Rectangle.Fill>
-                <ImageBrush x:Name="coin16" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle x:Name="coin1_Copy15" Tag="coin"  Width="24" Height="23" Canvas.Left="1147" Canvas.Top="307" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
@@ -321,7 +317,7 @@
                 <ImageBrush x:Name="coin17" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="coin1_Copy16" Tag="coin"  Width="25" Height="23" Canvas.Left="1117" Canvas.Top="307" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="coin1_Copy16" Tag="coin"  Width="25" Height="23" Canvas.Left="1146" Canvas.Top="141" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush x:Name="coin18" ImageSource="/img/coins/coin1.png"/>
             </Rectangle.Fill>
@@ -427,7 +423,7 @@
                 <ImageBrush x:Name="enemy" ImageSource="pack://application:,,,/img/sprites/monster_64px.png"/>
             </Rectangle.Fill>
         </Rectangle>
-       
+
         <Rectangle Name="enemy2" Tag="enemy"  Width="50" Height="50" Canvas.Left="379" Canvas.Top="252" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="pack://application:,,,/img/sprites/monster_64px.png"/>

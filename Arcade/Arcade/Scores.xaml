@@ -8,11 +8,11 @@
         Title="Scores" Height="450" Width="800" Focusable="True" WindowState="Maximized" WindowStyle="None">
     
     <Window.Background>
-        <ImageBrush ImageSource="pack://application:,,,/img/MangaStrips/Strip Scores.png"/>
+        <ImageBrush ImageSource="pack://application:,,,/img/MangaStrips/StripScores.png"/>
     </Window.Background>
     
     <Grid>
-        <Label x:Name="Tijd" Content="Tijd: 00:00" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Margin="50" VerticalAlignment="Top" HorizontalAlignment="Center" />
+        <Label x:Name="Tijd" Content="Gezamelijke tijd: 00:00" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Margin="50" VerticalAlignment="Top" HorizontalAlignment="Center" />
         <Label x:Name="ScoreSpeler1" Content="Munten (naam speler 1)" FontSize="20" FontFamily="Gill Sans Ultra Bold" Foreground="White"  Margin="50,100"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Label x:Name="ScoreSpeler2" Content="Munten (naam speler 2)" FontSize="20" FontFamily="Gill Sans Ultra Bold" Foreground="White"  Margin="50,100"  VerticalAlignment="Top" HorizontalAlignment="right"/>
         <Button x:Name="TerugHoofdMenu" Click="TerugHoofdMenuClick" Height="50" Width="200" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" Content="Hoofdmenu" FontFamily="Gill Sans Ultra Bold" FontSize="25"></Button>

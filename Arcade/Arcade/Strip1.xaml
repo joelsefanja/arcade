@@ -8,7 +8,7 @@
         Title="Strip1" Height="450" Width="800" Focusable="True" WindowState="Maximized" WindowStyle="None">
    
     <Window.Background>
-        <ImageBrush ImageSource="/img/MangaStrips/Strip start 1.png"/>
+        <ImageBrush ImageSource="pack://application:,,,/img/MangaStrips/StripStart1.png" />
     </Window.Background>
     <Grid>
         <Button x:Name="VerderButton"  Click="VerderClick" Height="50" Width="200" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20"  Content="Verder" FontFamily="Gill Sans Ultra Bold" FontSize="25" Background="#FFF3F1F1" BorderBrush="{x:Null}"></Button>

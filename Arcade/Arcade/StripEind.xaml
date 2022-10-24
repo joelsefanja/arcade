@@ -8,7 +8,7 @@
         Title="StripEind" Height="450" Width="800" Focusable="True" WindowState="Maximized" WindowStyle="None">
 
     <Window.Background>
-        <ImageBrush ImageSource="/img/MangaStrips/Strip eind.png"/>
+        <ImageBrush ImageSource="pack://application:,,,/img/MangaStrips/Stripeind.png"/>
     </Window.Background>
 
     <Grid>

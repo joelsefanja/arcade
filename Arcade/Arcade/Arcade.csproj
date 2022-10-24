@@ -21,6 +21,10 @@
     <None Remove="img\MangaStrips\Strip eind.png" />
     <None Remove="img\MangaStrips\Strip start 1.png" />
     <None Remove="img\MangaStrips\Strip start 2.png" />
+    <None Remove="img\MangaStrips\Stripeind.png" />
+    <None Remove="img\MangaStrips\StripScores.png" />
+    <None Remove="img\MangaStrips\StripStart1.png" />
+    <None Remove="img\MangaStrips\StripStart2.png" />
     <None Remove="img\monster_64px.png" />
     <None Remove="img\platforms\FLOOR2.png" />
     <None Remove="img\platforms\Floortile1.png" />
@@ -47,9 +51,10 @@
     <Resource Include="img\doors\DeurDicht.png" />
     <Resource Include="img\doors\DeurOpen.png" />
     <Resource Include="img\doors\DeurOpening.png" />
-    <Resource Include="img\MangaStrips\Strip eind.png" />
-    <Resource Include="img\MangaStrips\Strip start 1.png" />
-    <Resource Include="img\MangaStrips\Strip start 2.png" />
+    <Resource Include="img\MangaStrips\Stripeind.png" />
+    <Resource Include="img\MangaStrips\StripScores.png" />
+    <Resource Include="img\MangaStrips\StripStart1.png" />
+    <Resource Include="img\MangaStrips\StripStart2.png" />
     <Resource Include="img\platforms\FLOOR2.png" />
     <Resource Include="img\platforms\Floortile1.png" />
     <Resource Include="img\platforms\helling.png" />
@@ -66,9 +71,9 @@
   <ItemGroup>
     <Resource Include="img\sprites\monster_64px.png" />
     <Resource Include="img\walls\wall-tile1.png" />
-    <Resource Include="muur_376px.png" />
-    <Resource Include="platform_410px.png" />
-    <Resource Include="platform_960px.png" />
+    <Resource Include="img\walls\muur_376px.png" />
+    <Resource Include="img\platforms\platform_410px.png" />
+    <Resource Include="img\platforms\platform_960px.png" />
   </ItemGroup>
 
 </Project>

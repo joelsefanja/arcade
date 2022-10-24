@@ -8,7 +8,7 @@
         Title="Strip2" Height="450" Width="800" Focusable="True" WindowState="Maximized" WindowStyle="None">
    
     <Window.Background>
-        <ImageBrush ImageSource="/img/MangaStrips/Strip start 2.png"/>
+        <ImageBrush ImageSource="pack://application:,,,/img/MangaStrips/StripStart2.png"/>
     </Window.Background>
 
     <Grid>
