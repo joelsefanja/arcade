@@ -76,3 +76,11 @@ C:\Users\yvonn\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-wi
 C:\Users\yvonn\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\StripEind.baml
 C:\Users\yvonn\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Scores.g.cs
 C:\Users\yvonn\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Scores.baml
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Scores.g.cs
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Strip1.g.cs
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Strip2.g.cs
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\StripEind.g.cs
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Scores.baml
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Strip1.baml
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Strip2.baml
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\StripEind.baml

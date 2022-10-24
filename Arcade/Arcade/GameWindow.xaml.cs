@@ -42,7 +42,6 @@ namespace Arcade
 
         bool moveEnemyRightOne = true;
         bool moveEnemyRightTwo = true;
-        bool moveEnemyRightThree = true;
         int enemySpeed = 5;
 
 
@@ -86,9 +85,8 @@ namespace Arcade
             bewegingSpeler2();
 
             // BEWEGING MONSTERS
-            bewegingMonster(enemy2, eiland11, eiland10, ref moveEnemyRightOne);
-            bewegingMonster(enemy1, eiland15, eiland16, ref moveEnemyRightTwo);
-            bewegingMonster(enemy3, eiland28, eiland29, ref moveEnemyRightThree);
+            bewegingMonster(enemy1, eiland15, eiland16, ref moveEnemyRightOne);
+            bewegingMonster(enemy2, eiland28, eiland29, ref moveEnemyRightTwo);
 
             // DEZE METHODEN CONTROLEREN DE INTERACTIE TUSSEN EEN SPELER EN DE VERSCHILLENDE OBSTAKELS
             interactieMetMonster();
@@ -478,11 +476,6 @@ namespace Arcade
                 pm.Visibility = Visibility.Visible;
                 spelTimer.Stop();
                 timer.Stop();
-
-                if (pm.Visibility == Visibility.Visible)
-                {
-
-                }
             }
         }
 

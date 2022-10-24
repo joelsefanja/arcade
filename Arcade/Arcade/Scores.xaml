@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Arcade"
         mc:Ignorable="d"
         Title="Scores" Height="450" Width="800" Focusable="True" WindowState="Maximized" WindowStyle="None">
-    <Grid>
+    <Grid KeyDown="OnKeyDown">
         
     </Grid>
 </Window>
