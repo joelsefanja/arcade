@@ -15,8 +15,7 @@
 
         <!--De grid voor het hoofdmenu-->
         <Grid.RowDefinitions>
-            <!--6 rijen voor de layout van de knoppen en het spel-->
-            <RowDefinition></RowDefinition>
+            <!--5 rijen voor de layout van de knoppen en het spel-->
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -27,9 +26,8 @@
         <Canvas Focusable="True" x:Name="newcanvas" KeyDown="OnKeyDown" HorizontalAlignment="Center" VerticalAlignment="Center"></Canvas>
 
         <!--4 Knoppen om te navigeren naar verschillende window's-->
-        <Button x:Name="VerderSpelen" Background="{x:Null}" Grid.Row="1" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="VerderSpelenButtonClick" Content="Verder spelen" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FD511A0E" />
-        <Button x:Name="Herstarten" Background="{x:Null}" Grid.Row="2" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="HerstartenButtonClick" Content="Herstarten" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FD511A0E" />
-        <Button x:Name="Geluid" Background="{x:Null}" Grid.Row="3" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="GeluidButtonClick" Content="Geluid" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FD511A0E" />
-        <Button x:Name="Hoofdmenu"  Grid.Row="4" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="HoofmenuButtonClick" Content="Terug naar het hoofdmenu" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FD511A0E" Background="{x:Null}" />
+        <Button x:Name="VerderSpelen" Background="{x:Null}" Grid.Row="1" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="VerderSpelenButtonClick" Content="Verder spelen" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="White" />
+        <Button x:Name="Herstarten" Background="{x:Null}" Grid.Row="2" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="HerstartenButtonClick" Content="Herstarten" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="White" />
+        <Button x:Name="Hoofdmenu"  Grid.Row="3" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="HoofmenuButtonClick" Content="Terug naar het hoofdmenu" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="White"  Background="{x:Null}" />
     </Grid>
 </Window>

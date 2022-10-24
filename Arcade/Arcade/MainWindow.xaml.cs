@@ -41,13 +41,6 @@ namespace Arcade
 
         }
 
-        private void SettingsButtonClick(object sender, RoutedEventArgs e)
-        {
-            instellingen inst = new instellingen();
-            inst.Visibility = Visibility.Visible;
-            this.Close();
-        }
-
         private void CreditsButtonClick(object sender, RoutedEventArgs e)
         {
             credits cr = new credits();

@@ -24,5 +24,11 @@ namespace Arcade
             InitializeComponent();
         }
 
+        private void TerugHoofdMenuClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow MW = new MainWindow();
+            MW.Visibility = Visibility.Visible;
+        }
     }
 }
