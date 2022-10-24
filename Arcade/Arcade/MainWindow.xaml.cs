@@ -23,6 +23,7 @@ namespace Arcade
         public MainWindow()
         {
             InitializeComponent();
+            
         }
         private void StartButtonClick(object sender, RoutedEventArgs e)
         {

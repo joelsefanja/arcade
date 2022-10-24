@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:Arcade"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="manga-font" TargetType="Label">
+            <Setter Property="FontFamily" Value="pack://application:,,,/fonts/anime/ace.bold.ttf #manga"/>
+        </Style>
     </Application.Resources>
 </Application>

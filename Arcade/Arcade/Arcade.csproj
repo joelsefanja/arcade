@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="fonts\anime-ace.bold.ttf" />
+    <None Remove="fonts\anime-ace.italic.ttf" />
+    <None Remove="fonts\anime-ace.regular.ttf" />
     <None Remove="img\backgrounds\background_layered.png" />
     <None Remove="img\backgrounds\background_layer_1.png" />
     <None Remove="img\backgrounds\background_layer_2.png" />
@@ -43,6 +46,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="fonts\anime-ace.bold.ttf" />
+    <Resource Include="fonts\anime-ace.italic.ttf" />
+    <Resource Include="fonts\anime-ace.regular.ttf" />
     <Resource Include="img\backgrounds\background_layered.png" />
     <Resource Include="img\backgrounds\background_layer_1.png" />
     <Resource Include="img\backgrounds\background_layer_2.png" />

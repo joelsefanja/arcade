@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:Arcade"
         mc:Ignorable="d"
         Title="MainWindow" Width="1920" Height="1080" WindowState="Maximized" WindowStyle="None">
+    
+    <Window.Resources>
+      
+    </Window.Resources>
+    
     <Grid>
         <!--Achtergrond van het menu-->
         <Grid.Background>
@@ -25,19 +30,18 @@
 
         <!-- Puzzle Platform titel -->
         <Label Grid.Row="0"
-               FontFamily="Gill Sans Ultra Bold"
                FontSize="36"
-               Content="Feest In Het Bos" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
+               Content="Feest In Het Bos" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" FontFamily="Anime Ace" >
             <Label.Background>
                 <ImageBrush/>
             </Label.Background>
         </Label>
 
         <!--5 Knoppen om te navigeren naar verschillende window's-->
-        <Button x:Name="Start" Grid.Row="1" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Click="StartButtonClick" Content="Start" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592"></Button>
-        <Button x:Name="Leaderbord" Grid.Row="2" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Content="Scorebord" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592" Click="LeaderBoardButtonClick"/>
-        <Button x:Name="Credits" Grid.Row="3" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Click="CreditsButtonClick" Content="Credits" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592"></Button>
-        <Button x:Name="Quit" Grid.Row="4" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Click="QuitButtonClick" Content="Afsluiten" FontWeight="Bold"  FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="#FF465592"></Button>
+        <Button x:Name="Start" Grid.Row="1" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Click="StartButtonClick" Content="Start" FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="#FF465592"></Button>
+        <Button x:Name="Leaderbord" Grid.Row="2" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Content="Scorebord" FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="#FF465592" Click="LeaderBoardButtonClick"/>
+        <Button x:Name="Credits" Grid.Row="3" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Click="CreditsButtonClick" Content="Credits" FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="#FF465592"></Button>
+        <Button x:Name="Quit" Grid.Row="4" MaxWidth="190" MaxHeight="45" BorderBrush="{x:Null}" Background="White" Click="QuitButtonClick" Content="Afsluiten" FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="#FF465592"></Button>
 
     </Grid>
 </Window>

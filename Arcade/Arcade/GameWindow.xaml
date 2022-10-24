@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Arcade"
         mc:Ignorable="d"
         Title="GameWindow" WindowState="Maximized" WindowStyle="None">
+    
     <Window.Background>
         <ImageBrush ImageSource="/img/backgrounds/background_layered.png"/>
     </Window.Background>
@@ -207,15 +208,15 @@
             </Rectangle.Fill>
         </Rectangle>
         <!-- Game timer -->
-        <Label x:Name="tijd" Content="Tijd: 00:00" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="490" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="34" Height="44" Width="254" ForceCursor="False"/>
+        <Label x:Name="tijd" Content="Tijd: 00:00" FontSize="25" FontFamily="Anime Ace" Foreground="White" Canvas.Left="490" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="34" Height="44" Width="254" ForceCursor="False"/>
         <Rectangle x:Name="eiland6_Copy" Tag="eiland"  Width="99" Height="32" Canvas.Left="1041" Canvas.Top="561" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_5.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <!-- Labels voor speler namen -->
-        <Label x:Name="speler1label" Content="speler 1" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="18" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="34" Height="44" Width="283" ForceCursor="False"/>
-        <Label x:Name="speler2label" Content="speler 2" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Canvas.Left="724" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="34" Height="44" Width="248" ForceCursor="False"/>
+        <Label x:Name="speler1label" Content="speler 1" FontSize="25" FontFamily="Anime Ace" Foreground="White" Canvas.Left="18" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="34" Height="44" Width="283" ForceCursor="False"/>
+        <Label x:Name="speler2label" Content="speler 2" FontSize="25" FontFamily="Anime Ace" Foreground="White" Canvas.Left="724" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Canvas.Top="34" Height="44" Width="248" ForceCursor="False"/>
         <Rectangle x:Name="platform2" Tag="platform"  Width="802" Height="40" Canvas.Top="671" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="588" ForceCursor="False">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -226,14 +227,13 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
             <Rectangle.Fill>
-
                 <ImageBrush ImageSource="pack://application:,,,/img/platforms/platform_960px.png" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <!-- Coin code -->
 
-        <Label x:Name="scoreSpeler1Label" Content="Munten" Canvas.Left="306" Canvas.Top="34" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="44" Width="196" ForceCursor="False"/>
-        <Label x:Name="scoreSpeler2Label" Content="Munten" Canvas.Left="977" Canvas.Top="34" FontSize="25" FontFamily="Gill Sans Ultra Bold" Foreground="White" Height="44" Width="238" HorizontalAlignment="Left" VerticalAlignment="Center" ForceCursor="False"/>
+        <Label x:Name="scoreSpeler1Label" Content="Munten" Canvas.Left="306" Canvas.Top="34" FontSize="25" FontFamily="Anime Ace" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="44" Width="196" ForceCursor="False"/>
+        <Label x:Name="scoreSpeler2Label" Content="Munten" Canvas.Left="977" Canvas.Top="34" FontSize="25" FontFamily="Anime Ace" Foreground="White" Height="44" Width="238" HorizontalAlignment="Left" VerticalAlignment="Center" ForceCursor="False"/>
 
         <!--RECTANGLES VOOR DE COINS-->
         <Rectangle Name="coin1" Tag="coin"  Width="26" Height="26" Canvas.Left="524" Canvas.Top="368" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">

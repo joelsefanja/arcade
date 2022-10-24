@@ -12,7 +12,7 @@
     </Window.Background>
 
     <Grid>
-        <Button x:Name="ScoreBekijken" Click="ScoreBekijkenClick" Height="50" Width="200" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Content="Verder" FontFamily="Gill Sans Ultra Bold" FontSize="25"></Button> 
+        <Button x:Name="ScoreBekijken" Click="ScoreBekijkenClick" Height="50" Width="200" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Content="Verder" FontFamily="Anime Ace" FontSize="25"></Button> 
     </Grid>
     
 </Window>

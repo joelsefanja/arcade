@@ -25,7 +25,7 @@
 
                 <!-- Scoreboard titel -->
                 <Label Grid.Row="0"
-               FontFamily="Gill Sans Ultra Bold"
+               FontFamily="Anime Ace"
                FontSize="36"
                Content="Scoreboard" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
                 </Label>

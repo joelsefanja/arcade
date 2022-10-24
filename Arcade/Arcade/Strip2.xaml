@@ -12,6 +12,6 @@
     </Window.Background>
 
     <Grid>
-        <Button x:Name="SpelBeginnen"  Height="50" Width="230" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="SpelBeginnenClick" Content="Spel beginnen" FontFamily="Gill Sans Ultra Bold" FontSize="25" Background="#FFFCFCFC" BorderBrush="{x:Null}"></Button> 
+        <Button x:Name="SpelBeginnen"  Height="50" Width="230" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="SpelBeginnenClick" Content="Spel beginnen" FontFamily="Anime Ace" FontSize="25" Background="#FFFCFCFC" BorderBrush="{x:Null}"></Button> 
     </Grid>
 </Window>

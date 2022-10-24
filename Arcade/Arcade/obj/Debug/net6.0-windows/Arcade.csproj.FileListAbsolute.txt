@@ -76,3 +76,4 @@ C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-wi
 C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Strip1.baml
 C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Strip2.baml
 C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\StripEind.baml
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\App.baml
