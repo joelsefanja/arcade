@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Arcade"
         mc:Ignorable="d"
-        Title="credits" Height="450" Width="800">
+        Title="credits" Width="1920" Height="1080" ShowInTaskbar="False" WindowState="Maximized" WindowStyle="None" Focusable="True">
     <Grid>
 
         <!--Achtergrond van het menu-->
@@ -15,10 +15,14 @@
 
         <!--De grid voor het hoofdmenu-->
         <Grid.RowDefinitions>
-            <!--7 rijen voor de layout van de knoppen en het spel-titel-->
+            <!--8 rijen voor de layout-->
             <RowDefinition Height="200"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
             <RowDefinition></RowDefinition>
 
         </Grid.RowDefinitions>
@@ -30,5 +34,35 @@
                Content="Credits" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
         </Label>
 
+        <Label Grid.Row="1"
+               FontFamily="Gill Sans Ultra Bold"
+               FontSize="15"
+               Content="Pixel characters door:" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
+        </Label>
+
+        <Label Grid.Row="2"
+               FontFamily="Gill Sans Ultra Bold"
+               FontSize="25"
+               Content="Melissa Wijngaarden" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
+        </Label>
+
+        <Label Grid.Row="3"
+               FontFamily="Gill Sans Ultra Bold"
+               FontSize="15"
+               Content="Manga characters door:" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
+        </Label>
+
+        <Label Grid.Row="4"
+               FontFamily="Gill Sans Ultra Bold"
+               FontSize="25"
+               Content="kidznon" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
+        </Label>
+        <Label Grid.Row="5"
+               FontFamily="Gill Sans Ultra Bold"
+               FontSize="20"
+               Content="https://www.fiverr.com/kidznon" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
+        </Label>
+
+        <Button x:Name="TerugMenu"  Grid.Row="6" MaxWidth="350" MaxHeight="40" BorderBrush="{x:Null}" Click="TerugHoofmenuButtonClick" Content="Naar hoofdmenu" FontWeight="Bold" HorizontalAlignment="Right" FontFamily="Gill Sans Ultra Bold" FontSize="20" Foreground="Black" Background="White" />
     </Grid>
 </Window>

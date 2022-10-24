@@ -41,9 +41,9 @@
             </Rectangle.Fill>
         </Rectangle>
         <!--hier beginnen de zwefende platformen-->
-        <Rectangle Name="deur" Tag="deur" Width="34" Height="62" Canvas.Left="556" Canvas.Top="108" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False" Panel.ZIndex="-1">
+        <Rectangle Name="deur" Tag="deur" Width="34" Height="62" Canvas.Left="556" Canvas.Top="110" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False" Panel.ZIndex="-1">
             <Rectangle.Fill>
-                <ImageBrush x:Name="door" ImageSource="pack://application:,,,/img/doors/deur1.jpg"/>
+                <ImageBrush x:Name="door" ImageSource="pack://application:,,,/img/doors/DeurDicht.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle Name="eiland" Tag="eiland"  Width="99" Height="32" Canvas.Left="593" Canvas.Top="561" HorizontalAlignment="Left" VerticalAlignment="Top" ForceCursor="False">

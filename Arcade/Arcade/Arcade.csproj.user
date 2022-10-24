@@ -13,12 +13,6 @@
     <Compile Update="GameWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="GeluidsInstellingen.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="instellingen.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Leaderboard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,12 +40,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="GeluidsInstellingen.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="instellingen.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Leaderboard.xaml">

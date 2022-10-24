@@ -57,14 +57,6 @@ namespace Arcade
             MW.Close();
         }
 
-        private void GeluidButtonClick(object sender, RoutedEventArgs e)
-        {
-
-            GeluidsInstellingen Geluid = new GeluidsInstellingen();
-            Geluid.Visibility = Visibility.Visible;
-            Geluid.Show();
-        }
-
         private void HoofmenuButtonClick(object sender, RoutedEventArgs e)
         {
             this.Close();
