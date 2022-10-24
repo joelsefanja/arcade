@@ -45,15 +45,11 @@ C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-wi
 C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Leaderboard.g.cs
 C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Leaderboard.baml
 C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\credits.g.cs
-C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\instellingen.g.cs
 C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\credits.baml
-C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\instellingen.baml
 C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\NamenInvoeren.g.cs
 C:\Users\joels\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\NamenInvoeren.baml
-C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\GeluidsInstellingen.g.cs
 C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\PauzeMenu.g.cs
 C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\PauzeMenu.baml
-C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\GeluidsInstellingen.baml
 C:\Users\yvonn\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\GameWindow.g.cs
 C:\Users\yvonn\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Leaderboard.g.cs
 C:\Users\yvonn\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\NamenInvoeren.g.cs

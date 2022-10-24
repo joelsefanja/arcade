@@ -22,6 +22,7 @@ namespace Arcade
         public Scores()
         {
             InitializeComponent();
+            this.Focus();
         }
 
         private void TerugHoofdMenuClick(object sender, RoutedEventArgs e)

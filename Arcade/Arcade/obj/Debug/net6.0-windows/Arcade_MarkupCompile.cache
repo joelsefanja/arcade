@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\yvonn\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\
-Arcade
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\
+Arcade_udvtjtap_wpftmp
 none
 false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\yvonn\Source\Repos\joelsefanja\arcade\Arcade\Arcade\App.xaml
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\App.xaml
 10-1829488265
 
-121918328497
-194618410957
+23-2050523826
+388-401889352
 credits.xaml;GameWindow.xaml;Leaderboard.xaml;MainWindow.xaml;NamenInvoeren.xaml;PauzeMenu.xaml;Scores.xaml;Strip1.xaml;Strip2.xaml;StripEind.xaml;
 
-False
+True
 
