@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\harry\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Release\net6.0-windows\
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Release\net6.0-windows\
 Arcade
 none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
-C:\Users\harry\Source\Repos\joelsefanja\arcade\Arcade\Arcade\App.xaml
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\App.xaml
 10-1829488265
 
 121918328497
-194-1103864946
+194618410957
 credits.xaml;GameWindow.xaml;Leaderboard.xaml;MainWindow.xaml;NamenInvoeren.xaml;PauzeMenu.xaml;Scores.xaml;Strip1.xaml;Strip2.xaml;StripEind.xaml;
 
 True

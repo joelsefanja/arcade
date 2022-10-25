@@ -427,11 +427,16 @@
         </Rectangle>
         
         <!-- Sleutel om op te pakken -->
-        <Rectangle x:Name="Sleutel1" Tag="Sleutel" Width="20" Height="40" Canvas.Left="628" Canvas.Top="249" HorizontalAlignment="Center" VerticalAlignment="Top" ForceCursor="False">
+        <Rectangle x:Name="Sleutel1" Tag="Sleutel" Width="20" Height="40" Canvas.Left="628" Canvas.Top="249" HorizontalAlignment="Center" VerticalAlignment="Top" ForceCursor="False" Panel.ZIndex="-6">
             <Rectangle.Fill>
 
                 <ImageBrush ImageSource="pack://application:,,,/img/sleutels/sleutel.png" Stretch="UniformToFill" />
 
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="deurOpen" Tag="deur" Width="34" Height="62" Canvas.Left="556" Canvas.Top="110" ForceCursor="False" Panel.ZIndex="-1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+            <Rectangle.Fill>
+                <ImageBrush x:Name="deur2" ImageSource="pack://application:,,,/img/doors/DeurOpening.png"/>
             </Rectangle.Fill>
         </Rectangle>
 

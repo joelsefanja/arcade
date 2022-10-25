@@ -251,13 +251,22 @@ namespace Arcade
                     if (player1hitbox.IntersectsWith(monsterhitbox))
                     {
                         Canvas.SetTop(Speler1, Canvas.GetTop(platform1));
+                        Sleutel1.Visibility = Visibility.Visible;
+                        sleutelOpgepakt = false;
+
+                        // deur sluiten
+                        deurOpen.Visibility = Visibility.Hidden;
 
                     }
                     if (player2hitbox.IntersectsWith(monsterhitbox))
                     {
                         
                         Canvas.SetTop(Speler2, Canvas.GetTop(platform2));
+                        Sleutel1.Visibility = Visibility.Visible;
+                        sleutelOpgepakt = false;
 
+                        // deur sluiten
+                        deurOpen.Visibility = Visibility.Hidden;
                     }
                 }
             }
@@ -338,7 +347,8 @@ namespace Arcade
         }
         public void interactieMetDeur()
         {
-            // INSTELLEN WELKE SPELER HEEFT GEWONNEN AAN DE HAND VAN DE DEUR//
+            // LAAT ZIEN WELKE SPELER GEWONNEN HEEFT ALS BEIDE SPELERS DE DEUR BEREIKT HEBBEN
+
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
             {
                 if ((string)x.Tag == "deur")
@@ -347,18 +357,7 @@ namespace Arcade
                     Rect speler2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
                     Rect deurhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
 
-                    if (speler1hitbox.IntersectsWith(deurhitbox))
-                    {
-                        if (spelerGewonnen != speler2Naam)
-                        { spelerGewonnen = speler1Naam; }
-                    }
-
-                    if (speler2hitbox.IntersectsWith(deurhitbox))
-                    {
-                        if (spelerGewonnen != speler1Naam)
-                        { spelerGewonnen = speler2Naam; }
-                    }
-                    // LAAT ZIEN WELKE SPELER GEWONNEN HEEFT ALS BEIDE SPELERS DE DEUR BEREIKT HEBBEN
+                    
                     if (speler1hitbox.IntersectsWith(deurhitbox) && speler2hitbox.IntersectsWith(deurhitbox) && sleutelOpgepakt == true)
                     {
 
@@ -394,10 +393,8 @@ namespace Arcade
                     if (hitboxspeler1.IntersectsWith(hitbox) && x.Visibility == Visibility.Visible)
                     {
                         x.Visibility = Visibility.Hidden;
-
-
                         sleutelOpgepakt = true;
-
+                        deurOpen.Visibility = Visibility.Visible;
 
                     }
                     if (hitboxspeler2.IntersectsWith(hitbox) && x.Visibility == Visibility.Visible)
@@ -405,6 +402,7 @@ namespace Arcade
                         x.Visibility = Visibility.Hidden;
 
                         sleutelOpgepakt = true;
+                        deurOpen.Visibility = Visibility.Visible;
 
 
                     }
