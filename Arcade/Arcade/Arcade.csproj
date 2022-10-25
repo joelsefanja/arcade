@@ -16,6 +16,9 @@
     <None Remove="img\coins\coin1.png" />
     <None Remove="img\doors\deur1.jpg" />
     <None Remove="img\girl_64px.png" />
+    <None Remove="img\Key\Sleutel.png" />
+    <None Remove="img\Key\SleutelExtraGroot.png" />
+    <None Remove="img\Key\SleutelGroot.png" />
     <None Remove="img\monster_64px.png" />
     <None Remove="img\platforms\FLOOR2.png" />
     <None Remove="img\platforms\Floortile1.png" />
@@ -40,6 +43,9 @@
     <Resource Include="img\backgrounds\background_layer_3.png" />
     <Resource Include="img\coins\coin1.png" />
     <Resource Include="img\doors\deur1.jpg" />
+    <Resource Include="img\Key\Sleutel.png" />
+    <Resource Include="img\Key\SleutelExtraGroot.png" />
+    <Resource Include="img\Key\SleutelGroot.png" />
     <Resource Include="img\platforms\FLOOR2.png" />
     <Resource Include="img\platforms\Floortile1.png" />
     <Resource Include="img\platforms\helling.png" />

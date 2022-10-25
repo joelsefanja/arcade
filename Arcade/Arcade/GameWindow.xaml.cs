@@ -39,6 +39,7 @@ namespace Arcade
         string seconden, minuten; // PREFIX VOOR DE TIMER ONDER DE 10 SECONDEN & PREFIX VOOR DE TIMER ONDER DE 60 MINUTEN 
         public static string speler1Naam, speler2Naam; // SPELERS NAMEN; KUNNEN MET EXTERNE .XAML.CS BESTANDEN BENADERD WORDEN
         string spelerGewonnen = "Onbekende Winnaar"; // 
+        bool sleutelOpgepakt = false;
 
         // VARIABLEN VOOR TIJDENS PAUZE
         public static bool zwaartekrachtDisabled = false;
@@ -85,6 +86,7 @@ namespace Arcade
             interactieMetMuur();
             interactieMetMunt();
             interactieMetDeur();
+            interactieMetSleutel();
 
             //
             if (zwaartekrachtDisabled) { zwaartekracht = 0; } else { zwaartekrachtDisabled = false; zwaartekracht = 10; }
@@ -269,9 +271,42 @@ namespace Arcade
                 }
             }
         }
+        //KEY VOOR OPENEN DEUR
+        public void interactieMetSleutel()
+        {
+            foreach (var x in newcanvas.Children.OfType<Rectangle>())
+            {
+                Rect hitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                Rect hitboxspeler1 = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height);
+                Rect hitboxspeler2 = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
+                if ((string)x.Tag == "Sleutel")
+                {
+                    if(hitboxspeler1.IntersectsWith(hitbox) && x.Visibility == Visibility.Visible)
+                    {
+                        x.Visibility = Visibility.Hidden;
+                        
+                        
+                            sleutelOpgepakt = true;
+                        
+
+                    }
+                    if (hitboxspeler2.IntersectsWith(hitbox) && x.Visibility == Visibility.Visible)
+                    {
+                        x.Visibility = Visibility.Hidden;
+                    
+                        sleutelOpgepakt = true;
+                        
+
+                    }
+                }
+            }
+               
+        }
+
+
         public void interactieMetDeur() 
         {
-            // INSTELLEN WELKE SPELER HEEFT GEWONNEN AAN DE HAND VAN DE DEUR//
+            // LAAT ZIEN WELKE SPELER GEWONNEN HEEFT ALS BEIDE SPELERS DE DEUR BEREIKT HEBBEN
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
             {
                 if ((string)x.Tag == "deur")
@@ -280,19 +315,9 @@ namespace Arcade
                     Rect speler2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
                     Rect deurhitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
 
-                    if (speler1hitbox.IntersectsWith(deurhitbox))
-                    {
-                        if (spelerGewonnen != speler2Naam)
-                        { spelerGewonnen = speler1Naam; }
-                    }
-
-                    if (speler2hitbox.IntersectsWith(deurhitbox))
-                    {
-                        if (spelerGewonnen != speler1Naam)
-                        { spelerGewonnen = speler2Naam; }
-                    }
-                    // LAAT ZIEN WELKE SPELER GEWONNEN HEEFT ALS BEIDE SPELERS DE DEUR BEREIKT HEBBEN
-                    if (speler1hitbox.IntersectsWith(deurhitbox) && speler2hitbox.IntersectsWith(deurhitbox))
+                    
+                    
+                    if (speler1hitbox.IntersectsWith(deurhitbox) && speler2hitbox.IntersectsWith(deurhitbox) && sleutelOpgepakt == true)
                     {
 
                         // MessageBox.Show(spelerGewonnen + " heeft gewonnen!");
@@ -468,6 +493,6 @@ namespace Arcade
             spelTimer.Start();
         }
 
-      
+
     }
 }
