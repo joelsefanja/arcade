@@ -44,6 +44,8 @@ namespace Arcade
         bool moveEnemyRightTwo = true;
         int enemySpeed = 5;
 
+        bool sleutelOpgepakt = false;
+
 
         // VARIABLEN VOOR TIJDENS PAUZE
         public static bool zwaartekrachtDisabled = false;
@@ -95,6 +97,7 @@ namespace Arcade
             interactieMetMuur();
             interactieMetMunt();
             interactieMetDeur();
+            interactieMetSleutel();
 
 
             //
@@ -356,7 +359,7 @@ namespace Arcade
                         { spelerGewonnen = speler2Naam; }
                     }
                     // LAAT ZIEN WELKE SPELER GEWONNEN HEEFT ALS BEIDE SPELERS DE DEUR BEREIKT HEBBEN
-                    if (speler1hitbox.IntersectsWith(deurhitbox) && speler2hitbox.IntersectsWith(deurhitbox))
+                    if (speler1hitbox.IntersectsWith(deurhitbox) && speler2hitbox.IntersectsWith(deurhitbox) && sleutelOpgepakt == true)
                     {
 
                         // MessageBox.Show(spelerGewonnen + " heeft gewonnen!");
@@ -371,9 +374,47 @@ namespace Arcade
                         this.Close();
                     }
 
+
+                }
+
+
+            }
+        }
+
+        //KEY VOOR OPENEN DEUR
+        public void interactieMetSleutel()
+        {
+            foreach (var x in newcanvas.Children.OfType<Rectangle>())
+            {
+                Rect hitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                Rect hitboxspeler1 = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height);
+                Rect hitboxspeler2 = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
+                if ((string)x.Tag == "Sleutel")
+                {
+                    if (hitboxspeler1.IntersectsWith(hitbox) && x.Visibility == Visibility.Visible)
+                    {
+                        x.Visibility = Visibility.Hidden;
+
+
+                        sleutelOpgepakt = true;
+
+
+                    }
+                    if (hitboxspeler2.IntersectsWith(hitbox) && x.Visibility == Visibility.Visible)
+                    {
+                        x.Visibility = Visibility.Hidden;
+
+                        sleutelOpgepakt = true;
+
+
+                    }
                 }
             }
         }
+
+
+
+
         public void zwaartekrachtBerekenenSpelers()
         {
             Canvas.SetTop(Speler1, Canvas.GetTop(Speler1) + zwaartekracht); // ZWAARTEKRACHT BEREKENING
