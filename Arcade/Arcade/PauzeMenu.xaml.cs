@@ -49,6 +49,7 @@ namespace Arcade
 
         private void HerstartenButtonClick(object sender, RoutedEventArgs e)
         {
+            GameWindow.zwaartekrachtDisabled = false;
             MainWindow MW = new MainWindow();
             game.Close();
             GameWindow gw = new GameWindow();

@@ -28,6 +28,6 @@
         <!--4 Knoppen om te navigeren naar verschillende window's-->
         <Button x:Name="VerderSpelen" Background="{x:Null}" Grid.Row="1" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="VerderSpelenButtonClick" Content="Verder spelen" FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="White" />
         <Button x:Name="Herstarten" Background="{x:Null}" Grid.Row="2" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="HerstartenButtonClick" Content="Herstarten" FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="White" />
-        <Button x:Name="Hoofdmenu"  Grid.Row="3" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="HoofmenuButtonClick" Content="Terug naar het hoofdmenu" FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="White"  Background="{x:Null}" />
+        <Button x:Name="Hoofdmenu"  Grid.Row="3" MaxWidth="600" MaxHeight="45" BorderBrush="{x:Null}" Click="HoofmenuButtonClick" Content="Terug naar het hoofdmenu" FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="White"  Background="{x:Null}" />
     </Grid>
 </Window>
