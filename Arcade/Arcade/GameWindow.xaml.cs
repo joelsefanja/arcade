@@ -83,8 +83,8 @@ namespace Arcade
 
             // IN DE METHODEN STAAT DE CODE VOOR ELK VERSCHILLEND ONDERDEEL.
             zwaartekrachtBerekenenSpelers();
-            bewegingSpeler1();
-            bewegingSpeler2();
+            bewegingSpeler1(speler1NaarLinks,  speler1NaarRechts,  speler1Springt);
+            bewegingSpeler2(speler1NaarLinks, speler1NaarRechts, speler1Springt);
 
             // BEWEGING MONSTERS
             bewegingMonster(enemy1, eiland15, eiland16, ref moveEnemyRightOne);
@@ -111,7 +111,7 @@ namespace Arcade
             Canvas.SetBottom(Speler1, Canvas.GetTop(platform1));
             Canvas.SetBottom(Speler2, Canvas.GetTop(platform2));
         }
-        public void bewegingSpeler1()
+        public void bewegingSpeler1(bool speler1NaarLinks, bool speler1NaarRechts, bool speler1Springt)
         {
             // BEWEGINGS MECHANISMEN VOOR SPELER 1
 
@@ -126,13 +126,12 @@ namespace Arcade
                 Canvas.SetLeft(Speler1, Canvas.GetLeft(Speler1) + snelheid);
             }
 
-            // TODO SPRING BEREKENING. MISSCHIEN MET EEN TIMER
-            if (speler1Springt == true /*&& Canvas.GetLeft(Player) > 0*/) // SPRING OMHOOG BEREKENING 
+            if (speler1Springt == true) // SPRING OMHOOG BEREKENING 
             {
                 Canvas.SetTop(Speler1, Canvas.GetTop(Speler1) - springSnelheid);
             }
         }
-        public void bewegingSpeler2()
+        public void bewegingSpeler2(bool speler2NaarLinks, bool speler2NaarRechts, bool speler2Springt)
         {
             // BEWEGINGS MECHANISMEN VOOR SPELER 2
             if (speler2NaarLinks == true && Canvas.GetLeft(Speler2) > 0)  // BEWEEG NAAR LINKS BEREKENING 
@@ -144,8 +143,7 @@ namespace Arcade
                 Canvas.SetLeft(Speler2, Canvas.GetLeft(Speler2) + snelheid);
             }
 
-            // TODO SPRING BEREKENING. MISSCHIEN MET EEN TIMER
-            if (speler2Springt == true /*&& Canvas.GetLeft(Player2) > 0*/)
+            if (speler2Springt == true )
             {
                 Canvas.SetTop(Speler2, Canvas.GetTop(Speler2) - springSnelheid); // SPRING OMHOOG BEREKENING 
             }
@@ -274,8 +272,6 @@ namespace Arcade
 
          public void interactieMetMuur()
         {
-            // CONTROLE VAN SPELER 1 EN 2 OF ZE MET EEN MUUR INTERACTIE HEBBEN.
-            // TODO WERKEN MET METHODE(CASE) IPV IF ELSE
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
             {
                 if ((string)x.Tag == "muur")
@@ -318,7 +314,6 @@ namespace Arcade
         public void interactieMetMunt()
         {
             // MUNTEN OPPAKKEN SPELERS
-            //todo speler 2 munten oppakken.
             foreach (var x in newcanvas.Children.OfType<Rectangle>())
             {
                 if ((string)x.Tag == "coin")
@@ -361,10 +356,6 @@ namespace Arcade
                     if (speler1hitbox.IntersectsWith(deurhitbox) && speler2hitbox.IntersectsWith(deurhitbox) && sleutelOpgepakt == true)
                     {
 
-                        // MessageBox.Show(spelerGewonnen + " heeft gewonnen!");
-                        // MESSAGE BOX GEEFT EEN ERROR -> POPPETJES ZAKKEN NAAR BENEDEN ERDOOR... 
-                        // OPLOSSING: EEN NEW WINDOW POP-UP
-                        //TODO POPUP MET WIE GEWONNEN HEEFT -> SOORT MENU
                         timer.Stop();
                         spelTimer.Stop();
 
