@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -44,6 +45,16 @@ namespace Arcade
         bool moveEnemyRightTwo = true;
         int enemySpeed = 5;
 
+        // DATABASE VARIABLEN
+        private MySqlConnection connection;
+        private string server;
+        private string database;
+        private string user;
+        private string password;
+        private string port;
+        private string connectionString;
+        private string sslM;
+
 
         // VARIABLEN VOOR TIJDENS PAUZE
         public static bool zwaartekrachtDisabled = false;
@@ -53,6 +64,21 @@ namespace Arcade
         public GameWindow()
         {
             InitializeComponent();
+
+            // DATABASE CODE
+            //server = "localhost"; //127.0.0.1
+            //database = "arcade";
+            //user = "root";
+            //password = "Test1234!";
+            //port = "3306";
+            //sslM = "none";
+
+            //connectionString = String.Format("server={0};port={1};user id={2}; password={3}; database={4}; SslMode={5}", server, port, user, password, database, sslM);
+            ////  string connstring = @"server=localhost;uid=root;password=root;pwd=root;database=arcade";
+            //connection = new MySqlConnection(connectionString);
+
+            // EIND DATABASE CODE
+            
             newcanvas.Focus(); // FOCUS OP HET SPEL CANVAS ZODAT INGEDRUKTE TOETSEN EN MUISKLIKKEN KUNNEN WORDEN WAARGENOMEN
             updateNames(); // ZET DE INGEVOERDE NAMEN ALS LABELS
 
@@ -358,7 +384,8 @@ namespace Arcade
                     // LAAT ZIEN WELKE SPELER GEWONNEN HEEFT ALS BEIDE SPELERS DE DEUR BEREIKT HEBBEN
                     if (speler1hitbox.IntersectsWith(deurhitbox) && speler2hitbox.IntersectsWith(deurhitbox))
                     {
-
+                        // Scores opslaan in de database 
+                        scoresOpslaan();
                         // MessageBox.Show(spelerGewonnen + " heeft gewonnen!");
                         // MESSAGE BOX GEEFT EEN ERROR -> POPPETJES ZAKKEN NAAR BENEDEN ERDOOR... 
                         // OPLOSSING: EEN NEW WINDOW POP-UP
@@ -532,6 +559,49 @@ namespace Arcade
             spelTimer.Start();
         }
 
+        public void scoresOpslaan()
+        {
+
+            //conexion();
+            try
+            {
+                string connstring = @"server=localhost;uid=root;password=Test1234!;pwd=root;database=arcade";
+                MySqlConnection con = new MySqlConnection();
+                con.ConnectionString = connstring;
+                con.Open();
+                string sql = "Select * from arcade.highscores";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    MessageBox.Show("Gegevens: " + reader["spelersID"] + " " + reader["spelersNaam"] + " " + reader["Score"]);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+
+        //private void conexion()
+        //{
+        //    try
+        //    {
+        //        connection.Open();
+
+        //        MessageBox.Show("successful connection");
+
+        //        connection.Close();
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        MessageBox.Show(ex.Message + connectionString);
+        //    }
+        //}
+    }
+
 
     }
-}
+
