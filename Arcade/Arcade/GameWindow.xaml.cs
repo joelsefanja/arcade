@@ -42,7 +42,7 @@ namespace Arcade
 
         bool moveEnemyRightOne = true;
         bool moveEnemyRightTwo = true;
-        int enemySpeed = 5;
+        int enemySpeed = 3;
 
         bool sleutelOpgepakt = false;
 

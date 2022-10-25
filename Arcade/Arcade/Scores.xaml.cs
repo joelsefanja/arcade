@@ -22,14 +22,13 @@ namespace Arcade
         public Scores()
         {
             InitializeComponent();
-            this.Focus();
         }
 
         private void TerugHoofdMenuClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
             MainWindow MW = new MainWindow();
             MW.Visibility = Visibility.Visible;
+            this.Close();
         }
     }
 }
