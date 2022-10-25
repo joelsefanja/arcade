@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Arcade",
+    "\\Arcade\\Arcade"
   ],
+  "SelectedNode": "\\Arcade\\Arcade\\GameWindow.xaml",
   "PreviewInSolutionExplorer": false
 }
