@@ -425,6 +425,16 @@
                 <ImageBrush ImageSource="pack://application:,,,/img/sprites/monster_64px.png"/>
             </Rectangle.Fill>
         </Rectangle>
+        
+        <!-- Sleutel om op te pakken -->
+        <Rectangle x:Name="Sleutel1" Tag="Sleutel" Width="20" Height="40" Canvas.Left="628" Canvas.Top="249" HorizontalAlignment="Center" VerticalAlignment="Top" ForceCursor="False">
+            <Rectangle.Fill>
+
+                <ImageBrush ImageSource="pack://application:,,,/img/sleutels/sleutel.png" Stretch="UniformToFill" />
+
+            </Rectangle.Fill>
+        </Rectangle>
+
 
     </Canvas>
 
