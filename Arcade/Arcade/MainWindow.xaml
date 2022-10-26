@@ -31,7 +31,7 @@
         <!-- Puzzle Platform titel -->
         <Label Grid.Row="0"
                FontSize="36"
-               Content="Feest In Het Bos" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" FontFamily="Anime Ace" >
+               Content="Feest in het Sakara bos!" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" FontFamily="Anime Ace" >
             <Label.Background>
                 <ImageBrush/>
             </Label.Background>
