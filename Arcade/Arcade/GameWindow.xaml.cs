@@ -44,6 +44,8 @@ namespace Arcade
         bool moveEnemyRightTwo = true;
         int enemySpeed = 3;
 
+        bool buttonOneActive = false;
+
         bool sleutelOpgepakt = false;
 
 
@@ -98,9 +100,8 @@ namespace Arcade
             interactieMetMunt();
             interactieMetDeur();
             interactieMetSleutel();
+            interactieMetKnoppen();
 
-
-            //
             if (zwaartekrachtDisabled) { zwaartekracht = 0; } else { zwaartekrachtDisabled = false; zwaartekracht = 10; }
         }
 
@@ -172,9 +173,6 @@ namespace Arcade
                 }
             }
         }
-
-
-
         public void interactieMetPlatform()
         {
             // NATUURKUNDE VOOR DE SPELERS EN DE INTERACTIE MET OBSTAKELS EN PLATFORMEN
@@ -407,6 +405,110 @@ namespace Arcade
 
                     }
                 }
+            }
+        }
+
+        public void interactieMetKnoppen()
+        {
+            foreach (var x in newcanvas.Children.OfType<Rectangle>())
+            {
+                if ((string)x.Name == "Button1")
+
+                {
+                    Rect player1hitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height);
+                    Rect player2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
+                    Rect buttonHitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    // Rect eilandKnop1 = new Rect(Canvas.GetLeft(eiland_knop1), Canvas.GetTop(eiland_knop1), eiland_knop1.Width, eiland_knop1.Height);
+
+                    if (player1hitbox.IntersectsWith(buttonHitbox) || (player2hitbox.IntersectsWith(buttonHitbox)))
+                    {
+                        buttonOneActive = true;
+                        Canvas.SetLeft(eiland_knop1, -1000);
+                        eiland_knop1.Visibility = Visibility.Hidden;
+                    }
+                    else
+                    {
+                        buttonOneActive = false;
+                        Canvas.SetLeft(eiland_knop1, 96);
+                        eiland_knop1.Visibility = Visibility.Visible;
+
+                    }
+
+                }
+                if ((string)x.Name == "Button2")
+
+                {
+                    Rect player1hitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height);
+                    Rect player2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
+                    Rect buttonHitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    // Rect eilandKnop1 = new Rect(Canvas.GetLeft(eiland_knop1), Canvas.GetTop(eiland_knop1), eiland_knop1.Width, eiland_knop1.Height);
+
+                    if (player1hitbox.IntersectsWith(buttonHitbox) || (player2hitbox.IntersectsWith(buttonHitbox)))
+                    {
+                        buttonOneActive = true;
+                        Canvas.SetLeft(eiland_knop2, -1000);
+                        eiland_knop2.Visibility = Visibility.Hidden;
+
+                    }
+                    else
+                    {
+                        buttonOneActive = false;
+                        Canvas.SetLeft(eiland_knop2, 898);
+                        eiland_knop2.Visibility = Visibility.Visible;
+                    }
+
+                }
+                if ((string)x.Name == "Button3")
+
+                {
+                    Rect player1hitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height);
+                    Rect player2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
+                    Rect buttonHitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    // Rect eilandKnop1 = new Rect(Canvas.GetLeft(eiland_knop1), Canvas.GetTop(eiland_knop1), eiland_knop1.Width, eiland_knop1.Height);
+
+                    if (player1hitbox.IntersectsWith(buttonHitbox) || (player2hitbox.IntersectsWith(buttonHitbox)))
+                    {
+                        buttonOneActive = true;
+                        Canvas.SetLeft(eiland_knop3, -1000);
+                        eiland_knop3.Visibility = Visibility.Hidden;
+
+                    }
+                    else
+                    {
+                        buttonOneActive = false;
+                        Canvas.SetLeft(eiland_knop3, 701);
+                        eiland_knop3.Visibility = Visibility.Visible;
+
+                    }
+
+
+                }
+                if ((string)x.Name == "Button4")
+
+                {
+                    Rect player1hitbox = new Rect(Canvas.GetLeft(Speler1), Canvas.GetTop(Speler1), Speler1.Width, Speler1.Height);
+                    Rect player2hitbox = new Rect(Canvas.GetLeft(Speler2), Canvas.GetTop(Speler2), Speler2.Width, Speler2.Height);
+                    Rect buttonHitbox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+                    // Rect eilandKnop1 = new Rect(Canvas.GetLeft(eiland_knop1), Canvas.GetTop(eiland_knop1), eiland_knop1.Width, eiland_knop1.Height);
+
+                    if (player1hitbox.IntersectsWith(buttonHitbox) || (player2hitbox.IntersectsWith(buttonHitbox)))
+                    {
+                        buttonOneActive = true;
+                        Canvas.SetLeft(eiland_knop4, -1000);
+                        eiland_knop4.Visibility = Visibility.Hidden;
+
+                    }
+                    else
+                    {
+                        buttonOneActive = false;
+                        Canvas.SetLeft(eiland_knop4, 328);
+                        eiland_knop4.Visibility = Visibility.Visible;
+
+                    }
+
+
+                }
+
             }
         }
 
