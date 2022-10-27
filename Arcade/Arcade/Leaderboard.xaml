@@ -5,30 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Arcade"
         mc:Ignorable="d"
-        Title="Leaderboard" Height="450" Width="800" WindowState="Maximized" WindowStyle="None">
+        Title="Leaderboard" Height="450" Width="800" WindowState="Maximized" WindowStyle="None" Loaded="OnLoaded">
+
+    <!-- Grid met label, datagrid en button -->
     <Grid>
         
-                <!--Achtergrond van het menu-->
-                <Grid.Background>
-                    <ImageBrush ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
-                </Grid.Background>
+        <!--Achtergrond van het menu-->
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
+        </Grid.Background>
 
-                <!--De grid voor het hoofdmenu-->
-                <Grid.RowDefinitions>
-                    <!--7 rijen voor de layout van de knoppen en het spel-titel-->
-                    <RowDefinition Height="200"></RowDefinition>
-                    <RowDefinition Height="100"></RowDefinition>
-                    <RowDefinition Height="100"></RowDefinition>
-                    <RowDefinition></RowDefinition>
+        <!-- Scoreboard titel -->
+        <Label Content="Scorebord" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="50" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" FontFamily="Anime Ace" FontSize="36" FontWeight="Bold"></Label>
 
-                </Grid.RowDefinitions>
+        <!-- DataGrid voor het laten zien van de Highscores -->
+        <DataGrid x:Name="dataGridScores" AutoGenerateColumns="True" BorderBrush="{x:Null}" VerticalAlignment="Center" Background="#FFF" SelectionChanged="dataGridScores_SelectionChanged" Width="700" HorizontalAlignment="Center" MinHeight="100"/>
 
-                <!-- Scoreboard titel -->
-                <Label Grid.Row="0"
-               FontFamily="Anime Ace"
-               FontSize="36"
-               Content="Scoreboard" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
-                </Label>
-
-            </Grid>
+        <!-- Knop om te navaigeren naar het hoofdmenu -->
+        <Button x:Name="Hoofdmenu" Click="HoofdmenuClick" Height="50" Width="200" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30" Content="Hoofdmenu" FontFamily="Anime Ace" FontSize="25"></Button>
+   
+    </Grid>
+    
 </Window>

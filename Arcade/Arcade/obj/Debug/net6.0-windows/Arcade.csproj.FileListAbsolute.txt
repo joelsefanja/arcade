@@ -94,3 +94,62 @@ C:\Users\harry\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-wi
 C:\Users\harry\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.dll
 C:\Users\harry\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\refint\Arcade.dll
 C:\Users\harry\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.pdb
+C:\Users\yvonn\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\App.baml
+C:\Users\yvonn\source\repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.csproj.CopyComplete
+C:\Users\yvonn\source\repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\EntityFramework.SqlServer.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\EntityFramework.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\Arcade.exe
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\Arcade.deps.json
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\Arcade.runtimeconfig.json
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\Arcade.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\Arcade.pdb
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\EntityFramework.SqlServer.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\EntityFramework.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.csproj.AssemblyReference.cache
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\credits.g.cs
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\GameWindow.g.cs
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Leaderboard.g.cs
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\NamenInvoeren.g.cs
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\PauzeMenu.g.cs
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Scores.g.cs
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Strip1.g.cs
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Strip2.g.cs
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\StripEind.g.cs
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade_MarkupCompile.cache
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade_MarkupCompile.lref
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\App.baml
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\credits.baml
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\GameWindow.baml
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Leaderboard.baml
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\NamenInvoeren.baml
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\PauzeMenu.baml
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Scores.baml
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Strip1.baml
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Strip2.baml
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\StripEind.baml
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.g.resources
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.AssemblyInfoInputs.cache
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.AssemblyInfo.cs
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.csproj.CoreCompileInputs.cache
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.csproj.CopyComplete
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\refint\Arcade.dll
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.pdb
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.genruntimeconfig.cache
+C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\ref\Arcade.dll

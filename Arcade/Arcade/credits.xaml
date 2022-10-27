@@ -15,53 +15,32 @@
 
         <!--De grid voor het hoofdmenu-->
         <Grid.RowDefinitions>
-            <!--8 rijen voor de layout-->
-            <RowDefinition Height="200"></RowDefinition>
+            <!--9 rijen voor de layout-->
+            <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="150"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="150"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
             <RowDefinition></RowDefinition>
 
         </Grid.RowDefinitions>
 
-        <!-- titel -->
-        <Label Grid.Row="0"
-               FontFamily="Anime Ace"
-               FontSize="36"
-               Content="Credits" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
-        </Label>
+        <!-- Alle credits worden in de grid geplaatst -->
+        <Label Grid.Row="0" FontFamily="Anime Ace" FontSize="36" FontWeight="Bold" Content="Credits"                        HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White"></Label>
+        <Label Grid.Row="1" FontFamily="Anime Ace" FontSize="25" FontWeight="Bold" Content="Pixel characters door:"         HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White"></Label>
+        <Label Grid.Row="2" FontFamily="Anime Ace" FontSize="35" FontWeight="Bold" Content="Melissa Wijngaarden"            HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White"></Label>
+        <Label Grid.Row="3" FontFamily="Anime Ace" FontSize="25" FontWeight="Bold" Content="Manga characters door:"         HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White"></Label>
+        <Label Grid.Row="4" FontFamily="Anime Ace" FontSize="35" FontWeight="Bold" Content="kidznon"                        HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White"></Label>
+        <Label Grid.Row="5" FontFamily="Anime Ace" FontSize="20" FontWeight="Bold" Content="https://www.fiverr.com/kidznon" HorizontalAlignment="Center" VerticalAlignment="Top"    ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White"></Label>
+        <Label Grid.Row="6" FontFamily="Anime Ace" FontSize="20" FontWeight="Bold" Content="Muziek door:"                        HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White"></Label>
+        <Label Grid.Row="7" FontFamily="Anime Ace" FontSize="35" FontWeight="Bold" Content="Michael Robinson Homingstar"                        HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White"></Label>
 
-        <Label Grid.Row="1"
-               FontFamily="Anime Ace"
-               FontSize="25"
-               Content="Pixel characters door:" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
-        </Label>
-
-        <Label Grid.Row="2"
-               FontFamily="Anime Ace"
-               FontSize="35"
-               Content="Melissa Wijngaarden" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" FontWeight="Bold" />
-
-        <Label Grid.Row="3"
-               FontFamily="Anime Ace"
-               FontSize="25"
-               Content="Manga characters door:" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
-        </Label>
-
-        <Label Grid.Row="4"
-               FontFamily="Anime Ace"
-               FontSize="35"
-               Content="kidznon" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
-        </Label>
-        <Label Grid.Row="5"
-               FontFamily="Anime Ace"
-               FontSize="20"
-               Content="https://www.fiverr.com/kidznon" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="White" >
-        </Label>
-
-        <Button x:Name="TerugMenu"  Grid.Row="6" MaxWidth="350" MaxHeight="40" BorderBrush="{x:Null}" Click="TerugHoofmenuButtonClick" Content="Naar hoofdmenu" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="Anime Ace" FontSize="20" Foreground="Black" Background="White" Padding="5,5,5,5" Width="300" Height="39" />
+        <!--Button om terug naar het hoofdmenu te gaan-->
+        <Button x:Name="TerugMenu" Grid.Row="8" MaxWidth="350" MaxHeight="40" BorderBrush="{x:Null}" Click="TerugHoofdmenuButtonClick" Content="Naar hoofdmenu" HorizontalAlignment="Center" FontFamily="Anime Ace" FontSize="20" FontWeight="Bold" Foreground="Black" Background="White" Padding="5,5,5,5" Width="300" Height="39"></Button>
+    
     </Grid>
+    
 </Window>

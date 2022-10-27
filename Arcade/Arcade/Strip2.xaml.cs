@@ -14,16 +14,21 @@ using System.Windows.Shapes;
 
 namespace Arcade
 {
-    /// <summary>
-    /// Interaction logic for Strip2.xaml
-    /// </summary>
     public partial class Strip2 : Window
     {
+        /// <summary>
+        /// Strip2 scherm laten beginnen.
+        /// </summary>
         public Strip2()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Beginnen met het spel.
+        /// </summary>
+        /// <param name="sender">Aanroepende object van het event SpelBeginnenClick</param>
+        /// <param name="e">Extra informatie over aanroepend object</param>
         private void SpelBeginnenClick(object sender, RoutedEventArgs e)
         {
             GameWindow gw = new GameWindow();

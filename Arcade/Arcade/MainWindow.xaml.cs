@@ -15,16 +15,20 @@ using System.Windows.Shapes;
 
 namespace Arcade
 {
-    /// <summary>
-    /// Interaction logic for GameWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
             
         }
+        /// <summary>
+        /// StartButtonClick sluit de Main Window en opent het NamenInvoeren scherm zodra de knop "Start" is ingedrukt.
+        /// </summary>
+        /// <param name="sender">Aanroepende object van het event StartButtonClick</param>
+        /// <param name="e">Extra informatie over aanroepend object</param>
         private void StartButtonClick(object sender, RoutedEventArgs e)
         {
            
@@ -33,7 +37,11 @@ namespace Arcade
             this.Close();
             
         }
-
+        /// <summary>
+        /// LeaderBoardButtonClick sluit de Main Window en opent het Scores scherm zodra de knop "Scorebord" is ingedrukt.
+        /// </summary>
+        /// <param name="sender">Aanroepende object van het event LeaderBoardButtonClick</param>
+        /// <param name="e">Extra informatie over aanroepend object</param>
         private void LeaderBoardButtonClick(object sender, RoutedEventArgs e)
         {
             Leaderboard lb = new Leaderboard();
@@ -42,6 +50,11 @@ namespace Arcade
 
         }
 
+        /// <summary>
+        /// CreditsButtonClick sluit de Main Window en opent het credits scherm zodra de knop "Credits" is ingedrukt.
+        /// </summary>
+        /// <param name="sender">Aanroepende object van het event CreditsButtonClick</param>
+        /// <param name="e">Extra informatie over aanroepend object</param>
         private void CreditsButtonClick(object sender, RoutedEventArgs e)
         {
             credits cr = new credits();
@@ -52,8 +65,8 @@ namespace Arcade
         /// <summary>
         /// QuitButtonClick sluit het programma zodra de knop 'Quit' is ingedrukt.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Aanroepende object van het event QuitButtonClick</param>
+        /// <param name="e">Extra informatie over aanroepend object</param>
         private void QuitButtonClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();

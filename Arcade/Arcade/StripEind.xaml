@@ -7,10 +7,12 @@
         mc:Ignorable="d"
         Title="StripEind" Height="450" Width="800" Focusable="True" WindowState="Maximized" WindowStyle="None">
 
+    <!--Achtergrond voor de Window-->
     <Window.Background>
         <ImageBrush ImageSource="pack://application:,,,/img/MangaStrips/Stripeind.png"/>
     </Window.Background>
 
+    <!--Een knop om verder te gaan naar de scores-->
     <Grid>
         <Button x:Name="ScoreBekijken" Click="ScoreBekijkenClick" Height="50" Width="200" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Content="Verder" FontFamily="Anime Ace" FontSize="25"></Button> 
     </Grid>

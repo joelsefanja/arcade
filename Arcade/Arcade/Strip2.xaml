@@ -7,11 +7,14 @@
         mc:Ignorable="d"
         Title="Strip2" Height="450" Width="800" Focusable="True" WindowState="Maximized" WindowStyle="None">
    
+    <!--Achtergrond van de window-->
     <Window.Background>
         <ImageBrush ImageSource="pack://application:,,,/img/MangaStrips/StripStart2-2.jpg"/>
     </Window.Background>
 
+    <!--Grid met een button om het spel te beginnen-->
     <Grid>
-        <Button x:Name="SpelBeginnen"  Height="50" Width="230" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="SpelBeginnenClick" Content="Spel beginnen" FontFamily="Anime Ace" FontSize="25" Background="#FFFCFCFC" BorderBrush="{x:Null}"></Button> 
+        <Button x:Name="SpelBeginnen" Height="50" Width="230" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="SpelBeginnenClick" Content="Spel beginnen" FontFamily="Anime Ace" FontSize="25" Background="#FFFCFCFC" BorderBrush="{x:Null}"></Button> 
     </Grid>
+    
 </Window>
