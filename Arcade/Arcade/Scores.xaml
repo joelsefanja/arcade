@@ -7,15 +7,18 @@
         mc:Ignorable="d"
         Title="Scores" Height="450" Width="800" Focusable="True" WindowState="Maximized" WindowStyle="None">
     
+    <!--Achtergrond van de Window-->
     <Window.Background>
         <ImageBrush ImageSource="pack://application:,,,/img/MangaStrips/StripScores.png"/>
     </Window.Background>
     
+    <!--De Labels om scores weer te geven en een knop naar het hoofdmenu-->
     <Grid>
-        <Label x:Name="Tijd" Content="Gezamelijke tijd: 00:00" FontSize="25" FontFamily="Anime Ace" Foreground="White" Margin="50" VerticalAlignment="Top" HorizontalAlignment="Center" />
-        <Label x:Name="ScoreSpeler1" Content="Munten (naam speler 1)" FontSize="20" FontFamily="Anime Ace" Foreground="White"  Margin="50,100"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Label x:Name="ScoreSpeler2" Content="Munten (naam speler 2)" FontSize="20" FontFamily="Anime Ace" Foreground="White"  Margin="50,100"  VerticalAlignment="Top" HorizontalAlignment="right"/>
-        <Button x:Name="TerugHoofdMenu" Click="TerugHoofdMenuClick" Height="50" Width="200" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" Content="Hoofdmenu" FontFamily="Anime Ace" FontSize="25"></Button>
+        <Label  x:Name="Tijd"           Content="Gezamelijke tijd: 00:00" FontSize="25" FontFamily="Anime Ace" Foreground="White"        Margin="50"     VerticalAlignment="Top"    HorizontalAlignment="Center"/>
+        <Label  x:Name="ScoreSpeler1"   Content=""                        FontSize="20" FontFamily="Anime Ace" Foreground="White"        Margin="50,100" VerticalAlignment="Top"    HorizontalAlignment="Left"  />
+        <Label  x:Name="ScoreSpeler2"   Content=""                        FontSize="20" FontFamily="Anime Ace" Foreground="White"        Margin="50,100" VerticalAlignment="Top"    HorizontalAlignment="Right" />
+        <Label  x:Name="MeesteMunten"   Content=""                        FontSize="20" FontFamily="Anime Ace" Foreground="White"                        VerticalAlignment="Center" HorizontalAlignment="Center" Height="100" HorizontalContentAlignment="Center" MinWidth="300"  />
+        <Button x:Name="TerugHoofdMenu" Content="Hoofdmenu"               FontSize="25" FontFamily="Anime Ace" Click="TerugHoofdMenuClick" Margin="15"     VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="50" Width="200"></Button>
     </Grid>
     
 </Window>

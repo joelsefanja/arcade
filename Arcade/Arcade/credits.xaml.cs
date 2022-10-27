@@ -15,16 +15,24 @@ using System.Windows.Shapes;
 namespace Arcade
 {
     /// <summary>
-    /// Interaction logic for credits.xaml
+    /// Interactie logica voor credits.xaml
     /// </summary>
     public partial class credits : Window
     {
+        /// <summary>
+        /// Credits scherm laten beginnen.
+        /// </summary>
         public credits()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Open hoofdmenu window en sluit het huidige window.
+        /// </summary>
+        /// <param name="sender">Aanroepende object van het event TerugHoofdmenuButtonClick</param>
+        /// <param name="e">Extra informatie over aanroepend object</param>
 
-        private void TerugHoofmenuButtonClick(object sender, RoutedEventArgs e)
+        private void TerugHoofdmenuButtonClick(object sender, RoutedEventArgs e)
         {
             MainWindow MW = new MainWindow();
             MW.Visibility = Visibility.Visible;

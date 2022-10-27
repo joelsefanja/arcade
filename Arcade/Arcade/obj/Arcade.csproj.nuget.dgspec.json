@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joels\\source\\repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj": {}
+    "C:\\Users\\yvonn\\source\\repos\\joelsefanja\\arcade zonder database\\Arcade\\Arcade\\Arcade.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joels\\source\\repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj": {
+    "C:\\Users\\yvonn\\source\\repos\\joelsefanja\\arcade zonder database\\Arcade\\Arcade\\Arcade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joels\\source\\repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj",
+        "projectUniqueName": "C:\\Users\\yvonn\\source\\repos\\joelsefanja\\arcade zonder database\\Arcade\\Arcade\\Arcade.csproj",
         "projectName": "Arcade",
-        "projectPath": "C:\\Users\\joels\\source\\repos\\joelsefanja\\arcade\\Arcade\\Arcade\\Arcade.csproj",
-        "packagesPath": "C:\\Users\\joels\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joels\\source\\repos\\joelsefanja\\arcade\\Arcade\\Arcade\\obj\\",
+        "projectPath": "C:\\Users\\yvonn\\source\\repos\\joelsefanja\\arcade zonder database\\Arcade\\Arcade\\Arcade.csproj",
+        "packagesPath": "C:\\Users\\yvonn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yvonn\\source\\repos\\joelsefanja\\arcade zonder database\\Arcade\\Arcade\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\joels\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yvonn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

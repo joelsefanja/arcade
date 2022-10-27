@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Arcade"
         mc:Ignorable="d"
-     
         Title="PauzeMenu" Height="450" Width="800" WindowStyle="None" HorizontalAlignment="Center" VerticalAlignment="Center" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+
+    <!--De grid voor het menu-->
     <Grid>
         <!--Achtergrond van het menu-->
         <Grid.Background>
             <ImageBrush ImageSource="pack://application:,,,/img/backgrounds/background_layered.png"/>
         </Grid.Background>
 
-        <!--De grid voor het hoofdmenu-->
         <Grid.RowDefinitions>
             <!--5 rijen voor de layout van de knoppen en het spel-->
             <RowDefinition></RowDefinition>
@@ -25,9 +25,11 @@
 
         <Canvas Focusable="True" x:Name="newcanvas" KeyDown="OnKeyDown" HorizontalAlignment="Center" VerticalAlignment="Center"></Canvas>
 
-        <!--4 Knoppen om te navigeren naar verschillende window's-->
-        <Button x:Name="VerderSpelen" Background="{x:Null}" Grid.Row="1" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="VerderSpelenButtonClick" Content="Verder spelen" FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="White" />
-        <Button x:Name="Herstarten" Background="{x:Null}" Grid.Row="2" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="HerstartenButtonClick" Content="Herstarten" FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="White" />
-        <Button x:Name="Hoofdmenu"  Grid.Row="3" MaxWidth="600" MaxHeight="45" BorderBrush="{x:Null}" Click="HoofmenuButtonClick" Content="Terug naar het hoofdmenu" FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="White"  Background="{x:Null}" />
+        <!--3 Knoppen om te navigeren naar verschillende window's-->
+        <Button x:Name="VerderSpelen" Grid.Row="1" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="VerderSpelenButtonClick" Content="Verder spelen"            FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="White" Background="{x:Null}"/>
+        <Button x:Name="Herstarten"   Grid.Row="2" MaxWidth="350" MaxHeight="45" BorderBrush="{x:Null}" Click="HerstartenButtonClick"   Content="Herstarten"               FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="White" Background="{x:Null}"/>
+        <Button x:Name="Hoofdmenu"    Grid.Row="3" MaxWidth="600" MaxHeight="45" BorderBrush="{x:Null}" Click="HoofmenuButtonClick"     Content="Terug naar het hoofdmenu" FontWeight="Bold"  FontFamily="Anime Ace" FontSize="20" Foreground="White" Background="{x:Null}" />
+    
     </Grid>
+    
 </Window>

@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="audio\Fairy on Fire.wav" />
     <None Remove="fonts\anime-ace.bold.ttf" />
     <None Remove="fonts\anime-ace.italic.ttf" />
     <None Remove="fonts\anime-ace.regular.ttf" />
@@ -21,6 +22,10 @@
     <None Remove="img\doors\DeurOpen.png" />
     <None Remove="img\doors\DeurOpening.png" />
     <None Remove="img\girl_64px.png" />
+    <None Remove="img\knopPlatformen\PlatformBlauw.png" />
+    <None Remove="img\knopPlatformen\PlatformGeel.png" />
+    <None Remove="img\knopPlatformen\PlatformGroen.png" />
+    <None Remove="img\knopPlatformen\PlatformRood.png" />
     <None Remove="img\MangaStrips\Strip eind.png" />
     <None Remove="img\MangaStrips\Strip start 1.png" />
     <None Remove="img\MangaStrips\Strip start 2.png" />
@@ -47,6 +52,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="audio\Fairy on Fire.wav" />
     <Resource Include="fonts\anime-ace.bold.ttf" />
     <Resource Include="fonts\anime-ace.italic.ttf" />
     <Resource Include="fonts\anime-ace.regular.ttf" />
@@ -58,6 +68,10 @@
     <Resource Include="img\doors\DeurDicht.png" />
     <Resource Include="img\doors\DeurOpen.png" />
     <Resource Include="img\doors\DeurOpening.png" />
+    <Resource Include="img\knopPlatformen\PlatformBlauw.png" />
+    <Resource Include="img\knopPlatformen\PlatformGeel.png" />
+    <Resource Include="img\knopPlatformen\PlatformGroen.png" />
+    <Resource Include="img\knopPlatformen\PlatformRood.png" />
     <Resource Include="img\MangaStrips\StripStart2-2.jpg" />
     <Resource Include="img\MangaStrips\Stripeind.png" />
     <Resource Include="img\MangaStrips\StripScores.png" />

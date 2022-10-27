@@ -22,8 +22,26 @@ namespace Arcade
         public Scores()
         {
             InitializeComponent();
+
+            // Tijd label aanpassen naar de gezamelijke tijd + de tijd die opgeslagen is in de GameWindow.
+            Tijd.Content = "Gezamelijke tijd:" + GameWindow.TijdMetNul;
+
+            // Score label van speler 1 en speler 2 aanpassen naar het aantal munten dat opgeslagen is in de GameWindow.
+            ScoreSpeler1.Content = "Munten " + GameWindow.speler1Naam + ": " + GameWindow.muntenSpeler1;
+            ScoreSpeler2.Content = "Munten " + GameWindow.speler2Naam + ": " + GameWindow.muntenSpeler2;
+
+            // Label content aanpassen zodat wordt weergegeven wie de meeste munten heeft.
+            MeesteMunten.Content = GameWindow.MeesteMunten;
+
+            GameWindow.muntenSpeler1 = 0;
+            GameWindow.muntenSpeler2 = 0;
         }
 
+        /// <summary>
+        /// MainWindow openen en het huidige scherm afsluiten.
+        /// </summary>
+        /// <param name="sender">Aanroepende object van het event TerugHoofdMenuClick</param>
+        /// <param name="e">Extra informatie over aanroepend object</param>
         private void TerugHoofdMenuClick(object sender, RoutedEventArgs e)
         {
             MainWindow MW = new MainWindow();
