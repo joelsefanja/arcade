@@ -965,7 +965,7 @@ namespace Arcade {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Arcade;V1.0.0.0;component/gamewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Arcade;component/gamewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\GameWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

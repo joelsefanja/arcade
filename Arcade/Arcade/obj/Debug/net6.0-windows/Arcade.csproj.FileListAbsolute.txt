@@ -153,3 +153,12 @@ C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj
 C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.pdb
 C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.genruntimeconfig.cache
 C:\Users\yvonn\source\repos\joelsefanja\arcade zonder database\Arcade\Arcade\obj\Debug\net6.0-windows\ref\Arcade.dll
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\EntityFramework.SqlServer.dll
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\EntityFramework.dll
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\obj\Debug\net6.0-windows\Arcade.csproj.CopyComplete

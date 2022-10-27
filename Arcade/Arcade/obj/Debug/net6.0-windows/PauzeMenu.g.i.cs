@@ -85,7 +85,7 @@ namespace Arcade {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Arcade;V1.0.0.0;component/pauzemenu.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Arcade;component/pauzemenu.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\PauzeMenu.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

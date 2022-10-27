@@ -61,7 +61,7 @@ namespace Arcade {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Arcade;V1.0.0.0;component/strip1.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Arcade;component/strip1.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Strip1.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

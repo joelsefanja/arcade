@@ -68,6 +68,11 @@ namespace Arcade
         /// <param name="e">Extra informatie over aanroepend object</param>
         private void HerstartenButtonClick(object sender, RoutedEventArgs e)
         {
+
+            // Scores van de spelers resetten.
+            GameWindow.muntenSpeler1 = 0;
+            GameWindow.muntenSpeler2 = 0;
+
             // Zwaartekracht wordt aangezet voor het nieuwe spel.
             GameWindow.zwaartekrachtDisabled = false;
 

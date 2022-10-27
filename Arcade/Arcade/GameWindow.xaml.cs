@@ -62,7 +62,7 @@ namespace Arcade
             updateNames();
             
             // Spelmuziek toegevoegd.
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\yvonn\Source\Repos\joelsefanja\arcade\Arcade\Arcade\audio\Fairy_Spring_Tune.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\joels\Source\Repos\joelsefanja\arcade\Arcade\Arcade\audio\Fairy_Spring_Tune.wav");
             player.Play();
 
 
